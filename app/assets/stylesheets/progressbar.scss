@@ -8,7 +8,6 @@
   --font-size-default: .875rem;
 }
 
-
 h2 {
   color: var(--color-gray);
   font-size: var(--font-size-small);
@@ -28,13 +27,14 @@ section {
   padding: 0;
   margin: 0 0 1rem 0;
 }
+
 .progress-bar li {
   flex: 2;
   position: relative;
   padding: 0 0 14px 0;
   font-size: var(--font-size-default);
   line-height: 1.5;
-  color: var(--color-green);
+  color: var(--color-gray);
   font-weight: 600;
   white-space: nowrap;
   overflow: visible;
@@ -56,7 +56,7 @@ section {
   height: 8px;
   background-color: var(--color-gray-disabled);
   border-radius: 50%;
-  border: 2px solid var(--color-white);
+  border: 2px solid var(--color-gray);
   position: absolute;
   left: calc(50% - 6px);
   bottom: -7px;
@@ -107,8 +107,8 @@ section {
 .progress-bar .is-active:before,
 .progress-bar li:hover:before,
 .progress-bar .is-hovered:before {
-  background-color: var(--color-white);
-  border-color: var(--color-green);
+  background-color: var(--color-red);
+  border-color: var(--color-red);
 }
 .progress-bar li:hover:before,
 .progress-bar .is-hovered:before {
