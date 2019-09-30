@@ -30,12 +30,21 @@
 }
 
 .main3{
-  height: 1283px;
+  height: 1260px;
   width: 100%;
   background-color: #f5f5f5;
   padding-bottom:75px; 
-  display: flex;
 }
+
+.register-box {
+  height: 1260px;
+  width: 700px;
+  margin: 0 auto;
+  background-color: #ffffff;
+
+
+}
+
 
 .login-new-account {
   height: 144px;
@@ -160,7 +169,105 @@
   }
 }
 
+.register-text {
+  width: 700px;
+  height: 97px; 
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 97px;
+}
 
+.register-new {
+  width: 700px;
+  height: 287px; 
+  background-color: #ffffff;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 40px;
+  &__email {
+    height: 50px;
+    width: 343px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #eeeeee;
+    &--icon {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translate(0, -50%);
+      color: #ccc;
+      font-size: 16px;
+    }
+    &--submit {
+      font-size: 14px;
+      line-height: 50px;
+      text-decoration: none;
+      color: #333333;
+    }
+  }
+  &__facebook {
+    height: 50px;
+    width: 343px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 16px;
+    background-color: #385185;
+    color: #ffffff;
+    text-decoration: none;
+    &--icon {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translate(0, -50%);
+      color: #385185;
+      background-color: #ffffff;
+      font-size: 26px;
+    }
+    &--submit {
+      font-size: 14px;
+      line-height: 50px;
+      text-decoration: none;
+      color:#ffffff;
+    }
+  }
+  &__google {
+    height: 50px;
+    width: 343px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 16px;
+    border: 1px solid #ccc;
+
+    &--icon {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translate(0, -50%);
+      color: #385185;
+      background-color: #ffffff;
+      font-size: 26px;
+      
+    }
+    &--submit {
+      font-size: 14px;
+      line-height: 50px;
+      text-decoration: none;
+      color: #333333;;
+    }
+  }
+}
+
+.register-profile {
+  width: 700px;
+  height: 1283px; 
+  background-color: #ffffff;
+  margin: 0 auto;
+}
 
 .footer {
   background-color: #f5f5f5;
