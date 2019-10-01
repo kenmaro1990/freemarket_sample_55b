@@ -12,7 +12,24 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-
+# usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|nickname|string|null: false|
+|profile_description|text||
+|given_name|string|null: false|
+|family_name|string|null: false|
+|given_name_kana|string|null: false|
+|family_name_kana|string|null: false|
+|mobile_number|string|null: false, unique: true|
+|postal_code|string|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|block|string|null: false|
+|building|string||
+|phone_number|string|null: false|
 * Database initialization
 
 * How to run the test suite

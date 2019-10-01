@@ -4,7 +4,7 @@
   %ol.progress-bar
     %li.is-active
       %span 会員情報
-    %li.is-active
+    %li
       %span 電話番号認証
     %li
       %span  お届け先住所入力
@@ -66,6 +66,4 @@
       = link_to step2_signup_index_path, class: "register-profile__policy--link",method: :get do
         本人情報の登録について
         %i.fa.fa-arrow-right
-
-
 = render "login-footer"
