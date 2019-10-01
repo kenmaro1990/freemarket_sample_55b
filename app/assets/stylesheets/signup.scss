@@ -17,20 +17,27 @@
   }
 }
 
-.main {
+.login-main {
   height: 731px;
   width: 100%;
   background-color: #f5f5f5;
 }
-.main2 {
+.register-main {
   height: 564px;
   width: 100%;
   background-color: #f5f5f5;
   padding-bottom:75px; 
 }
 
-.main3{
+.step1-main{
   height: 1260px;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding-bottom:75px; 
+}
+
+.step2-main{
+  height: 403px;
   width: 100%;
   background-color: #f5f5f5;
   padding-bottom:75px; 
@@ -41,10 +48,7 @@
   width: 700px;
   margin: 0 auto;
   background-color: #ffffff;
-
-
 }
-
 
 .login-new-account {
   height: 144px;
@@ -267,6 +271,254 @@
   height: 1283px; 
   background-color: #ffffff;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40px 40px 64px ;
+  &__nickname {
+    height: 70px;
+    width: 343px;
+    margin: 0 auto;
+    &--label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &--textarea {
+      width: 343px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }
+  }
+    &__email {
+      height: 70px;
+      width: 343px;
+      margin: 32px auto 0;
+      &--label {
+        font-size: 14px;
+        font-weight: bold;
+      }
+      &--textarea {
+        width: 343px;
+        resize: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-top: 8px;
+      }
+    }
+    &__password {
+      height: 70px;
+      width: 343px;
+      margin: 32px auto 0;
+      &--label {
+        font-weight: bold;
+      }
+      &--textarea {
+        width: 343px;
+        resize: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-top: 8px;
+      }
+    }
+   &__identification {
+    width: 343px;
+    margin: 32px auto 0;
+    font-size: 14px;
+    &--bold {
+      font-weight: bold;
+    }
+   } 
+   &__name {
+    width: 343px;
+    margin: 32px auto 0;
+    font-size: 14px;
+    &--label {
+      font-weight: bold;
+    }
+   } 
+   &__nameform {
+    font-size: 14px;
+    text-align: center;
+    &--textarea {
+      width: 165.5px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+   } 
+   &__namekana {
+    width: 343px;
+    margin: 32px auto 0;
+    font-size: 14px;
+    &--label {
+      font-weight: bold;
+   }
+  }
+   &__kana-nameform {
+    font-size: 14px;
+    text-align: center;
+    &--textarea {
+      width: 165.5px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+   }   
+  }
+  &__birthday {
+    height: 70px;
+    width: 343px;
+    margin: 32px auto 0;
+
+    &--label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &--select {
+      height: 48px;
+      width: 76px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      background-color: #ffffff;
+    }
+    &--caution {
+      color: #888888;
+      font-size:14px;
+      margin-top: 8px;
+    }
+  }
+  &__captcha{
+    &--box {
+      height: 78px;
+      width: 343px;
+      margin: 0 auto;
+      margin-top: 90px;
+      background: #888888;;
+    }
+  }
+  &__nextpage {
+    display: block;
+    height: 50px;
+    width: 328px;
+    background-color: #ea352d;
+    color: #ffffff;
+    margin: 8px auto 0;
+    text-align: center;
+    line-height: 42px;
+    text-decoration: none;
+    font-size: 14px;
+    }
+  &__caution {
+    display: block;
+    width: 328px;
+    margin: 0 auto;
+  }
+  &__nextpage {
+    display: block;
+    width: 343px;
+    margin: 32px auto 0;
+  }
+  &__policy {
+    display: block;
+    width: 343px;
+    margin: 32px auto;
+    text-align: right;
+    &--link {
+      width: 343px;
+      color: #0099e8;
+      text-decoration: none;
+    }
+  }
+}
+
+.register-phonenumber {
+  height: 403px;
+  width: 700px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40px 40px 64px ;
+  &__box {
+    height: 70px;
+    width: 343px;
+    margin: 0 auto;
+    &--label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &--textarea {
+      width: 343px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }
+    &--description {
+      width: 343px;
+      font-size: 14px;
+      margin-top: 8px;
+      padding: 5px;
+    }
+  }
+  &__nextpage {
+    display: block;
+    height: 50px;
+    width: 343px;
+    background-color: #ea352d;
+    color: #ffffff;
+    margin: 100px auto 0;
+    text-align: center;
+    line-height: 42px;
+    text-decoration: none;
+    font-size: 14px;
+    }
+  &__description {
+    height: 70px;
+    width: 343px;
+    margin: 0 auto;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  &__reason {
+    display: block;
+    width: 343px;
+    margin: 0 auto;
+    text-align: right;
+    color: #0099e8;
+    text-decoration: none;
+  }
+}
+
+
+.register-required {
+  margin: 0 0 0 8px;
+  margin-bottom: 10px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size:12px;
+  color: #ffffff;
+  background: #ea352d;
 }
 
 .footer {
