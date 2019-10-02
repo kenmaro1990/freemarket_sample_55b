@@ -2,6 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin next() {
+  display: block;
+  height: 50px;
+  width: 343px;
+  background-color: #ea352d;
+  color: #ffffff;
+  margin: 8px auto 0;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+@mixin form() {
+  height: 70px;
+  width: 343px;
+  margin: 32px auto 0;
+  &--label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  &--textarea {
+    width: 343px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 8px;
+  }
+}
+
+@mixin sign-up-contents() {
+  width: 700px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40px 40px 64px;
+}
+
 .header{
   height: 128px;
   width: 100%;
@@ -45,21 +86,21 @@
 
 
 .step3-main{
-  height: 403px;
+  height: 1110px;
   width: 100%;
   background-color: #f5f5f5;
   padding-bottom:75px; 
 }
 
 .step4-main{
-  height: 403px;
+  height: 1110px;
   width: 100%;
   background-color: #f5f5f5;
   padding-bottom:75px; 
 }
 
 .step5-main{
-  height: 403px;
+  height: 234px;
   width: 100%;
   background-color: #f5f5f5;
   padding-bottom:75px; 
@@ -208,13 +249,9 @@
 }
 
 .register-new {
-  width: 700px;
-  height: 287px; 
-  background-color: #ffffff;
-  margin: 0 auto;
+  @include sign-up-contents();
   text-align: center;
   box-sizing: border-box;
-  padding-top: 40px;
   &__email {
     height: 50px;
     width: 343px;
@@ -268,7 +305,6 @@
     position: relative;
     margin-top: 16px;
     border: 1px solid #ccc;
-
     &--icon {
       position: absolute;
       top: 50%;
@@ -289,12 +325,7 @@
 }
 
 .register-profile {
-  width: 700px;
-  height: 1283px; 
-  background-color: #ffffff;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 40px 40px 64px;
+  @include sign-up-contents();
   &__nickname {
     height: 70px;
     width: 343px;
@@ -437,26 +468,14 @@
     }
   }
   &__nextpage {
-    display: block;
-    height: 50px;
-    width: 328px;
-    background-color: #ea352d;
-    color: #ffffff;
-    margin: 8px auto 0;
-    text-align: center;
-    line-height: 42px;
-    text-decoration: none;
-    font-size: 14px;
+    @include next();
+    margin: 32px auto 0;
+
     }
   &__caution {
     display: block;
     width: 328px;
     margin: 0 auto;
-  }
-  &__nextpage {
-    display: block;
-    width: 343px;
-    margin: 32px auto 0;
   }
   &__policy {
     display: block;
@@ -504,16 +523,9 @@
     }
   }
   &__nextpage {
-    display: block;
-    height: 50px;
-    width: 343px;
-    background-color: #ea352d;
-    color: #ffffff;
+    @include next();
     margin: 100px auto 0;
-    text-align: center;
-    line-height: 42px;
-    text-decoration: none;
-    font-size: 14px;
+
     }
   &__description {
     height: 70px;
@@ -533,14 +545,125 @@
 }
 
 .register-address {
-  height: 403px;
-  width: 700px;
-  background-color: #ffffff;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 40px 40px 64px;
+  @include sign-up-contents();
+  &__name {
+    width: 343px;
+    margin: 0 auto;
+    &--label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &--textarea {
+      width: 343px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }
+  }
+  &__namekana {
+    width: 343px;
+    margin: 32px auto 0;
+    &--label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &--textarea {
+      width: 343px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }
+  }
+  &__prefecture {
+    width: 343px;
+    margin: 32px auto 0;
+    &--label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &--select {
+      height: 46px;
+      width: 343px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }  
+  }
+  &__postalcode {
+    @include form();
+  }
+  &__city {
+    @include form();
+  }
+  &__block {
+    @include form();
+  }
+  &__building {
+    @include form();
+  }
+  &__phone-number {
+    @include form();
+  }
 }
 
+.register-card {
+  @include sign-up-contents();
+  &__number {
+    @include form();
+    margin-top: 0
+  }
+  &__date {
+    width: 343px;
+    margin: 32px auto 0;
+    &--label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &--select {
+      height: 46px;
+      width: 76px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }
+  }
+  &__code {
+    @include form();
+    margin-top: 32px
+  }
+  &__reason {
+    display: block;
+    width: 343px;
+    margin: 10px auto 0;
+    text-align: right;
+    color: #0099e8;
+    text-decoration: none;
+  }
+}
+
+.register-complete {
+  @include sign-up-contents();
+  height: 234px;
+  &__message {
+    text-align: center;
+  }
+}
 
 .register-required {
   margin: 0 0 0 8px;
@@ -552,37 +675,47 @@
   background: #ea352d;
 }
 
+.register-any {
+  margin: 0 0 0 8px;
+  margin-bottom: 10px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size:12px;
+  color: #ffffff;
+  background: gray;
+}
+
 .footer {
   background-color: #f5f5f5;
   height: 140px;
   padding:40px;
   }
-  .policy {
-    width: 100%;
-    line-height: 13px;
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
-    color: #333333;
-    &__list {
-      margin: 0px 10px;
-      list-style: none;
-    }
+.policy {
+  width: 100%;
+  line-height: 13px;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: #333333;
+  &__list {
+    margin: 0px 10px;
+    list-style: none;
   }
+}
 
-  .footer-image {
-    text-align: center;
-    width: 80px;
-    height: 65px; 
-    padding: 30px 0 10px 0; 
-    margin: 0 auto;
-  }
-    .footer-text{
-    clear: both;
-    text-align: center;
-    color: #333333;
-    font-size: 11px;
-  }
+.footer-image {
+  text-align: center;
+  width: 80px;
+  height: 65px; 
+  padding: 30px 0 10px 0; 
+  margin: 0 auto;
+}
+  .footer-text{
+  clear: both;
+  text-align: center;
+  color: #333333;
+  font-size: 11px;
+}
 
 
 

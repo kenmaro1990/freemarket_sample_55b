@@ -12,7 +12,7 @@
       %span 支払い方法
     %li
       %span 完了
-
+  
 .step4-main
   .register-text 支払い方法
   .register-card
@@ -22,18 +22,18 @@
       %textarea.register-card__number--textarea{:cols => "40", :name => "kanso", :placeholder => "半角数字のみ", :rows => "1"}
 
     .register-card__date
-      %label.register-card__date--label カード番号
+      %label.register-card__date--label 有効期限
       %span.register-required 必須
       %br
-      %select.register-card__date----select{name:"card_month"}
+      %select.register-card__date--select{name:"card_month"}
       年
-      %select.register-card__date----select{name:"card_year"}
+      %select.register-card__date--select{name:"card_year"}
       月
     .register-card__code
-      %label.register-card__code--label カード番号
+      %label.register-card__code--label セキュリティコード
       %span.register-required 必須
       %textarea.register-card__code--textarea{:cols => "40", :name => "security_code", :placeholder => "カード背面4桁もしくは3桁の番号", :rows => "1"}
-    = link_to step3_signup_index_path, class: "register-card__code__reason",method: :get do
+    = link_to step3_signup_index_path, class: "register-card__reason",method: :get do
       %i.fa.fa-question-circle
       カード裏面の番号とは？
     = link_to "次へ進む", step5_signup_index_path, class: "register-profile__nextpage"

@@ -13,11 +13,10 @@
     %li.is-active
       %span 完了
 
-.step4-main
+.step5-main
   .register-text 会員登録完了
   .register-complete
-    .register-complete__message ありがとうございます。会員登録が完了いたしました。
-  = link_to "メリカルを始める", root_path, class: "register-profile__nextpage"
-
-
+    .register-complete__message ありがとうございます。
+    .register-complete__message 会員登録が完了いたしました。
+    = link_to "メルカリを始める", root_path, class: "register-profile__nextpage"
 = render "login-footer"
