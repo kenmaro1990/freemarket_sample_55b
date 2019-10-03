@@ -1,24 +1,25 @@
+
 .header
   .header__image
     .header__image--mercari
-      = image_tag('/logo.svg')
+      = link_to image_tag('/logo.svg'), root_path
 .login-main
   .login-new-account
     %p.login-new-account__text アカウントをお持ちでない方はこちら
     = link_to "新規会員登録", register_signup_index_path, class: "login-new-account__link"
   .login-social
-    .login-social__facebook
-      = fa_icon 'facebook', class: 'login-social__facebook--icon'
-      = link_to "Facebookでログイン", register_signup_index_path, class: "login-social__facebook--submit"
-    .login-social__google
-      = fa_icon 'google', class: 'login-social__goog;e--icon'
-      = link_to "Googleでログイン", register_signup_index_path, class: "login-social__google--submit"
+    = link_to register_signup_index_path, class: "login-social__facebook",method: :get do
+      %i.fa.fa-facebook-square.login-social__facebook--icon
+      Facebookでログイン
+    = link_to register_signup_index_path, class: "login-social__google",method: :get do
+      %i.fa.fa-google.login-social__google--icon
+      Googleでログイン
   .login-email
     .login-email__address
       %textarea.login-email__address--textarea{:name => "mail-address", :placeholder => "メールアドレス", :rows => "1"}
     .login-email__password
       %textarea.login-email__password--textarea{:name => "password", :placeholder => "パスワード", :rows => "1"}
-    .login-email__login
-      %button{class: "login-email__login--submit", :type => "submit"} ログイン
+    = link_to "ログイン", register_signup_index_path, class: "login-email__login",method: :get
     %a.login-email__help{:href => "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
+
 = render "login-footer"

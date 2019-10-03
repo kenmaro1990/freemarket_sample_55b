@@ -1,6 +1,6 @@
 .header
   .header__image--mercari
-    = image_tag('/logo.svg')
+    = link_to image_tag('/logo.svg'), root_path
   %ol.progress-bar
     %li.is-active
       %span 会員情報
@@ -19,4 +19,5 @@
     .register-complete__message ありがとうございます。
     .register-complete__message 会員登録が完了いたしました。
     = link_to "メルカリを始める", root_path, class: "register-profile__nextpage"
+  .container
 = render "login-footer"
