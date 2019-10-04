@@ -1,23 +1,22 @@
-.header
-  .header__image--mercari
-    = link_to image_tag('/logo.svg'), root_path
-  %ol.progress-bar
-    %li.is-active
-      %span 会員情報
-    %li.is-active
-      %span 電話番号認証
-    %li.is-active
-      %span  お届け先住所入力
-    %li.is-active
-      %span 支払い方法
-    %li.is-active
-      %span 完了
-
-.step5-main
-  .register-text 会員登録完了
-  .register-complete
-    .register-complete__message ありがとうございます。
-    .register-complete__message 会員登録が完了いたしました。
-    = link_to "メルカリを始める", root_path, class: "register-profile__nextpage"
-  .container
+.container
+  .header
+    .header__image--mercari
+      = link_to image_tag('/logo.svg'), root_path
+    %ol.progress-bar
+      %li.is-active
+        %span 会員情報
+      %li.is-active
+        %span 電話番号認証
+      %li.is-active
+        %span  お届け先住所入力
+      %li.is-active
+        %span 支払い方法
+      %li.is-active.is-active__last
+        %span 完了
+  .step5-main
+    .register-text 会員登録完了
+    .register-complete
+      .register-complete__message ありがとうございます。
+      .register-complete__message 会員登録が完了いたしました。
+      = link_to "メルカリを始める", root_path, class: "register-profile__nextpage"
 = render "login-footer"

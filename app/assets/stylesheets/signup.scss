@@ -450,32 +450,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.step3-main{
-  height: 1110px;
-  @include login-background();
-  padding-bottom:75px; 
-}
-
 .step4-main{
-  height: 1110px;
+  height: 502px;
   @include login-background();
   padding-bottom:75px; 
 }
@@ -483,7 +459,6 @@
 .step5-main{
   height: 234px;
   @include login-background();
-  padding-bottom:75px; 
 }
 
 .register-box {
@@ -493,12 +468,11 @@
   background-color: #ffffff;
 }
 
-
-
-
-
-
-
+.step3-main{
+  height: 1110px;
+  @include login-background();
+  padding-bottom:75px; 
+}
 .register-address {
   @include sign-up-contents();
   &__name {
@@ -575,6 +549,7 @@
 
 .register-card {
   @include sign-up-contents();
+  height: 502px;
   &__number {
     @include form();
     margin-top: 0
