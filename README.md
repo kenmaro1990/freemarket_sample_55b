@@ -24,6 +24,17 @@ Things you may want to cover:
 |given_name_kana|string|null: false|
 |family_name_kana|string|null: false|
 |mobile_number|string|null: false, unique: true|
+
+### Association
+- has_many :items
+- has_many :messages
+- has_many :comments
+  has_one :address
+
+# addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
 |postal_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -32,9 +43,7 @@ Things you may want to cover:
 |phone_number|string|null: false|
 
 ### Association
-- has_many :items
-- has_many :messages
-- has_many :comments
+- belongs_to :user
 
 # cardsテーブル
 |Column|Type|Options|
@@ -121,6 +130,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :item
+
 * Database initialization
 
 * Database initialization
