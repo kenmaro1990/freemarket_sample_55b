@@ -19,9 +19,9 @@ Things you may want to cover:
 |password|string|null: false|
 |nickname|string|null: false|
 |profile_description|text||
-|given_name|string|null: false|
+|first_name|string|null: false|
 |family_name|string|null: false|
-|given_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |family_name_kana|string|null: false|
 |mobile_number|string|null: false, unique: true|
 
@@ -88,10 +88,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|integer||
-|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
 - belongs_to :item
 
 # categoriesテーブル
