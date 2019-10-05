@@ -27,7 +27,7 @@ Things you may want to cover:
 |postal_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|block_number|string|null: false|
+|block|string|null: false|
 |building|string||
 |phone_number|string|null: false|
 
@@ -121,6 +121,8 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :item
+* Database initialization
+
 * Database initialization
 
 * How to run the test suite
