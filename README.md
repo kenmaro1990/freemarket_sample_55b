@@ -34,13 +34,13 @@ Things you may want to cover:
 # addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
 |postal_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |block|string|null: false|
 |building|string||
-|phone_number|string|null: false|
+|phone_number|string||
 
 ### Association
 - belongs_to :user
