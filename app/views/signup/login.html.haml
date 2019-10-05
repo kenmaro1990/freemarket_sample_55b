@@ -19,7 +19,6 @@
       %textarea.login-email__address--textarea{:name => "email", :placeholder => "メールアドレス", :rows => "1"}
     .login-email__password
       %textarea.login-email__password--textarea{:name => "password", :placeholder => "パスワード", :rows => "1"}
-    = link_to "ログイン", register_signup_index_path, class: "login-email__login",method: :get
-    %a.login-email__help{:href => "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
-
+    = link_to "ログイン", register_signup_index_path, class: "login-email__login"
+    = link_to "パスワードをお忘れの方", "https://www.mercari.com/jp/password/reset/start/", class: "login-email__help"
 = render "login-footer"
