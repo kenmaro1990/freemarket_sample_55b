@@ -75,3 +75,58 @@
                 =link_to 'http://google.co.jp', class: 'notification-all' do
                   一覧を見る
 
+        .mypage__bought
+          .mypage__bought__head.bold
+            購入した商品
+          %ul.mypage__bought__tabs
+            .mypage__bought__tabs--transaction
+              %h3.bold
+                取引中
+            .mypage__bought__tabs--past
+              %h4.bold
+                過去の取引
+          .mypage__bought__content
+            %li
+              =link_to 'http://google.co.jp', class: 'mypage__bought__content--link' do
+                =image_tag "cloth.jpg", class: "items"
+                .bought__body
+                  .bought__body--text
+                    洋服洋服洋服洋服洋服洋服
+                  .bought__body--status
+                    取引完了
+                  .bought__body--next
+                    =fa_icon "chevron-right"
+            %li
+              =link_to 'http://google.co.jp', class: 'mypage__bought__content--link' do
+                =image_tag "bag.jpeg", class: "items"
+                .bought__body
+                  .bought__body--text
+                    カバンカバンカバンカバンカバン
+                  .bought__body--status
+                    取引完了
+                  .bought__body--next
+                    =fa_icon "chevron-right"
+            %li
+              =link_to 'http://google.co.jp', class: 'mypage__bought__content--link' do
+                =image_tag "bag.jpeg", class: "items"
+                .bought__body
+                  .bought__body--text
+                    文具文具文具文具文具
+                  .bought__body--status
+                    取引完了
+                  .bought__body--next
+                    =fa_icon "chevron-right"
+            %li
+              =link_to 'http://google.co.jp', class: 'mypage__bought__content--link' do
+                =image_tag "cloth.jpg", class: "items"
+                .bought__body
+                  .bought__body--text
+                    服服服服服服
+                  .bought__body--status
+                    取引完了
+                  .bought__body--next
+                    =fa_icon "chevron-right"
+            %li
+              .mypage__bought__content--all
+                =link_to 'http://google.co.jp', class: 'notification-all' do
+                  一覧を見る
