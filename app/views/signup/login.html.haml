@@ -16,7 +16,7 @@
       Googleでログイン
   .login-email
     .login-email__address
-      %textarea.login-email__address--textarea{:name => "mail-address", :placeholder => "メールアドレス", :rows => "1"}
+      %textarea.login-email__address--textarea{:name => "email", :placeholder => "メールアドレス", :rows => "1"}
     .login-email__password
       %textarea.login-email__password--textarea{:name => "password", :placeholder => "パスワード", :rows => "1"}
     = link_to "ログイン", register_signup_index_path, class: "login-email__login",method: :get
