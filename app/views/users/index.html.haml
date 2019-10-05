@@ -22,3 +22,56 @@
                   %span.bold
                     1
 
+        .mypage__notification
+          %ul.mypage__notification__tabs
+            .mypage__notification__tabs--notify
+              %h3.bold
+                お知らせ
+            .mypage__notification__tabs--todo-list
+              %h4.bold
+                やることリスト
+          .mypage__notification__content
+            %li
+              =link_to 'http://google.co.jp', class: 'mypage__notification__content--link' do
+                =image_tag "mercari.jpeg", class: "mercari-icon"
+                .notification__body
+                  .notification__body--text
+                    【今日まで！】1000ポイント貰える!
+                  .notification__body--time
+                    .icon_time
+                      =fa_icon "history", class: 'time_icon'
+                      %span
+                        2 日前
+                  .notification__body--next
+                    =fa_icon "chevron-right"
+            %li
+              =link_to 'http://google.co.jp', class: 'mypage__notification__content--link' do
+                =image_tag "mercari.jpeg", class: "mercari-icon"
+                .notification__body
+                  .notification__body--text
+                    【今日まで！】1000ポイント貰える!【今日まで！】1000ポイント貰える!【今日まで！】1000ポイント貰える!【今日まで！】1000ポイント貰える!【今日まで！】1000ポイント貰える!
+                  .notification__body--time
+                    .icon_time
+                      =fa_icon "history", class: 'time_icon'
+                      %span
+                        2 日前
+                  .notification__body--next
+                    =fa_icon "chevron-right"
+            %li
+              =link_to 'http://google.co.jp', class: 'mypage__notification__content--link' do
+                =image_tag "mercari.jpeg", class: "mercari-icon"
+                .notification__body
+                  .notification__body--text
+                    【今日まで！】1000ポイント貰える!
+                  .notification__body--time
+                    .icon_time
+                      =fa_icon "history", class: 'time_icon'
+                      %span
+                        2 日前
+                  .notification__body--next
+                    =fa_icon "chevron-right"
+            %li
+              .mypage__notification__content--all
+                =link_to 'http://google.co.jp', class: 'notification-all' do
+                  一覧を見る
+
