@@ -2,9 +2,10 @@
 %html
   %head
   %body
+    =render partial: "shared/header"
     .mypage__wrapper
       =render partial:"sidebar"
-
+    
       .mypage-content
         %section.mypage-content__icon
           =link_to "http://google.co.jp" do
