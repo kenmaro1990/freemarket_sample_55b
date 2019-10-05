@@ -15,5 +15,9 @@
  */
 
  @import "./reset";
- @import "./main-top";
+ @import "mixin/clearfix";
+ @import "config/colors";
  @import "font-awesome";
+ @import "modules/main-top";
+ @import "modules/sidebar";
+ @import "./mypage";
