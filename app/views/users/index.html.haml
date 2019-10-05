@@ -5,3 +5,20 @@
     .mypage__wrapper
       =render partial:"sidebar"
 
+      .mypage-content
+        %section.mypage-content__icon
+          =link_to "http://google.co.jp" do
+            .mypage__link
+              =image_tag ("face.jpg"), class: "mypage__link--photo"
+              %h2.mypage__link--name.bold
+                aaa
+              .mypage__link__number
+                .mypage__link__number__evaluation
+                  評価
+                  %span.bold
+                    6
+                .mypage__link__number__items
+                  出品数
+                  %span.bold
+                    1
+
