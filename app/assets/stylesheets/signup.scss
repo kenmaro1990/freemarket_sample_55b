@@ -3,68 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $fontSizeNormal: 14px; 
 
-@mixin next() {
-  display: block;
-  height: 50px;
-  width: 343px;
-  background-color: #ea352d;
-  color: #ffffff;
-  margin: 8px auto 0;
-  text-align: center;
-  line-height: 50px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-@mixin form() {
-  height: 70px;
-  width: 343px;
-  margin: 32px auto 0;
-  &--label {
-    font-size: $fontSizeNormal;
-    font-weight: bold;
-  }
-  &--textarea {
-    width: 343px;
-    resize: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
-    padding: 10px;
-    margin-top: 8px;
-  }
-}
-
-@mixin sign-up-contents() {
-  width: 700px;
-  background-color: #ffffff;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 40px 40px 64px;
-}
-
-@mixin login-background() {
-  width: 100%;
-  background-color: #f5f5f5;
-}
-
-@mixin icon-size() {
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  transform: translate(0, -50%);
-  font-size: 26px;
-}
-
-@mixin register-box-size {
-  display: block;
-  height: 50px;
-  width: 343px;
-  line-height: 50px;
-  margin: 0 auto;
-  text-decoration: none;
-}
 
 .header{
   height: 128px;
