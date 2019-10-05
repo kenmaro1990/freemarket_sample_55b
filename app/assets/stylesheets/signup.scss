@@ -1,6 +1,7 @@
 // Place all the styles related to the signup controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$fontSizeNormal: 14px; 
 
 @mixin next() {
   display: block;
@@ -20,7 +21,7 @@
   width: 343px;
   margin: 32px auto 0;
   &--label {
-    font-size: 14px;
+    font-size: $fontSizeNormal;
     font-weight: bold;
   }
   &--textarea {
@@ -213,6 +214,7 @@
     margin:  0 auto;
     margin-top: 40px;
     color: #0099e8;
+    font-size: $fontSizeNormal;
     text-decoration: none;
   }
 }
@@ -288,6 +290,7 @@
   @include sign-up-contents();
   &__nickname {
     @include form();
+    margin-top: 0;
   }
     &__email {
       @include form();
@@ -298,7 +301,7 @@
    &__identification {
     width: 343px;
     margin: 32px auto 0;
-    font-size: 14px;
+    font-size: $fontSizeNormal;
     &--bold {
       font-weight: bold;
     }
@@ -306,13 +309,13 @@
    &__name {
     width: 343px;
     margin: 32px auto 0;
-    font-size: 14px;
+    font-size: $fontSizeNormal;
     &--label {
       font-weight: bold;
     }
    } 
    &__nameform {
-    font-size: 14px;
+    font-size: $fontSizeNormal;
     text-align: center;
     &--textarea {
       width: 165.5px;
@@ -383,13 +386,15 @@
   &__nextpage {
     @include next();
     margin: 32px auto 0;
-
+    &--caution {
+      display: block;
+      width: 328px;
+      margin: 0 auto;
+      font-size:14px;
+      text-align: center;
     }
-  &__caution {
-    display: block;
-    width: 328px;
-    margin: 0 auto;
   }
+ 
   &__policy {
     display: block;
     width: 343px;
@@ -399,6 +404,7 @@
       width: 343px;
       color: #0099e8;
       text-decoration: none;
+      font-size:14px;
     }
   }
 }
@@ -429,13 +435,12 @@
   &__nextpage {
     @include next();
     margin: 100px auto 0;
-
     }
   &__description {
     height: 70px;
     width: 343px;
     margin: 0 auto;
-    font-size: 14px;
+    font-size: $fontSizeNormal;
     margin-top: 8px;
   }
   &__reason {
@@ -445,27 +450,8 @@
     text-align: right;
     color: #0099e8;
     text-decoration: none;
+    font-size: $fontSizeNormal;
   }
-}
-
-
-
-.step4-main{
-  height: 502px;
-  @include login-background();
-  padding-bottom:75px; 
-}
-
-.step5-main{
-  height: 234px;
-  @include login-background();
-}
-
-.register-box {
-  height: 1260px;
-  width: 700px;
-  margin: 0 auto;
-  background-color: #ffffff;
 }
 
 .step3-main{
@@ -479,7 +465,7 @@
     width: 343px;
     margin: 0 auto;
     &--label {
-      font-size: 14px;
+      font-size: $fontSizeNormal;
       font-weight: bold;
     }
     &--textarea {
@@ -497,7 +483,7 @@
     width: 343px;
     margin: 32px auto 0;
     &--label {
-      font-size: 14px;
+      font-size: $fontSizeNormal;
       font-weight: bold;
     }
     &--textarea {
@@ -515,7 +501,7 @@
     width: 343px;
     margin: 32px auto 0;
     &--label {
-      font-size: 14px;
+      font-size: $fontSizeNormal;
       font-weight: bold;
     }
     &--select {
@@ -547,6 +533,12 @@
   }
 }
 
+.step4-main{
+  height: 502px;
+  @include login-background();
+  padding-bottom:75px; 
+}
+
 .register-card {
   @include sign-up-contents();
   height: 502px;
@@ -558,7 +550,7 @@
     width: 343px;
     margin: 32px auto 0;
     &--label {
-      font-size: 14px;
+      font-size: $fontSizeNormal;
       font-weight: bold;
     }
     &--select {
@@ -582,9 +574,16 @@
     width: 343px;
     margin: 10px auto 0;
     text-align: right;
+    font-size: $fontSizeNormal;
+
     color: #0099e8;
     text-decoration: none;
   }
+}
+
+.step5-main{
+  height: 234px;
+  @include login-background();
 }
 
 .register-complete {
@@ -621,6 +620,7 @@
   padding:40px;
   margin: 0 auto;
   }
+
 .policy {
   width: 100%;
   display: flex;
@@ -646,7 +646,5 @@
   color: #333333;
   font-size: 11px;
 }
-
-
 
 /*# sourceMappingURL=style.css.map */

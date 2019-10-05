@@ -4,8 +4,6 @@
   --color-gray-light: #cccccc;
   --color-gray-disabled: #cccccc;
   --color-red: #ea352d;
-  --font-size-small: .75rem;
-  --font-size-default: .875rem;
 }
 
 .progress-bar {
@@ -91,7 +89,6 @@
   border-color: var(--color-red);
 
 }
-
 
 .is-active__last span {
   color: var(--color-red);
