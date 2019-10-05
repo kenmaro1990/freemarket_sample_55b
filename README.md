@@ -30,6 +30,7 @@ Things you may want to cover:
 - has_many :messages
 - has_many :comments
   has_one :address
+  has_one :card
 
 # addressesテーブル
 |Column|Type|Options|
@@ -53,6 +54,7 @@ Things you may want to cover:
 |card_id|string|null: false|
 
 ### Association
+- belongs_to :user
 
 # itemsテーブル
 |Column|Type|Options|
