@@ -134,6 +134,11 @@ Things you may want to cover:
 
 * Database initialization
 
+### Association
+- belongs_to :user
+- belongs_to :item
+* Database initialization
+
 * Database initialization
 
 * How to run the test suite
