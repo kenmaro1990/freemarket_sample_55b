@@ -1,0 +1,39 @@
+.mypage-left{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+}
+
+.mypage-nav__list{
+  margin: 8px 0 0;
+  &--item{
+    position: relative;
+    display: block;
+    min-height: 48px;
+    padding: 16px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+  }
+}
+
+.icon_next{
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  color: #ccc;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: all ease-out .2s;
+  transition: all ease-out .2s;
+}
+
+.mypage-nav__link{
+  text-decoration: none;
+}
+
+.mypage-nav__head{
+  margin: 40px 0 0;
+  font-size: 19px;
+  font-weight: bold;
+}
