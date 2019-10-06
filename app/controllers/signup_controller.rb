@@ -3,6 +3,12 @@ class SignupController < ApplicationController
   def login
   end
 
+  def information
+  end
+
+  def phonenumber
+  end
+
   def address
   end
 
@@ -12,13 +18,4 @@ class SignupController < ApplicationController
   def complete
   end
 
-  def information
-  end
-
-  def phonenumber
-  end
-
-  def register
-  end
-  
 end
