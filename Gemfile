@@ -59,8 +59,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
-gem 'carrierwave'
 gem 'mini_magick'
+gem 'carrierwave'
 gem 'fog-aws'
 
 group :production do
