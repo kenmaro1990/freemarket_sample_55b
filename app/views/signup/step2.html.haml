@@ -18,7 +18,7 @@
   .register-phonenumber
     .register-phonenumber__box
       %label.register-phonenumber__box--label 携帯電話の番号
-      %textarea.register-phonenumber__box--textarea{:cols => "40", :name => "phonenumber", :placeholder => "携帯電話の番号を入力", :rows => "1"}
+      %textarea.register-phonenumber__box--textarea{cols: "40", name: "phonenumber", placeholder: "携帯電話の番号を入力", rows: "1"}
       .register-phonenumber__box--description 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
     = link_to "SMSを送信する", step3_signup_index_path, class: "register-phonenumber__nextpage"
     .register-phonenumber__description ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。

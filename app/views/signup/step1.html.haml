@@ -18,19 +18,19 @@
     .register-profile__nickname
       %label.register-profile__nickname--label ニックネーム
       %span.register-required 必須
-      %textarea.register-profile__nickname--textarea{:cols => "40", :name => "nickname", :placeholder => "仮)メルカリ太郎", :rows => "1"}
+      %textarea.register-profile__nickname--textarea{cols: "40", name: "nickname", placeholder: "仮)メルカリ太郎", rows: "1"}
     .register-profile__email
       %label.register-profile__email--label メールアドレス
       %span.register-required 必須
-      %textarea.register-profile__email--textarea{:cols => "40",:name => "email", :placeholder => "PC・携帯どちらでも可", :rows => "1"}
+      %textarea.register-profile__email--textarea{cols: "40", name: "email", placeholder: "PC・携帯どちらでも可", rows: "1"}
     .register-profile__password
       %label.register-profile__password--label パスワード
       %span.register-required 必須
-      %textarea.register-profile__password--textarea{:cols => "40",:name => "password", :placeholder => "7文字以上", :rows => "1"}
+      %textarea.register-profile__password--textarea{cols: "40",name: "password", placeholder: "7文字以上", rows: "1"}
     .register-profile__password
       %label.register-profile__password--label パスワード(確認)
       %span.register-required 必須
-      %textarea.register-profile__password--textarea{:cols => "40",:name => "password", :placeholder => "7文字以上", :rows => "1"}
+      %textarea.register-profile__password--textarea{cols: "40", name: "password", placeholder: "7文字以上", rows: "1"}
     .register-profile__identification
       %p.register-profile__identification--bold 本人確認
       %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
@@ -38,23 +38,23 @@
       %label.register-profile__name--label お名前(全角)
       %span.register-required 必須
     .register-profile__nameform
-      %textarea.register-profile__nameform--textarea{:name => "family_name", :placeholder => "例)山田", :rows => "1"}
-      %textarea.register-profile__nameform--textarea{:name => "given_name", :placeholder => "例)彩", :rows => "1"}
+      %textarea.register-profile__nameform--textarea{name: "family_name", placeholder:  "例)山田", rows: "1"}
+      %textarea.register-profile__nameform--textarea{name: "first_name", placeholder: "例)彩", rows: "1"}
     .register-profile__namekana
       %label.register-profile__namekana--label  お名前かな(全角)
       %span.register-required 必須
     .register-profile__kana-nameform
-      %textarea.register-profile__kana-nameform--textarea{cols:"20",:name => "family_name_kana", :placeholder => "例)ヤマダ", :rows => "1"}
-      %textarea.register-profile__kana-nameform--textarea{cols:"20",:name => "given_name_kana", :placeholder => "例)アヤ", :rows => "1"}
+      %textarea.register-profile__kana-nameform--textarea{cols: "20", name: "family_name_kana", placeholder: "例)ヤマダ", rows: "1"}
+      %textarea.register-profile__kana-nameform--textarea{cols: "20", name: "first_name_kana", placeholder: "例)アヤ", rows: "1"}
     .register-profile__birthday
       %label.register-profile__birthday--label 生年月日
       %span.register-required 必須
       %br
-      %select.register-profile__birthday--select{name:"birth_year",option: "選択肢２"}
+      %select.register-profile__birthday--select{name: "birth_year", option: "選択肢２"}
       年
-      %select.register-profile__birthday--select{name:"birth_year"}
+      %select.register-profile__birthday--select{name: "birth_year"}
       月
-      %select.register-profile__birthday--select{name:"birth_year"}
+      %select.register-profile__birthday--select{name: "birth_year"}
       日
       %p.register-profile__birthday--caution ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
     .register-profile__captcha
@@ -62,7 +62,7 @@
     .register-profile__nextpage--caution 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
     = link_to "次へ進む", step2_signup_index_path, class: "register-profile__nextpage"
     .register-profile__policy
-      = link_to step2_signup_index_path, class: "register-profile__policy--link",method: :get do
+      = link_to step2_signup_index_path, class: "register-profile__policy--link", method: :get do
         本人情報の登録について
         %i.fa.fa-arrow-right
 = render "login-footer"
