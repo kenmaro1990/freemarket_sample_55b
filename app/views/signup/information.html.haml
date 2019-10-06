@@ -60,9 +60,9 @@
     .register-profile__captcha
       .register-profile__captcha--box
     .register-profile__nextpage--caution 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-    = link_to "次へ進む", step2_signup_index_path, class: "register-profile__nextpage"
+    = link_to "次へ進む", phonenumber_signup_index_path, class: "register-profile__nextpage"
     .register-profile__policy
-      = link_to step2_signup_index_path, class: "register-profile__policy--link", method: :get do
+      = link_to phonenumber_signup_index_path, class: "register-profile__policy--link", method: :get do
         本人情報の登録について
         %i.fa.fa-arrow-right
 = render "login-footer"
