@@ -1,0 +1,24 @@
+
+.header
+  .header__image
+    .header__image--mercari
+      = link_to image_tag('/logo.svg'), root_path
+.login-main
+  .login-new-account
+    %p.login-new-account__text アカウントをお持ちでない方はこちら
+    = link_to "新規会員登録", register_signup_index_path, class: "login-new-account__link"
+  .login-social
+    = link_to register_signup_index_path, class: "login-social__facebook",method: :get do
+      %i.fa.fa-facebook-square.login-social__facebook--icon
+      Facebookでログイン
+    = link_to register_signup_index_path, class: "login-social__google",method: :get do
+      %i.fa.fa-google.login-social__google--icon
+      Googleでログイン
+  .login-email
+    .login-email__address
+      %textarea.login-email__address--textarea{name: "email", placeholder: "メールアドレス", rows: "1"}
+    .login-email__password
+      %textarea.login-email__password--textarea{name: "password", placeholder: "パスワード", rows: "1"}
+    = link_to "ログイン", register_signup_index_path, class: "login-email__login"
+    = link_to "パスワードをお忘れの方", "https://www.mercari.com/jp/password/reset/start/", class: "login-email__help"
+= render "login-footer"

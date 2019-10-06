@@ -1,0 +1,588 @@
+// Place all the styles related to the signup controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$fontSizeNormal: 14px; 
+
+
+.header{
+  height: 128px;
+  width: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__image--mercari{
+    display: block;
+    width: 185px;
+    height: 49px; 
+    padding-right: 44px;
+  }
+}
+
+.login-main {
+  height: 731px;
+ @include login-background();
+}
+
+.login-new-account {
+  height: 144px;
+  width: 456px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40px 64px;
+  &__text {
+    font-size: 14px;
+    text-align: center;
+  }
+  &__link {
+    display: block;
+    height: 42px;
+    width: 328px;
+    background-color: #0099e8;
+    color: #ffffff;
+    margin: 8px auto 0;
+    text-align: center;
+    line-height: 42px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+}
+.login-social {
+  height: 181px;
+  width: 456px;
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 32px 64px;
+  &__facebook {
+    display: block;
+    height: 50px;
+    width: 328px;
+    margin: 0 auto;
+    background-color: #385185;
+    color: #ffffff;
+    line-height: 50px;
+    text-decoration: none;
+    position: relative;
+    & i {
+      @include icon-size();
+      color: #ffffff;
+    }
+  }
+  &__google {
+    display: block;
+    height: 50px;
+    width: 326px;
+    margin:  auto;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid gray;
+    margin-top: 18px;
+    line-height: 50px;
+    text-decoration: none;
+    position: relative;
+    & i {
+      @include icon-size();
+    }
+  }
+}
+
+.login-email{
+  height: 406px;
+  width: 456px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 30px;
+  margin: 0 auto;
+  &__address {
+    height: 46px;
+    width: 328px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    &--textarea {
+      width: 100%;
+      height: 100%;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+  }
+  &__password {
+    height: 48px;
+    width: 328px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    &--textarea {
+      width: 100%;
+      height: 100%;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+  }
+  &__login {
+    display: block;
+    height: 50px;
+    width: 328px;
+    margin: 0 auto;
+    margin-top: 18px;
+    line-height: 50px;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    background-color: #ea352d;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  &__help {
+    display: block;
+    height: 50px;
+    width: 328px;
+    margin:  0 auto;
+    margin-top: 40px;
+    color: #0099e8;
+    font-size: $fontSizeNormal;
+    text-decoration: none;
+  }
+}
+
+.container {
+  height: calc(100vh - 220px);
+  background-color: #f5f5f5;
+}
+
+.register-main {
+  height: 286px;
+  @include login-background();
+  padding-bottom:75px; 
+}
+
+.register-text {
+  width: 700px;
+  height: 97px; 
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 97px;
+}
+
+.register-new {
+  @include sign-up-contents();
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  &__email {
+    @include register-box-size();
+    background-color: #eeeeee;
+    color: #000000;
+    position: relative;
+    & i {
+      @include icon-size();
+      color: gray;
+    }
+  }
+  &__facebook {
+    @include register-box-size();
+    margin-top: 16px;
+    background-color: #385185;
+    color: #ffffff;
+    position: relative;
+    & i {
+      @include icon-size();
+    }
+  }
+  &__google {
+    @include register-box-size();
+    margin-top: 16px;
+    background-color: #ffffff;
+    color: #333333;       
+    position: relative;
+    border: 1px solid gray;
+    & i {
+      @include icon-size();
+    }
+  }
+}
+
+.step1-main{
+  height: 1260px;
+  @include login-background();
+  padding-bottom:75px; 
+}
+
+.register-profile {
+  @include sign-up-contents();
+  &__nickname {
+    @include form();
+    margin-top: 0;
+  }
+    &__email {
+      @include form();
+    }
+    &__password {
+      @include form();
+    }
+   &__identification {
+    width: 343px;
+    margin: 32px auto 0;
+    font-size: $fontSizeNormal;
+    &--bold {
+      font-weight: bold;
+    }
+   } 
+   &__name {
+    width: 343px;
+    margin: 32px auto 0;
+    font-size: $fontSizeNormal;
+    &--label {
+      font-weight: bold;
+    }
+   } 
+   &__nameform {
+    font-size: $fontSizeNormal;
+    text-align: center;
+    &--textarea {
+      width: 165.5px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+   } 
+   &__namekana {
+    width: 343px;
+    margin: 32px auto 0;
+    font-size: 14px;
+    &--label {
+      font-weight: bold;
+   }
+  }
+   &__kana-nameform {
+    font-size: 14px;
+    text-align: center;
+    &--textarea {
+      width: 165.5px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+   }   
+  }
+  &__birthday {
+    height: 70px;
+    width: 343px;
+    margin: 32px auto 0;
+
+    &--label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &--select {
+      height: 48px;
+      width: 76px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      background-color: #ffffff;
+    }
+    &--caution {
+      color: #888888;
+      font-size:14px;
+      margin-top: 8px;
+    }
+  }
+  &__captcha{
+    &--box {
+      height: 78px;
+      width: 343px;
+      margin: 0 auto;
+      margin-top: 90px;
+      background: #888888;;
+    }
+  }
+  &__nextpage {
+    @include next();
+    margin: 32px auto 0;
+    &--caution {
+      display: block;
+      width: 328px;
+      margin: 0 auto;
+      font-size:14px;
+      text-align: center;
+    }
+  }
+ 
+  &__policy {
+    display: block;
+    width: 343px;
+    margin: 32px auto;
+    text-align: right;
+    &--link {
+      width: 343px;
+      color: #0099e8;
+      text-decoration: none;
+      font-size:14px;
+    }
+  }
+}
+
+.step2-main{
+  height: 403px;
+  @include login-background();
+  padding-bottom:75px; 
+}
+
+.register-phonenumber {
+  height: 403px;
+  width: 700px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40px 40px 64px;
+  &__box {
+    @include form();
+    margin-top: 0;
+    &--description {
+      width: 343px;
+      font-size: 14px;
+      margin-top: 8px;
+      padding: 5px;
+    }
+  }
+  &__nextpage {
+    @include next();
+    margin: 100px auto 0;
+    }
+  &__description {
+    height: 70px;
+    width: 343px;
+    margin: 0 auto;
+    font-size: $fontSizeNormal;
+    margin-top: 8px;
+  }
+  &__reason {
+    display: block;
+    width: 343px;
+    margin: 0 auto;
+    text-align: right;
+    color: #0099e8;
+    text-decoration: none;
+    font-size: $fontSizeNormal;
+  }
+}
+
+.step3-main{
+  height: 1110px;
+  @include login-background();
+  padding-bottom:75px; 
+}
+.register-address {
+  @include sign-up-contents();
+  &__name {
+    width: 343px;
+    margin: 0 auto;
+    &--label {
+      font-size: $fontSizeNormal;
+      font-weight: bold;
+    }
+    &--textarea {
+      width: 343px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }
+  }
+  &__namekana {
+    width: 343px;
+    margin: 32px auto 0;
+    &--label {
+      font-size: $fontSizeNormal;
+      font-weight: bold;
+    }
+    &--textarea {
+      width: 343px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }
+  }
+  &__prefecture {
+    width: 343px;
+    margin: 32px auto 0;
+    &--label {
+      font-size: $fontSizeNormal;
+      font-weight: bold;
+    }
+    &--select {
+      height: 46px;
+      width: 343px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }  
+  }
+  &__postalcode {
+    @include form();
+  }
+  &__city {
+    @include form();
+  }
+  &__block {
+    @include form();
+  }
+  &__building {
+    @include form();
+  }
+  &__phone-number {
+    @include form();
+  }
+}
+
+.step4-main{
+  height: 502px;
+  @include login-background();
+  padding-bottom:75px; 
+}
+
+.register-card {
+  @include sign-up-contents();
+  height: 502px;
+  &__number {
+    @include form();
+    margin-top: 0
+  }
+  &__date {
+    width: 343px;
+    margin: 32px auto 0;
+    &--label {
+      font-size: $fontSizeNormal;
+      font-weight: bold;
+    }
+    &--select {
+      height: 46px;
+      width: 76px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 8px;
+    }
+  }
+  &__code {
+    @include form();
+    margin-top: 32px
+  }
+  &__reason {
+    display: block;
+    width: 343px;
+    margin: 10px auto 0;
+    text-align: right;
+    font-size: $fontSizeNormal;
+
+    color: #0099e8;
+    text-decoration: none;
+  }
+}
+
+.step5-main{
+  height: 234px;
+  @include login-background();
+}
+
+.register-complete {
+  @include sign-up-contents();
+  height: 234px;
+  &__message {
+    text-align: center;
+  }
+}
+
+.register-required {
+  margin: 0 0 0 8px;
+  margin-bottom: 10px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size:12px;
+  color: #ffffff;
+  background: #ea352d;
+}
+
+.register-any {
+  margin: 0 0 0 8px;
+  margin-bottom: 10px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size:12px;
+  color: #ffffff;
+  background: gray;
+}
+
+.footer {
+  background-color: #f5f5f5;
+  height: 140px;
+  padding:40px;
+  margin: 0 auto;
+  }
+
+.policy {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  &__list {
+    margin: 0px 8px;
+    text-decoration: none;
+    color: #333333;
+  }
+}
+
+.footer-image {
+  text-align: center;
+  width: 80px;
+  height: 65px; 
+  padding: 30px 0 10px 0; 
+  margin: 0 auto;
+}
+  .footer-text{
+  clear: both;
+  text-align: center;
+  color: #333333;
+  font-size: 11px;
+}
+
+/*# sourceMappingURL=style.css.map */
