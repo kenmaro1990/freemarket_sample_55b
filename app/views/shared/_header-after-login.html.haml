@@ -1,0 +1,36 @@
+.main-top__header
+  .main-top__header__box
+    .main-top__header__box__form
+      .main-top__header__box__form__logo
+        %span.image
+          = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", size: "134x36"
+      = form_tag('/', class: 'search-form') do
+        %input.search-form__input{name: "keyword", placeholder: "何をお探しですか？", type: "text", value: ""}
+        %button.btn-search{title: "検索", type: "submit"}
+          = fa_icon "search", class: "search-form__icon"
+    .main-top__header__box__menu
+      .main-top__header__box__menu__search
+        .main-top__header__box__menu__search__category
+          = fa_icon "list-ul", class: "list__icon"
+          = link_to 'カテゴリーから探す', 'http://google.co.jp', class: 'link'
+        .main-top__header__box__menu__search__brand
+          = fa_icon "tags", class: "tags__icon"
+          = link_to 'ブランドから探す', 'http://google.co.jp', class: 'link'
+      .main-top__header__box__menu__other
+        %li.header__liked-items
+          =link_to "http://google.co.jp", class:"header_box_menu" do
+            =fa_icon  "heart", class:"header_right_icon"
+            %span いいね!一覧
+        %li.header__notification
+          =link_to "http://google.co.jp", class:"header_box_menu" do
+            =fa_icon  "bell", class:"header_right_icon"
+            %span お知らせ
+        %li.header__todo-list
+          =link_to "http://google.co.jp", class:"header_box_menu" do
+            =fa_icon  "check", class:"header_right_icon"
+            %span やることリスト
+        %li.header__todo-list
+          =link_to "http://google.co.jp", class:"header_box_menu" do
+            =image_tag ("face.jpg"), class:"header_face_icon" 
+            %span<>
+              マイページ

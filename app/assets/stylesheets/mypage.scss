@@ -18,6 +18,9 @@ html,body{
   width: 1020px;
   margin: 24px auto 0;
   padding: 0 0 40px;
+  li{
+    border-bottom: 1px solid #eee;
+  }
 }
 
 .mypage-content{
@@ -100,10 +103,6 @@ html,body{
       }
     }
   }
-}
-
-li{
-  border-bottom: 1px solid #eee;
 }
 
 .mypage__bought{
@@ -230,7 +229,6 @@ li{
 }
 
 span{
-  margin: 0 0 0 8px;
   font-size: 14px;
 }
 
