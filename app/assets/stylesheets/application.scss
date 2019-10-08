@@ -1,8 +1,14 @@
- @import "./reset";
- @import "mixin/clearfix";
- @import "config/colors";
- @import "font-awesome";
- @import "modules/main-top";
- @import "modules/sidebar";
- @import "./mypage";
- @import "identification.scss"
+@import "mixin/signup_mixin";
+@import "signup.scss";
+@import "progressbar.scss";
+@import "reset.css";
+@import "reset.scss";
+@import "mixin/clearfix";
+@import "config/colors";
+@import "font-source";
+@import "font-awesome";
+@import "modules/main-top";
+@import "modules/sidebar";
+@import "./mypage";
+@import "items/new.scss";
+@import "identification.scss"
