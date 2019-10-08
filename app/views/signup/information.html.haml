@@ -14,15 +14,15 @@
       %span 完了
 .step1-main
   .register-text 会員情報入力
-  .register-profile
+  = form_for @user, url: phonenumber_signup_index_path, method: :get, html: {class: 'register-profile'} do |f|
     .register-profile__nickname
       %label.register-profile__nickname--label ニックネーム
       %span.register-required 必須
-      %textarea.register-profile__nickname--textarea{cols: "40", name: "nickname", placeholder: "仮)メルカリ太郎", rows: "1"}
+      = f.text_field :nickname, placeholder: '例) メルカリ太郎', class: "register-profile__nickname--textarea"
     .register-profile__email
       %label.register-profile__email--label メールアドレス
       %span.register-required 必須
-      %textarea.register-profile__email--textarea{cols: "40", name: "email", placeholder: "PC・携帯どちらでも可", rows: "1"}
+      = f.text_field :email, placeholder: 'PC・携帯どちらでも可', class: "register-profile__email--textarea"
     .register-profile__password
       %label.register-profile__password--label パスワード
       %span.register-required 必須
