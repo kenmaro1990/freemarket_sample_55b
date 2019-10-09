@@ -40,7 +40,7 @@
                 郵便番号
               %span.form-arbitrary
                 任意
-              %input.identification__input{:name => "zip-code", :placeholder => "例）1234567", :type => "text", :value => ""}
+              %input.identification__input{name: "zip-code", placeholder: "例）1234567",type: "text"}
             .identification__form
               %label.zip_code
                 都道府県
@@ -48,26 +48,26 @@
                 任意
               .identification__form__prefecture
                 =fa_icon "chevron-down", class:"prefecture-select-icon"
-                %select.identification__form__prefecture-select{:name => "prefecture"}
+                %select.identification__form__prefecture-select{name: "prefecture"}
             .identification__form
               %label.city
                 市区町村
               %span.form-arbitrary
                 任意
-              %input.identification__input{:name => "city", :placeholder => "例）横浜市緑区", :type => "text", :value => ""}
+              %input.identification__input{name: "city", placeholder: "例）横浜市緑区", type: "text"}
             .identification__form
               %label.address_label
                 番地
               %span.form-arbitrary
                 任意
-              %input.identification__input{:name => "address-label", :placeholder => "例）青山1-1-1", :type => "text", :value => ""}
+              %input.identification__input{name: "address-label",placeholder: "例）青山1-1-1", type: "text"}
             .identification__form
               %label.address2_label
                 番地
               %span.form-arbitrary
                 任意
-              %input.identification__input{:name => "address2-label", :placeholder => "例）柳ビル103", :type => "text", :value => ""}
-            %button.btn_identification_submit{:type => "submit"}
+              %input.identification__input{name: "address2-label", placeholder: "例）柳ビル103",type: "text"}
+            %button.btn_identification_submit{type: "submit"}
               登録する
             .identification__registration
               =link_to "http://google.co.jp", class:"identification__registration-link" do
