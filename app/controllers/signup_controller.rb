@@ -11,6 +11,8 @@ class SignupController < ApplicationController
   end
 
   def phonenumber
+    @user = User.new
+
   end
 
   def address
