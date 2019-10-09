@@ -16,9 +16,13 @@ class SignupController < ApplicationController
   end
 
   def address
+    @user = User.new
+    @address = Address.new
+
   end
 
   def card
+    @user = User.new
   end
 
   def complete

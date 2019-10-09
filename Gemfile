@@ -62,6 +62,7 @@ gem 'devise'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'active_hash'
 
 group :production do
   gem 'unicorn', '5.4.1'

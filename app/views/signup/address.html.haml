@@ -16,6 +16,7 @@
 .step3-main
   .register-text 住所入力
   .register-address
+  = form_for @address, url: phonenumber_signup_index_path, method: :get, html: {class: 'register-profile'} do |f|
     .register-address__name
       %label.register-address__name--label お名前(全角)
       %span.register-required 必須
@@ -33,7 +34,7 @@
     .register-address__prefecture
       %label.register-address__prefecture--label 都道府県
       %span.register-required 必須
-      %select.register-address__prefecture--select{name:"prefecture"}
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{}, {class:"register-address__prefecture--select"}
     .register-address__city
       %label.register-address__city--label 市町村
       %span.register-required 必須
