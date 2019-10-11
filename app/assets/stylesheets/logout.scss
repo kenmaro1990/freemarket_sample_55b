@@ -1,0 +1,13 @@
+.mypage__logout{
+  padding: 64px;
+  &__content{
+  max-width: 320px;
+  margin: 0 auto;  
+  }
+  .btn{
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    text-decoration: none;
+  }
+}

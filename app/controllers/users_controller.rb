@@ -4,6 +4,9 @@ class UsersController < ApplicationController
 
   def identification
   end
+  
+  def logout
+  end
 
   def card
   end
