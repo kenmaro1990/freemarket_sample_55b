@@ -18,4 +18,7 @@ Rails.application.routes.draw do
       get 'complete'
     end
   end
+
+  resources :items do
+    end 
 end
