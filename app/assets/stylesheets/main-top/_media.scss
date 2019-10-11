@@ -1,0 +1,32 @@
+@media (min-width: 768px){
+  .main-top__contents {
+    max-width: 1020px;
+  }
+}
+@media (min-width: 768px){
+  .main-top__exhibit {
+    bottom: 32px;
+    font-size: 22px;
+    height: 160px;
+    right: 32px;
+    width: 160px;
+  }
+}
+
+@media (min-width: 1068px){
+  .main-top__header__box{
+    width: 1020px;
+  }
+}
+
+@media (min-width: 1068px){
+  .main-top__contents__center__screen{
+      height: 170px;
+  }
+}
+
+@media (min-width: 768px){
+  .main-top__contents__center__screen{
+    height: 390px;
+  } 
+}
