@@ -43,6 +43,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem  "better_errors"
+  gem 'binding_of_caller'
 end
 
 group :development do

@@ -55,8 +55,7 @@
     .register-profile__captcha
       .register-profile__captcha--box
     .register-profile__nextpage--caution 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-    = button_to phonenumber_signup_index_path, class: "register-profile__nextpage", method: :post do
-      次へ進む
+    = f.submit '次へ進む', class: 'register-profile__nextpage'
     .register-profile__policy
       = link_to phonenumber_signup_index_path, class: "register-profile__policy--link", method: :get do
         本人情報の登録について
