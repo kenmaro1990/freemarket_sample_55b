@@ -398,7 +398,6 @@ $fontSizeNormal: 14px;
   padding-bottom:75px; 
 }
 .register-address {
-  @include sign-up-contents();
   &__name {
     width: 343px;
     margin: 0 auto;

@@ -32,8 +32,8 @@
       %label.register-card__code--label セキュリティコード
       %span.register-required 必須
       %textarea.register-card__code--textarea{cols:  "40", name: "security_code", placeholder: "カード背面4桁もしくは3桁の番号", rows: "1"}
-    = link_to complete_signup_index_path, class: "register-card__reason",method: :get do
-      %i.fa.fa-question-circle
-      カード裏面の番号とは？
+  = button_to complete_signup_index_path, class: "register-card__reason", method: :post do
+    %i.fa.fa-question-circle
+    カード裏面の番号とは？
     = link_to "次へ進む", complete_signup_index_path, class: "register-profile__nextpage"
 = render "login-footer"

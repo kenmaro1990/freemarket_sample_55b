@@ -18,7 +18,8 @@
   .register-phonenumber
     = form_for @user, url: address_signup_index_path, method: :get, html: {class: 'register-phonenumber__box'} do |f|
       = f.text_field :phone_number, placeholder: '携帯電話の番号を入力', class: "register-profile__kana-nameform--textarea"
-      = link_to "SMSを送信する", address_signup_index_path, class: "register-phonenumber__nextpage"
+      = button_to phonenumber_signup_index_path, class: "register-phonenumber__nextpage", method: :post do
+        SMSを送信する
       .register-phonenumber__description ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
       = link_to address_signup_index_path, class: "register-phonenumber__reason",method: :get do
         電話番号の確認が必要な理由
