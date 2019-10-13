@@ -1,5 +1,4 @@
 class SignupController < ApplicationController
-
   before_action :session_before_phonenumber, only: :phonenumber
   before_action :session_before_address, only: :address
   before_action :session_before_card, only: :card
@@ -7,7 +6,6 @@ class SignupController < ApplicationController
 
   def index
     session[:flag] = "signup"
-
   end
 
   def login
@@ -31,17 +29,7 @@ class SignupController < ApplicationController
   end
 
   def card
-    @user = User.new(
-      nickname: session[:nickname], 
-      email: session[:email],
-      password: session[:password],
-      password_confirmation: session[:password_confirmation],
-      last_name: session[:last_name], 
-      first_name: session[:first_name], 
-      last_name_kana: session[:last_name_kana], 
-      first_name_kana: session[:first_name_kana], 
-      phone_number: session[:phone_number]  
-    )    
+    @user = User.new
     @user.build_address
   end
 
@@ -59,11 +47,13 @@ class SignupController < ApplicationController
       last_name_kana: session[:last_name_kana], 
       first_name_kana: session[:first_name_kana], 
       phone_number: session[:phone_number],
-      birthday: session[:birthdate_year]
+      birthyear: session[:birthyear],
+      birthmonth: session[:birthmonth],
+      birthday: session[:birthday]
     )
     @user.build_address(user_params[:address_attributes])
     if @user.save
-      redirect_to complete_signup_index_path 
+      redirect_to complete_signup_index_path
     end
   end
 
@@ -76,6 +66,8 @@ class SignupController < ApplicationController
     session[:first_name] = user_params[:first_name]
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
+    session[:birthyear] = user_params[:birthyear]
+    session[:birthmonth] = user_params[:birthmonth]
     session[:birthday] = user_params[:birthday]
     @user = User.new(
       nickname: session[:nickname],
@@ -86,7 +78,9 @@ class SignupController < ApplicationController
       first_name: session[:first_name], 
       last_name_kana: session[:last_name_kana], 
       first_name_kana: session[:first_name_kana], 
-      birthday: session[:birthdate_year]
+      birthyear: session[:birthyear],
+      birthmonth: session[:birthmonth],
+      birthday: session[:birthday]
     )
   end
 
@@ -101,19 +95,38 @@ class SignupController < ApplicationController
       first_name: session[:first_name], 
       last_name_kana: session[:last_name_kana], 
       first_name_kana: session[:first_name_kana], 
-      birthday: session[:birthdate_year],
+      birthyear: session[:birthyear],
+      birthmonth: session[:birthmonth],
+      birthday: session[:birthday],
       phone_number: session[:phone_number]
     )
   end
 
   def session_before_card
-
+    session[:address_attributes] = user_params[:address_attributes]
+      @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      last_name: session[:last_name], 
+      first_name: session[:first_name], 
+      last_name_kana: session[:last_name_kana], 
+      first_name_kana: session[:first_name_kana], 
+      birthyear: session[:birthyear],
+      birthmonth: session[:birthmonth],
+      birthday: session[:birthday],
+      phone_number: session[:phone_number],
+      address_attributes: session[:address_attributes]
+    )
+    @user.build_address
   end
 
   def session_before_complete
   end
 
   private
+  
     def user_params
       params.require(:user).permit(
         :nickname, 
@@ -125,16 +138,20 @@ class SignupController < ApplicationController
         :last_name_kana, 
         :first_name_kana, 
         :phone_number,
+        :birthyear,
+        :birthmonth,
+        :birthday,
         address_attributes: [
-          :address_first_name, 
-          :address_last_name, 
+          :id,
+          :address_first_name,
+          :address_last_name,
           :address_first_name_kana, 
-          :address_last_name_kana, 
-          :postal_code, 
-          :prefecture_id, 
-          :city, 
-          :block, 
-          :building, 
+          :address_last_name_kana,
+          :postal_code,
+          :prefecture_id,
+          :city,
+          :block,
+          :building,
           :phone_number
         ]
     )

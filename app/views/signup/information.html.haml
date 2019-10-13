@@ -50,7 +50,12 @@
       %label.register-profile__birthday--label 生年月日
       %span.register-required 必須
       %br
-      != sprintf(f.date_select(:birthday, autofocus: true, use_month_numbers: true, start_year: 2019,end_year:1900 ,prompt: "--", date_separator: '%s'), "年", "月") + "日"
+      =f.select :birthyear, [[1990]], {prompt: "---"}, class: "register-profile__birthday--select"
+      年
+      =f.select :birthmonth, [[1], [2], [3], [4]],  {prompt: "---"}, class:"register-profile__birthday--select"
+      月
+      =f.select :birthday, [[1], [2], [3], [4]], {prompt: "---"}, class: "register-profile__birthday--select"
+      日
       %p.register-profile__birthday--caution ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
     .register-profile__captcha
       .register-profile__captcha--box
