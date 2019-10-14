@@ -28,7 +28,6 @@ class SignupController < ApplicationController
   end
 
   def card
-    binding.pry
     @user = User.new(
       nickname: session[:nickname], 
       email: session[:email],
@@ -67,6 +66,7 @@ class SignupController < ApplicationController
       address_attributes: session[:address_attributes]
     )
     @user.build_address(session[:address_attributes])
+    @user.save!
     if @user.save
       redirect_to complete_signup_index_path
     else 
@@ -89,7 +89,7 @@ class SignupController < ApplicationController
         :birthmonth,
         :birthday,
         address_attributes: [
-          :user_id,
+          :id,
           :address_first_name,
           :address_last_name,
           :address_first_name_kana, 
@@ -174,7 +174,7 @@ class SignupController < ApplicationController
         birthmonth: session[:birthmonth],
         birthday: session[:birthday]
       )
-      @user.build_address(user_params[:address_attributes])
+      @user.build_address
     end
   
     def session_before_complete
@@ -194,5 +194,4 @@ class SignupController < ApplicationController
       )
       @user.build_address(session[:address_attributes])
     end
-
 end
