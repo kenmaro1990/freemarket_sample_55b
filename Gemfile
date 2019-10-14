@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7', '>= 5.0.7.2'
@@ -66,6 +67,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'pry-rails'
+gem 'recaptcha', require: "recaptcha/rails"
 
 group :production do
   gem 'unicorn', '5.4.1'
