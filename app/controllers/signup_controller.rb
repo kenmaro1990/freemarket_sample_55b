@@ -15,11 +15,12 @@ class SignupController < ApplicationController
 
   def information
     @user = User.new
+
   end
 
   def phonenumber
     @user = User.new
-
+    
   end
 
   def address
