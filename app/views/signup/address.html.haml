@@ -17,40 +17,40 @@
   .register-text 住所入力
   .register-address
   = form_for @user, url: card_signup_index_path, method: :get, html: {class: 'register-profile'} do |f|
-    = f.fields_for :address do |i|
+    = f.fields_for :address do |a|
       .register-address__name
         %label.register-address__name--label お名前(全角)
         %span.register-required 必須
-        = i.text_field :address_last_name, placeholder: '例)山田', class: "register-address__name--textarea"
-        = i.text_field :address_first_name, placeholder: '例)彩', class: "register-address__name--textarea"
+        = a.text_field :address_last_name, placeholder: '例)山田', class: "register-address__name--textarea"
+        = a.text_field :address_first_name, placeholder: '例)彩', class: "register-address__name--textarea"
       .register-address__namekana
         %label.register-address__namekana--label  お名前かな(全角)
         %span.register-required 必須
-        = i.text_field :address_last_name_kana, placeholder: '例)ヤマダ', class: "register-address__namekana--textarea"
-        = i.text_field :address_first_name_kana, placeholder: '例)アヤ', class: "register-address__namekana--textarea"
+        = a.text_field :address_last_name_kana, placeholder: '例)ヤマダ', class: "register-address__namekana--textarea"
+        = a.text_field :address_first_name_kana, placeholder: '例)アヤ', class: "register-address__namekana--textarea"
       .register-address__postalcode
         %label.register-address__postalcode--label 郵便番号
         %span.register-required 必須
-        = i.text_field :postal_code, placeholder: '123-4567',cols:"20", class: "register-address__postalcode--textarea"
+        = a.text_field :postal_code, placeholder: '123-4567',cols:"20", class: "register-address__postalcode--textarea"
       .register-address__prefecture
         %label.register-address__prefecture--label 都道府県
         %span.register-required 必須
-        = i.collection_select :prefecture_id, Prefecture.all, :id, :name,{}, {class:"register-address__prefecture--select"}
+        = a.collection_select :prefecture_id, Prefecture.all, :id, :name,{}, {class:"register-address__prefecture--select"}
       .register-address__city
         %label.register-address__city--label 市町村
         %span.register-required 必須
-        = i.text_field :city, placeholder: '例)横浜市緑区',cols:"20", class: "register-address__city--textarea"
+        = a.text_field :city, placeholder: '例)横浜市緑区',cols:"20", class: "register-address__city--textarea"
       .register-address__block
         %label.register-address__block--label 番地
         %span.register-required 必須
-        = i.text_field :block, placeholder: '例)青山1-1-1',cols:"20", class: "register-address__block--textarea"
+        = a.text_field :block, placeholder: '例)青山1-1-1',cols:"20", class: "register-address__block--textarea"
       .register-address__building
         %label.register-address__building--label 建物名
         %span.register-any 任意
-        = i.text_field :building, placeholder: '例)柳ビル103',cols:"20", class: "register-address__building--textarea"
+        = a.text_field :building, placeholder: '例)柳ビル103',cols:"20", class: "register-address__building--textarea"
       .register-address__phone-number
         %label.register-address__phone-number--label 電話
         %span.register-any 任意
-        = i.text_field :building, placeholder: '09012345678',cols:"20", class: "register-address__phone-number--textarea"
+        = a.text_field :address_phone_number, placeholder: '09012345678',cols:"20", class: "register-address__phone-number--textarea"
       = f.submit '次へ進む', class: 'register-profile__nextpage'
 = render "login-footer"
