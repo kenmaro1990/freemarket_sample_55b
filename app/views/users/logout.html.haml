@@ -1,0 +1,13 @@
+%html
+  %head
+  %body
+    =render partial: "shared/header"
+
+    .mypage__wrapper
+      =render partial:"sidebar"
+
+      .mypage__identification
+        %form.mypage__logout
+          .mypage__logout__content
+            = link_to "https://google.co.jp", class: 'btn' do
+              ログアウト

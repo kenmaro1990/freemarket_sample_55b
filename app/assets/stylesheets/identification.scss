@@ -1,0 +1,125 @@
+.mypage__identification{
+  float: right;
+  width: 700px;
+  background: #fff;
+  box-sizing: border-box;
+  &__head{
+    font-size: 24px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    font-weight: bold;
+    line-height: 34px;
+  }
+  &__contents{
+    padding: 64px;
+    p{
+      margin: 8px 0 0;
+      line-height: 1.5;
+    }
+  }
+}
+
+.identification__description-upload{
+  @include clearfix();
+  display: block;
+  width: 100%;
+  margin: 8px 0 0;
+  line-height: 1.5;
+  &-link{
+    float: right;
+    color: #0099e8;
+    text-decoration: none;
+  }
+}
+
+.identification__form{
+  margin: 40px 0 0;
+  label{
+    font-weight: 600;
+  }
+}
+
+.form-arbitrary{
+  background: #ccc;
+  margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.identification__input{
+  width: 100%;
+  margin: 8px 0 0;
+  display: block;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.identification__form__prefecture{
+  margin: 8px 0 0;
+  position: relative;
+  background: #fff;
+  .prefecture-select-icon{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    z-index: 2;
+    color: #888;
+    font-size: 16px;
+    transform: translate(0, -50%);
+  }
+  &-select{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  select::-ms-expand{
+    display: none;
+    }
+}
+
+.btn_identification_submit{
+  margin: 40px 0 0 0;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.identification__registration{
+  @include clearfix();
+  display: block;
+  width: 100%;
+  margin: 40px 0 0;
+  line-height: 1.5;
+  &-link{
+    float: right;
+    color: #0099e8;
+    text-decoration: none;
+  }
+}
