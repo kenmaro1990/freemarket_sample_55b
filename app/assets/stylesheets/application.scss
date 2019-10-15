@@ -13,6 +13,7 @@
  *= require_self
  */
 
+
 @import "mixin/signup_mixin";
 @import "signup.scss";
 @import "progressbar.scss";
@@ -26,10 +27,10 @@
 @import "font-source";
 @import "font-awesome";
 @import "modules/header-icon";
+@import "modules/main-top";
 @import "modules/sidebar";
 @import "./mypage";
 @import "items/new.scss";
 @import "identification.scss";
 @import "card.scss";
 @import "logout.scss";
-
