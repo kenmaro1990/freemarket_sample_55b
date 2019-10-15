@@ -1,4 +1,3 @@
-
 .header
   .header__image
     .header__image--mercari
@@ -14,12 +13,10 @@
     = link_to register_signup_index_path, class: "login-social__google",method: :get do
       %i.fa.fa-google.login-social__google--icon
       Googleでログイン
-      
+
+ = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .login-email
-    .login-email__address
-      %textarea.login-email__address--textarea{name: "email", placeholder: "メールアドレス", rows: "1"}
-    .login-email__password
-      %textarea.login-email__password--textarea{name: "password", placeholder: "パスワード", rows: "1"}
-    = link_to "ログイン", register_signup_index_path, class: "login-email__login"
-    = link_to "パスワードをお忘れの方", "https://www.mercari.com/jp/password/reset/start/", class: "login-email__help"
+    = f.email_field :email, class: 'login-email__address--textarea', placeholder: 'メールアドレス'
+    = f.password_field :password, class: 'login-email__password--textarea', placeholder: 'パスワード', autocomplete: "current-password"
+    = f.submit 'ログイン', class: 'login-email__login'
 = render "login-footer"
