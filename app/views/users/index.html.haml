@@ -2,7 +2,10 @@
 %html
   %head
   %body
-    =render partial: "shared/header" 
+    -if user_signed_in?  
+      =render partial: "shared/header-after-login"
+    -else
+      =render partial: "shared/header"
     .mypage__wrapper
       =render partial:"sidebar"
       .mypage-content
