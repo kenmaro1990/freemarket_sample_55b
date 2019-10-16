@@ -1,0 +1,199 @@
+@media (min-width: 1068px) {
+  .main-top__header__box {
+    width: 1020px;
+  }
+}
+@media (max-width: 768px) {
+  .main-top__header__box {
+    position: fixed;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 0px 20px black;
+  }
+}
+@media (min-width: 1068px) {
+  .main-top__contents {
+    max-width: 1020px;
+  }
+}
+@media (max-width: 768px) {
+  .main-top__contents {
+    max-width: 700px;
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .main-top__contents__center__items__ladies__list {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px 20px;
+    img {
+      height: auto;
+    }
+  }
+
+  .main-top__contents__center__items__mens__list {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px 20px;
+    img {
+      height: auto;
+    }
+  }
+
+  .main-top__contents__center__items__appliances__list {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px 20px;
+    img {
+      height: auto;
+    }
+  }
+  
+  .main-top__contents__center__items__toys__list {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px 20px;
+    img {
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-top__contents__center__items__ladies__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px 6px;
+    width: 100%;
+    img {
+      height: auto;
+    }
+  }
+
+  .main-top__contents__center__items__mens__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px 6px;
+    width: 100%;
+    img {
+      height: auto;
+    }
+  }
+  
+  .main-top__contents__center__items__appliances__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px 6px;
+    width: 100%;
+    img {
+      height: auto;
+    }
+  }
+
+  .main-top__contents__center__items__toys__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px 6px;
+    width: 100%;
+    img {
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 1068px) {
+  .main-top__contents__center__screen {
+    height: 390px;
+  }
+
+  .swiper-slide img{
+    height: 390px;
+  }
+
+  .main-top__slide__advert{
+    height: 390px;
+    width: 100%;
+    h2, h3{
+      font-size: 60px; 
+      margin-bottom: 15px;
+    }
+    h4, h5{
+      font-size: 15px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .main-top__contents__center__screen {
+    height: 170px;
+  }
+
+  .swiper-slide img{
+    height: 170px;
+  }
+
+  .main-top__slide__advert{
+    height: 170px;
+    position: relative;
+    img{
+      height: 30px;
+      width: auto;
+    }
+    h2, h3{
+      font-size: 24px;
+      margin-bottom: 0;  
+    }
+    h4, h5{
+      font-size: 1.7px;
+    }
+    .iphone_img{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 170px;
+    }
+  }
+
+}
+
+@media (min-width: 768px) {
+  .main-top__exhibit {
+    bottom: 32px;
+    font-size: 22px;
+    height: 160px;
+    right: 32px;
+    width: 160px;
+  }
+}
+@media (min-width: 1068px) {
+  .main-top__footer__guide {
+    display: flex;
+  }
+}
+@media (min-width: 1068px) {
+  .main-top__footer__guide__cellbox {
+    display: none;
+  }
+}
+@media (min-width: 1068px) {
+  .main-top__footer__guide__cellbox__cell {
+    width: auto;
+    padding: 0px 40px 0px 0px;
+  }
+}
+@media (min-width: 768px) {
+  .main-top__footer__guide__cell-2 {
+    padding-right: 20px;
+    margin-right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .main-top__footer__guide__cell-2 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .main-top__footer__guide__cell-2__box__cell {
+    padding-right: 40px;
+    margin-right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .main-top__footer__guide__cell-2__box__cell {
+    padding-right: 40px;
+    margin-right: 166px;
+  }
+}

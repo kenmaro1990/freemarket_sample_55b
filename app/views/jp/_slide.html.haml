@@ -1,0 +1,22 @@
+.swiper-container
+  .swiper-wrapper
+    .swiper-slide
+      = image_tag "download.jpg"
+    .swiper-slide
+      .main-top__slide__advert
+        .main-top__slide__advert__box
+          .main-top__slide__advert__box__downlord
+            %h2 スマホでかんたん
+            %h3 フリマアプリ
+            %h4 メルカリはスマホカメラからすぐに出品できる
+            %h5 購入時も安心な独自システムのアプリです。
+            .main-top__aslide__dvert__box__downlord__contents
+              = image_tag ("mercari_icon.png"), height: '68', width: '68'
+              = link_to "https://www.apple.com/jp/ios/app-store/", class: ".main-top__slide__advert__box__downlord__contents__AppStore" do
+                = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", class: "app_img"
+              = link_to "https://www.apple.com/jp/ios/app-store/", class: ".main-top__slide__advert__box__downlord__contents__AppStore" do
+                = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", class: "app_img"
+          = image_tag ("download-hsnd.png"),height: '390', width: '450', class: "iphone_img"
+  .swiper-pagination
+  .swiper-button-prev
+  .swiper-button-next
