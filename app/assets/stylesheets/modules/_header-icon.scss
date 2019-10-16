@@ -1,0 +1,43 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-top__header__box__menu__other{
+  float:right;
+  list-style: none;
+  height: 44px;
+  li{
+    padding: 0px 14px;
+    display: block;
+    float: left;
+    line-height: 44px;
+  }
+}
+
+.header_box_menu{
+  box-sizing: border-box;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  height: 32px;
+  transform: scale(1);
+  transition: all 0.3s ease-out 0s;
+  text-decoration:  none;
+  color: inherit;
+  .header_right_icon{
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    color: rgb(204, 204, 204);
+    margin-right: 10px;
+    width: 19px;
+  }
+}
+
+.header_face_icon{
+  margin-right: 10px;
+  height: 28x;
+  width: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+}
