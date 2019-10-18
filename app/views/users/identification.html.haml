@@ -4,8 +4,6 @@
     =render partial: "shared/header"
 
     .mypage__wrapper
-      =render partial:"sidebar"
-
       .mypage__identification
         %h2.mypage__identification__head
           本人情報の登録
@@ -74,3 +72,5 @@
                 %p
                 本人情報の登録について
                 =fa_icon "chevron-right"
+      =render partial:"sidebar"
+      = render partial: "shared/footer"
