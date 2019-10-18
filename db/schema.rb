@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191013093006) do
+ActiveRecord::Schema.define(version: 20191016144713) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20191013093006) do
     t.string   "last_name",                                         null: false
     t.string   "first_name_kana",                                   null: false
     t.string   "last_name_kana",                                    null: false
-    t.integer  "phone_number",                                      null: false
+    t.string   "phone_number",                                      null: false
     t.text     "self_introduction",      limit: 65535
     t.string   "encrypted_password",                   default: "", null: false
     t.string   "reset_password_token"

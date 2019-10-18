@@ -7,15 +7,11 @@ class SignupController < ApplicationController
   def index
   end
 
-  def login
-  end
-
-  def register    
+  def register
   end
 
   def information
     @user = User.new
-
   end
 
   def phonenumber
@@ -48,6 +44,7 @@ class SignupController < ApplicationController
 
   def complete
 
+    sign_in User.find(session[:id])
   end
 
   def create
@@ -69,6 +66,7 @@ class SignupController < ApplicationController
     @user.build_address(session[:address_attributes])
     @user.save!
     if @user.save
+      session[:id] = @user.id
       redirect_to complete_signup_index_path
     else 
     end
@@ -127,8 +125,10 @@ class SignupController < ApplicationController
         first_name_kana: session[:first_name_kana], 
         birthyear: session[:birthyear],
         birthmonth: session[:birthmonth],
-        birthday: session[:birthday]
+        birthday: session[:birthday],
+        phone_number:"09012345678"
       )
+      render "signup/information" unless @user.valid?
     end
   
     def session_before_address
@@ -147,6 +147,7 @@ class SignupController < ApplicationController
         birthday: session[:birthday],
         phone_number: session[:phone_number]
       )
+      render "signup/phonenumber" unless @user.valid?
     end
   
     def session_before_card
@@ -162,7 +163,7 @@ class SignupController < ApplicationController
       session[:building] = user_params[:address_attributes][:building]
       session[:address_phone_number] = user_params[:address_attributes][:address_phone_number]
       @user = User.new(
-        nickname: session[:nickname], 
+        nickname: session[:nickname],
         email: session[:email],
         password: session[:password],
         password_confirmation: session[:password_confirmation],
@@ -170,16 +171,17 @@ class SignupController < ApplicationController
         first_name: session[:first_name], 
         last_name_kana: session[:last_name_kana], 
         first_name_kana: session[:first_name_kana], 
-        phone_number: session[:phone_number],
         birthyear: session[:birthyear],
         birthmonth: session[:birthmonth],
-        birthday: session[:birthday]
+        birthday: session[:birthday],
+        phone_number: session[:phone_number]
       )
-      @user.build_address
+      @user.build_address(user_params[:address_attributes])
+      render "signup/address" unless @user.valid?
     end
   
     def session_before_complete
-      @user = User.new(
+        @user = User.new(
         nickname: session[:nickname],
         email: session[:email],
         password: session[:password],

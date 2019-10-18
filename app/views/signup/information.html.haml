@@ -19,6 +19,7 @@
       %label.register-profile__nickname--label ニックネーム
       %span.register-required 必須
       = f.text_field :nickname, placeholder: '例) メルカリ太郎', class: "register-profile__nickname--textarea"
+      = render 'layouts/error_messages', model: f.object
     .register-profile__email
       %label.register-profile__email--label メールアドレス
       %span.register-required 必須
