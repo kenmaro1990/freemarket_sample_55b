@@ -4,8 +4,6 @@
     =render partial: "shared/header"
 
     .mypage__wrapper
-      =render partial:"sidebar"
-
       .mypage__identification
         %h2.mypage__identification__head
           支払い方法
@@ -29,3 +27,5 @@
               =link_to "http://google.co.jp", class:"payment__method" do
                 %span 支払い方法について
                 =fa_icon "chevron-right"
+      =render partial:"sidebar"
+    = render partial: "shared/footer"

@@ -197,3 +197,60 @@
     margin-right: 166px;
   }
 }
+
+@media (max-width: 1068px) {
+  .mypage__wrapper{
+    width: 700px;
+    margin: 24px auto 0;
+  }
+
+  .mypage-content{
+    width: 700px;
+    margin: 40px auto 0;
+  }
+
+  .mypage-left{
+    width: 700px;
+    margin: 40px auto 0;
+  }
+}
+
+@media (min-width: 1068px) {
+  .mypage__wrapper{
+    width: 1020px;
+    margin: 40px auto 0;
+  }
+
+  .mypage-content{
+    margin: 40px auto 0;
+    width: 700px;
+  }
+
+  .mypage-left{
+    width: 280px;
+    margin: 40px auto 0;
+  }
+}
+
+@media (max-width: 855px) {
+  .main-top__header__box__menu__other{
+    span{
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .mypage__wrapper{
+    width: 100%;
+  }
+
+  .mypage-content{
+    width: 100%;
+  }
+
+  .mypage-left{
+    width: 100%;
+  }
+}
+
