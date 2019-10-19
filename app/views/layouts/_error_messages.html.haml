@@ -3,9 +3,3 @@
     %ul.error__red
       - errors.each do |error|
         %li=error
-
-- if @user.build_address.errors.any?
-  - if errors = @user.build_address.errors.full_messages_for(column.to_sym)
-    %ul.error__red
-      - errors.each do |error|
-        %li=error

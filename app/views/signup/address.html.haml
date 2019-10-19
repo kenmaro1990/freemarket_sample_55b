@@ -22,29 +22,36 @@
         %label.register-address__name--label お名前(全角)
         %span.register-required 必須
         = a.text_field :address_last_name, placeholder: '例)山田', class: "register-address__name--textarea"
-        = render partial: 'layouts/error_messages', locals: {user: @user.build_address, column: "address_last_name"}
+        = render partial: 'layouts/address_error_messages', locals: {user: @user, column: "address_last_name"}
         = a.text_field :address_first_name, placeholder: '例)彩', class: "register-address__name--textarea"
+        = render partial: 'layouts/address_error_messages', locals: {user: @user, column: "address_first_name"}
       .register-address__namekana
         %label.register-address__namekana--label  お名前かな(全角)
         %span.register-required 必須
         = a.text_field :address_last_name_kana, placeholder: '例)ヤマダ', class: "register-address__namekana--textarea"
+        = render partial: 'layouts/address_error_messages', locals: {user: @user, column: "address_last_name_kana"}
         = a.text_field :address_first_name_kana, placeholder: '例)アヤ', class: "register-address__namekana--textarea"
+        = render partial: 'layouts/address_error_messages', locals: {user: @user, column: "address_first_name_kana"}
       .register-address__postalcode
         %label.register-address__postalcode--label 郵便番号
         %span.register-required 必須
         = a.text_field :postal_code, placeholder: '123-4567',cols:"20", class: "register-address__postalcode--textarea"
+        = render partial: 'layouts/address_error_messages', locals: {user: @user, column: "postal_code"}
       .register-address__prefecture
         %label.register-address__prefecture--label 都道府県
         %span.register-required 必須
         = a.collection_select :prefecture_id, Prefecture.all, :id, :name,{}, {class:"register-address__prefecture--select"}
+        = render partial: 'layouts/address_error_messages', locals: {user: @user, column: "prefecture_id"}
       .register-address__city
         %label.register-address__city--label 市町村
         %span.register-required 必須
         = a.text_field :city, placeholder: '例)横浜市緑区',cols:"20", class: "register-address__city--textarea"
+        = render partial: 'layouts/address_error_messages', locals: {user: @user, column: "city"}
       .register-address__block
         %label.register-address__block--label 番地
         %span.register-required 必須
         = a.text_field :block, placeholder: '例)青山1-1-1',cols:"20", class: "register-address__block--textarea"
+        = render partial: 'layouts/address_error_messages', locals: {user: @user, column: "block"}
       .register-address__building
         %label.register-address__building--label 建物名
         %span.register-any 任意

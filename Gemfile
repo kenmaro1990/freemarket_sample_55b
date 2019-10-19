@@ -69,6 +69,7 @@ gem 'active_hash'
 gem 'pry-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'rails-i18n'
+gem 'rspec-rails'
 
 
 group :production do
