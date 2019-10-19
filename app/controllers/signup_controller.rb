@@ -16,7 +16,6 @@ class SignupController < ApplicationController
 
   def phonenumber
     @user = User.new
-    
   end
 
   def address
@@ -43,7 +42,6 @@ class SignupController < ApplicationController
   end
 
   def complete
-
     sign_in User.find(session[:id])
   end
 
