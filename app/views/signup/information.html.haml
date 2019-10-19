@@ -19,19 +19,22 @@
       %label.register-profile__nickname--label ニックネーム
       %span.register-required 必須
       = f.text_field :nickname, placeholder: '例) メルカリ太郎', class: "register-profile__nickname--textarea"
-      = render 'layouts/error_messages', model: f.object
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "nickname"}
     .register-profile__email
       %label.register-profile__email--label メールアドレス
       %span.register-required 必須
       = f.text_field :email, placeholder: 'PC・携帯どちらでも可', class: "register-profile__email--textarea"
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "email"}
     .register-profile__password
       %label.register-profile__password--label パスワード
       %span.register-required 必須
       = f.password_field :password, placeholder: '7文字以上', class: "register-profile__password--textarea"
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "password"}
     .register-profile__password
       %label.register-profile__password--label パスワード(確認)
       %span.register-required 必須
       = f.password_field :password_confirmation, placeholder: '7文字以上', class: "register-profile__password--textarea"
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "password_confirmation"}
     .register-profile__identification
       %p.register-profile__identification--bold 本人確認
       %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
@@ -40,13 +43,17 @@
       %span.register-required 必須
     .register-profile__nameform
       = f.text_field :last_name, placeholder: '例)山田', class: "register-profile__nameform--textarea"
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "last_name"}
       = f.text_field :first_name, placeholder: '例)彩', class: "register-profile__nameform--textarea"
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "first_name"}
     .register-profile__namekana
       %label.register-profile__namekana--label  お名前かな(全角)
       %span.register-required 必須
     .register-profile__kana-nameform
       = f.text_field :last_name_kana, placeholder: '例)ヤマダ', class: "register-profile__kana-nameform--textarea"
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "last_name_kana"}      
       = f.text_field :first_name_kana, placeholder: '例)アヤ', class: "register-profile__kana-nameform--textarea"
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "last_name_kana"}
     .register-profile__birthday
       %label.register-profile__birthday--label 生年月日
       %span.register-required 必須
@@ -57,6 +64,10 @@
       月
       =f.select :birthday, [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],[20],[21],[22],[23],[24],[25],[26],[27],[28],[29],[30],[31]], {prompt: "---"}, class: "register-profile__birthday--select"
       日
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "birthyear"}
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "birthmonth"}
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "birthday"}
+
       %p.register-profile__birthday--caution ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
     .register-profile__captcha
       .register-profile__captcha--box

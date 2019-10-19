@@ -1,5 +1,11 @@
-- if model.errors.any?
-  .alert.alert-warning
-    %ul
-      - model.errors.full_messages.each do |message|
-        %li= message
+- if user.errors.any?
+  - if errors = user.errors.full_messages_for(column.to_sym)
+    %ul.error__red
+      - errors.each do |error|
+        %li=error
+
+- if @user.build_address.errors.any?
+  - if errors = @user.build_address.errors.full_messages_for(column.to_sym)
+    %ul.error__red
+      - errors.each do |error|
+        %li=error

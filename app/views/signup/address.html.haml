@@ -22,6 +22,7 @@
         %label.register-address__name--label お名前(全角)
         %span.register-required 必須
         = a.text_field :address_last_name, placeholder: '例)山田', class: "register-address__name--textarea"
+        = render partial: 'layouts/error_messages', locals: {user: @user.build_address, column: "address_last_name"}
         = a.text_field :address_first_name, placeholder: '例)彩', class: "register-address__name--textarea"
       .register-address__namekana
         %label.register-address__namekana--label  お名前かな(全角)
