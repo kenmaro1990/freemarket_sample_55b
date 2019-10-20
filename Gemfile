@@ -46,6 +46,9 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem  "better_errors"
   gem 'binding_of_caller'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+
 end
 
 group :development do
@@ -69,7 +72,6 @@ gem 'active_hash'
 gem 'pry-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'rails-i18n'
-gem 'rspec-rails'
 gem 'payjp'
 
 
