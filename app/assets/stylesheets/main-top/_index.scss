@@ -11,6 +11,10 @@
   opacity: 0.6;
 }
 
+.mercari-camping{
+  width: 100%;
+}
+
 .main-top__slide__advert {
   background-image: url("download-1.jpg");
   color: #222222;
@@ -23,9 +27,9 @@
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    width: 750px;
-    margin: 0px auto;
+    max-width: 860px;
     height: 100%;
+    margin: 0px auto;
     &__downlord{
       display: flex;
       flex-direction: column;
@@ -39,10 +43,9 @@
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         text-decoration: none;
         white-space: nowrap;
-        line-height: 1;
       }
       h3{
-        padding: 0 0 30px 0;
+        padding: 0 0 10px 0;
       }
       h4, h5{
         color: #0f0f0f;
@@ -52,6 +55,23 @@
         line-height: 0.5;
         letter-spacing: 5px;
       }
+      &__contents{
+        img{
+
+          vertical-align: middle;
+        }
+        &__AppStore{
+          color: inherit;
+          text-decoration: none;
+          .app_img{
+            margin-right: 8px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    .iphone_img{
+      vertical-align: middle;
     }
   }
 }
