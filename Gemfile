@@ -70,6 +70,7 @@ gem 'pry-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'rails-i18n'
 gem 'rspec-rails'
+gem 'payjp'
 
 
 group :production do
