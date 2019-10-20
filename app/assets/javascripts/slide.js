@@ -4,6 +4,10 @@ window.addEventListener('DOMContentLoaded', function() {
     paginationClickable: true,
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
-    loop: true
+    loop: true,
+    speed: 1000,
+    autoplay: 3000,
+    spaceBetween: 10,
+    effect: 'coverflow'
   });
 }, false);
