@@ -10,8 +10,8 @@ FactoryBot.define do
     prefecture_id {1}
     city {"八王子市"}
     block {"長沼地"}
-    building {""}
-    address_phone_number {""}
+    building {"ヒルサイドテラス"}
+    address_phone_number {"09012345678"}
   end
 
 end
