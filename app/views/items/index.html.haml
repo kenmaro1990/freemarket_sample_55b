@@ -28,7 +28,8 @@
               - @items.each do |item|
                 %li.main-top__contents__center__items__ladies__list__item
                   = link_to "http://google.co.jp", class: "link" do
-                    = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                    -image = item.item_images[0]
+                    =image_tag "#{image.image}"
                     %span.price
                       ¥
                       =item.price
@@ -42,12 +43,17 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__mens__list
-              %ul.main-top__contents__center__items__mens__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース
+              - @items.each do |item|
+                %ul.main-top__contents__center__items__mens__list__item
+                  = link_to "http://google.co.jp", class: "link" do
+                    -image = item.item_images[0]
+                    =image_tag "#{image.image}"
+                    %span.price
+                      ¥
+                      =item.price
+                    %figcaption
+                      %span
+                        =item.name
           .main-top__contents__center__items__appliances
             .main-top__contents__center__items__appliances__title
               %h3 家電・スマホ・カメラ新着アイテム
@@ -55,12 +61,17 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__appliances__list
-              %ul.main-top__contents__center__items__appliances__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース  
+              - @items.each do |item|
+                %ul.main-top__contents__center__items__appliances__list__item
+                  = link_to "http://google.co.jp", class: "link" do
+                    -image = item.item_images[0]
+                    =image_tag "#{image.image}"
+                    %span.price
+                      ¥
+                      =item.price
+                    %figcaption
+                      %span
+                        =item.name
           .main-top__contents__center__items__toys
             .main-top__contents__center__items__toys__title
               %h3 おもちゃ・ホビー・グッズ新着アイテム
@@ -68,12 +79,17 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__toys__list
-              %ul.main-top__contents__center__items__toys__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース 
+              - @items.each do |item|
+                %ul.main-top__contents__center__items__toys__list__item
+                  = link_to "http://google.co.jp", class: "link" do
+                    -image = item.item_images[0]
+                    =image_tag "#{image.image}"
+                    %span.price
+                      ¥
+                      =item.price
+                    %figcaption
+                      %span
+                        =item.name
         .main-top__contents__center__pop-category
           %h2 人気のブランド
           .main-top__contents__center__pop-category__list
@@ -94,13 +110,17 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__ladies__list
-              -# - @items.each do |item|
-              %li.main-top__contents__center__items__ladies__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース
+              - @items.each do |item|
+                %li.main-top__contents__center__items__ladies__list__item
+                  = link_to "http://google.co.jp", class: "link" do
+                    -image = item.item_images[0]
+                    =image_tag "#{image.image}"
+                    %span.price
+                      ¥
+                      =item.price
+                    %figcaption
+                      %span
+                        =item.name
           .main-top__contents__center__items__mens
             .main-top__contents__center__items__mens__title
               %h3 ルイヴィトン新着アイテム
@@ -108,12 +128,17 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__mens__list
-              %ul.main-top__contents__center__items__mens__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース
+              - @items.each do |item|
+                %ul.main-top__contents__center__items__mens__list__item
+                  = link_to "http://google.co.jp", class: "link" do
+                    -image = item.item_images[0]
+                    =image_tag "#{image.image}"
+                    %span.price
+                      ¥
+                      =item.price
+                    %figcaption
+                      %span
+                        =item.name
           .main-top__contents__center__items__appliances
             .main-top__contents__center__items__appliances__title
               %h3 シュプリーム新着アイテム
@@ -121,12 +146,17 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__appliances__list
-              %ul.main-top__contents__center__items__appliances__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース  
+              - @items.each do |item|
+                %ul.main-top__contents__center__items__appliances__list__item
+                  = link_to "http://google.co.jp", class: "link" do
+                    -image = item.item_images[0]
+                    =image_tag "#{image.image}"
+                    %span.price
+                      ¥
+                      =item.price
+                    %figcaption
+                      %span
+                        =item.name
           .main-top__contents__center__items__toys
             .main-top__contents__center__items__toys__title
               %h3 ナイキ新着アイテム
@@ -134,12 +164,17 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__toys__list
-              %ul.main-top__contents__center__items__toys__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース 
+              - @items.each do |item|
+                %ul.main-top__contents__center__items__toys__list__item
+                  = link_to "http://google.co.jp", class: "link" do
+                    -image = item.item_images[0]
+                    =image_tag "#{image.image}"
+                    %span.price
+                      ¥
+                      =item.price
+                    %figcaption
+                      %span
+                        =item.name
     .main-top__exhibit
       = link_to "http://google.co.jp", class: "main-top__exhibit__link" do
         .main-top__exhibit__link__circle
