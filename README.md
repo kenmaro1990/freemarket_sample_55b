@@ -87,7 +87,7 @@ Things you may want to cover:
 # item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|integer||
+|image|string||
 |item|references|null: false, foreign_key: true|
 
 ### Association
