@@ -88,7 +88,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|integer||
-|item_id|integer|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
