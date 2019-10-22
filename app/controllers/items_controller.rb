@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.order('id ASC').limit(10)
+    @items = Item.includes(:item_images).order('id ASC').limit(10)
   end
 
 end
