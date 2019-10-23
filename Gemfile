@@ -48,6 +48,9 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'faker'
+  gem 'capybara'
 
 end
 

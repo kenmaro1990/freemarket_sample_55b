@@ -14,6 +14,12 @@ describe User do
       expect(user.errors[:email]).to include("を入力してください")
     end
 
+    it "is invalid without a @ mark in email" do
+      user = build(:user, email: "123456789.com")
+      user.valid?
+      expect(user.errors[:email]).to include("は不正な値です")
+    end
+
     it "is invalid without a password" do
       user = build(:user, password: "")
       user.valid?
