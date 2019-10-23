@@ -25,17 +25,8 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__ladies__list
-              - @items.each do |item|
-                %li.main-top__contents__center__items__ladies__list__item
-                  = link_to "http://google.co.jp", class: "link" do
-                    -image = item.item_images[0]
-                    =image_tag "#{image.image}"
-                    %span.price
-                      ¥
-                      =item.price
-                    %figcaption
-                      %span
-                        =item.name
+              - @ladies_items.each do |ladies_item|
+                = render partial: "item", locals: {item: ladies_item}
           .main-top__contents__center__items__mens
             .main-top__contents__center__items__mens__title
               %h3 メンズ新着アイテム
@@ -43,17 +34,8 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__mens__list
-              - @items.each do |item|
-                %ul.main-top__contents__center__items__mens__list__item
-                  = link_to "http://google.co.jp", class: "link" do
-                    -image = item.item_images[0]
-                    =image_tag "#{image.image}"
-                    %span.price
-                      ¥
-                      =item.price
-                    %figcaption
-                      %span
-                        =item.name
+              - @mens_items.each do |mens_item|
+                = render partial: "item", locals: {item: mens_item}
           .main-top__contents__center__items__appliances
             .main-top__contents__center__items__appliances__title
               %h3 家電・スマホ・カメラ新着アイテム
@@ -61,17 +43,8 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__appliances__list
-              - @items.each do |item|
-                %ul.main-top__contents__center__items__appliances__list__item
-                  = link_to "http://google.co.jp", class: "link" do
-                    -image = item.item_images[0]
-                    =image_tag "#{image.image}"
-                    %span.price
-                      ¥
-                      =item.price
-                    %figcaption
-                      %span
-                        =item.name
+              - @electrical_appliances.each do |electrical_appliance|
+                = render partial: "item", locals: {item: electrical_appliance}
           .main-top__contents__center__items__toys
             .main-top__contents__center__items__toys__title
               %h3 おもちゃ・ホビー・グッズ新着アイテム
@@ -79,17 +52,8 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__toys__list
-              - @items.each do |item|
-                %ul.main-top__contents__center__items__toys__list__item
-                  = link_to "http://google.co.jp", class: "link" do
-                    -image = item.item_images[0]
-                    =image_tag "#{image.image}"
-                    %span.price
-                      ¥
-                      =item.price
-                    %figcaption
-                      %span
-                        =item.name
+              - @toys.each do |toy|
+                = render partial: "item", locals: {item: toy}
         .main-top__contents__center__pop-category
           %h2 人気のブランド
           .main-top__contents__center__pop-category__list
@@ -110,17 +74,8 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__ladies__list
-              - @items.each do |item|
-                %li.main-top__contents__center__items__ladies__list__item
-                  = link_to "http://google.co.jp", class: "link" do
-                    -image = item.item_images[0]
-                    =image_tag "#{image.image}"
-                    %span.price
-                      ¥
-                      =item.price
-                    %figcaption
-                      %span
-                        =item.name
+              - @chanel.each do |chanel|
+                = render partial: "item", locals: {item: chanel}
           .main-top__contents__center__items__mens
             .main-top__contents__center__items__mens__title
               %h3 ルイヴィトン新着アイテム
@@ -128,17 +83,8 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__mens__list
-              - @items.each do |item|
-                %ul.main-top__contents__center__items__mens__list__item
-                  = link_to "http://google.co.jp", class: "link" do
-                    -image = item.item_images[0]
-                    =image_tag "#{image.image}"
-                    %span.price
-                      ¥
-                      =item.price
-                    %figcaption
-                      %span
-                        =item.name
+              - @louis_vuitton.each do |louis_vuitton|
+                = render partial: "item", locals: {item: louis_vuitton}
           .main-top__contents__center__items__appliances
             .main-top__contents__center__items__appliances__title
               %h3 シュプリーム新着アイテム
@@ -146,17 +92,8 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__appliances__list
-              - @items.each do |item|
-                %ul.main-top__contents__center__items__appliances__list__item
-                  = link_to "http://google.co.jp", class: "link" do
-                    -image = item.item_images[0]
-                    =image_tag "#{image.image}"
-                    %span.price
-                      ¥
-                      =item.price
-                    %figcaption
-                      %span
-                        =item.name
+              - @supreme.each do |supreme|
+                = render partial: "item", locals: {item: supreme}
           .main-top__contents__center__items__toys
             .main-top__contents__center__items__toys__title
               %h3 ナイキ新着アイテム
@@ -164,17 +101,8 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__toys__list
-              - @items.each do |item|
-                %ul.main-top__contents__center__items__toys__list__item
-                  = link_to "http://google.co.jp", class: "link" do
-                    -image = item.item_images[0]
-                    =image_tag "#{image.image}"
-                    %span.price
-                      ¥
-                      =item.price
-                    %figcaption
-                      %span
-                        =item.name
+              - @nike.each do |nike|
+                = render partial: "item", locals: {item: nike}
     .main-top__exhibit
       = link_to "http://google.co.jp", class: "main-top__exhibit__link" do
         .main-top__exhibit__link__circle
