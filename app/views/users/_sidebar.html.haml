@@ -2,7 +2,7 @@
   .mypage-nav
     %ul.mypage-nav__list
       %li
-        =link_to "http://google.co.jp", class: 'mypage-nav__link' do
+        =link_to users_path, class: 'mypage-nav__link' do
           .mypage-nav__list--item
             マイページ
             =fa_icon "chevron-right", class: "icon_next"
@@ -98,7 +98,7 @@
             発送元・お届け先住所変更
             =fa_icon "chevron-right", class: "icon_next"
       %li
-        =link_to "http://google.co.jp", class: 'mypage-nav__link' do
+        =link_to card_users_path, class: 'mypage-nav__link' do
           .mypage-nav__list--item
             支払い方法
             =fa_icon "chevron-right", class: "icon_next"
@@ -108,7 +108,7 @@
             メール/パスワード
             =fa_icon "chevron-right", class: "icon_next"
       %li
-        =link_to "http://google.co.jp", class: 'mypage-nav__link' do
+        =link_to identification_users_path, class: 'mypage-nav__link' do
           .mypage-nav__list--item
             本人情報
             =fa_icon "chevron-right", class: "icon_next"
@@ -118,7 +118,7 @@
             電話番号の確認
             =fa_icon "chevron-right", class: "icon_next"
       %li
-        =link_to "http://google.co.jp", class: 'mypage-nav__link' do
+        =link_to logout_users_path, class: 'mypage-nav__link' do
           .mypage-nav__list--item
             ログアウト
             =fa_icon "chevron-right", class: "icon_next"

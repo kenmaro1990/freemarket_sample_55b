@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'users#index'
-  resources :users
-
+  root 'items#index'
+  resources :users do
+    collection do
+      get 'identification'
+      get 'card'
+      get 'logout'
+      get 'edit_profile'
+    end 
+  end
   resources :signup do
     collection do
       get 'login'
@@ -17,4 +23,8 @@ Rails.application.routes.draw do
       get 'complete'
     end
   end
+
+  resources :items do
+  end
+  
 end

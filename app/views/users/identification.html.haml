@@ -1,0 +1,76 @@
+%html
+  %head
+  %body
+    =render partial: "shared/header-after-login"
+
+    .mypage__wrapper
+      .mypage__identification
+        %h2.mypage__identification__head
+          本人情報の登録
+        %form.mypage__identification__contents
+          .identification__description
+            %p
+            お客さまの本人情報をご登録ください。
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            .identification__description-upload
+              =link_to "http://google.co.jp", class:"identification__description-upload-link" do
+                %p
+                本人確認書類のアップロードについて
+                =fa_icon "chevron-right"
+            .identification__form
+              %label
+                お名前
+              %p
+                田中 花子
+            .identification__form
+              %label
+                お名前カナ
+              %p
+                タナカ ハナコ
+            .identification__form
+              %label.birthday
+                生年月日
+              %p
+                1990/1/1
+            .identification__form
+              %label.zip_code
+                郵便番号
+              %span.form-arbitrary
+                任意
+              %input.identification__input{name: "zip-code", placeholder: "例）1234567",type: "text"}
+            .identification__form
+              %label.zip_code
+                都道府県
+              %span.form-arbitrary
+                任意
+              .identification__form__prefecture
+                =fa_icon "chevron-down", class:"prefecture-select-icon"
+                %select.identification__form__prefecture-select{name: "prefecture"}
+            .identification__form
+              %label.city
+                市区町村
+              %span.form-arbitrary
+                任意
+              %input.identification__input{name: "city", placeholder: "例）横浜市緑区", type: "text"}
+            .identification__form
+              %label.address_label
+                番地
+              %span.form-arbitrary
+                任意
+              %input.identification__input{name: "address-label",placeholder: "例）青山1-1-1", type: "text"}
+            .identification__form
+              %label.address2_label
+                番地
+              %span.form-arbitrary
+                任意
+              %input.identification__input{name: "address2-label", placeholder: "例）柳ビル103",type: "text"}
+            %button.btn_identification_submit{type: "submit"}
+              登録する
+            .identification__registration
+              =link_to "http://google.co.jp", class:"identification__registration-link" do
+                %p
+                本人情報の登録について
+                =fa_icon "chevron-right"
+      =render partial:"sidebar"
+    = render partial: "shared/footer"

@@ -1,0 +1,486 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+*{
+  box-sizing: border-box;
+}
+
+.app_img:hover{
+  opacity: 0.6;
+}
+
+.mercari-camping{
+  width: 100%;
+}
+
+.main-top__slide__advert {
+  background-image: url("download-1.jpg");
+  color: #222222;
+  background-size: cover;
+  background-position: center center;
+  margin-top: auto;
+  opacity: 1;
+  &__box{
+    display: none;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 860px;
+    height: 100%;
+    margin: 0px auto;
+    &__downlord{
+      display: flex;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      justify-content: center;
+      z-index: 1;
+      h2, h3{
+        color: #0c0c0c;
+        font-weight: 600;
+        line-height: 1.4;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      h3{
+        padding: 0 0 10px 0;
+      }
+      h4, h5{
+        color: #0f0f0f;
+        margin-bottom: 20px;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        text-decoration: none;
+        line-height: 0.5;
+        letter-spacing: 5px;
+      }
+      &__contents{
+        img{
+
+          vertical-align: middle;
+        }
+        &__AppStore{
+          color: inherit;
+          text-decoration: none;
+          .app_img{
+            margin-right: 8px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    .iphone_img{
+      vertical-align: middle;
+    }
+  }
+}
+.main-top{
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  &__header{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    height: 100px;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 0 0px 20px black;
+    &__box{
+      max-width: 1020px;
+      min-width: 400px;
+      margin: 0px auto;
+      padding: 8px 0px 0px;
+      height: 100px;
+      &__form{
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        margin: 0px 5px 0px;
+        &__logo{
+          -webkit-box-align: center;
+          align-items: center;
+          display: flex;
+          height: 40px;
+          margin-right: 45px
+        }
+        .search-form{
+          position: relative;
+          width: 100%;
+          display: flex;
+          &__input{
+            background-color: rgb(245, 245, 245);
+            font-size: 16px;
+            height: 40px;
+            line-height: 1.4em;
+            position: relative;
+            width: 100%;
+            -webkit-appearance: none;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+            border-image: initial;
+            border-radius: 4px;
+            outline: none;
+            padding: 0px 50px 0px 10px;
+            transition: all 0.3s ease-out 0s;
+          }
+          .btn-search{
+            background-color: transparent;
+            cursor: pointer;
+            height: 40px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 40px;
+            -webkit-appearance: none;
+            border-width: initial;
+            border-style: none;
+            border-color: initial;
+            border-image: initial;
+            border-radius: 0px 4px 4px 0px;
+            padding: 0px;
+            .search-form__icon{
+              max-width: 100%;
+              max-height: 100%;
+              color: rgb(34, 34, 34);
+              height: 14px;
+              margin-top: 2px;
+              width: 14px;
+              z-index: 3;
+            }
+          }
+        }
+      }
+      &__menu{
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        margin: 8px 5px 0px;
+        &__search{
+          display: flex;
+          margin-left: -3px;
+          &__category{
+            padding-left: 0px;
+            cursor: pointer;
+            height: 44px;
+            position: relative;
+            z-index: 3;
+            padding: 0px 10px;
+            display: flex;
+            .list__icon{
+              max-width: 100%;
+              max-height: 100%;
+              color: rgb(234, 53, 45);
+              height: 12px;
+              margin-right: 4px;
+              margin-top: 10px; 
+            }
+            .link{
+              display: block;
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 36px;
+              white-space: nowrap;
+              color: inherit;
+              text-decoration: none;
+            }
+          }
+          &__brand{
+            padding-right: 0px;
+            cursor: pointer;
+            height: 44px;
+            position: relative;
+            z-index: 3;
+            padding: 0px 10px;
+            display: flex;
+            .tags__icon{
+              max-width: 100%;
+              max-height: 100%;
+              color: rgb(234, 53, 45);
+              height: 12px;
+              margin-right: 4px;
+              margin-top: 10px; 
+            }
+            .link{
+              display: block;
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 36px;
+              white-space: nowrap;
+              color: inherit;
+              text-decoration: none;
+            }
+          }
+        }
+        &__login{
+          display: flex;
+          &__new{
+            text-align: center;
+            .login-new{
+              background-color: rgb(234, 53, 45);
+              color: rgb(255, 255, 255);
+              display: block;
+              font-size: 14px;
+              border-width: 1px;
+              border-style: solid;
+              border-color: rgb(234, 53, 45);
+              border-image: initial;
+              border-radius: 4px;
+              padding: 8px 10px;
+              text-decoration: none;
+            }
+          }
+          &__in{
+            text-align: center;
+            margin-left: 11px;
+            .login-in{
+              background-color: rgb(255, 255, 255);
+              color: rgb(0, 149, 238);
+              display: block;
+              font-size: 14px;
+              border-width: 1px;
+              border-style: solid;
+              border-color: rgb(0, 149, 238);
+              border-image: initial;
+              border-radius: 4px;
+              padding: 8px 10px;
+              transition: all 0.3s ease-out 0s;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__contents{
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px 10px;
+    &__center{
+      position: relative;
+      &__screen{
+        left: 50%;
+        margin-left: -50vw;
+        position: relative;
+        top: 0px;
+        width: 100vw;
+        overflow: hidden;
+        .c-container {
+          position: relative;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 1000px;
+          padding: 0 15px;
+        }
+      }
+      &__pop-category{
+        background-color: rgb(255, 255, 255);
+        left: 50%;
+        margin-left: -50vw;
+        position: relative;
+        top: 0px;
+        width: 100vw;
+        padding: 40px 0 20px;
+        h2{
+          margin-bottom: 16px;
+          text-align: center;
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          font-size: 28px;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin: 0;
+          padding: 0;
+        }
+        &__list{
+          overflow-x: auto;
+          text-align: center;
+          white-space: nowrap;
+          margin-bottom: 10px; 
+          ul{
+            display: block;
+            text-align: center;
+            width: 100%;
+            margin: -10px 0px 0px -10px;
+            list-style: none;
+            margin: 0px;
+            .ladies{
+              @include categpry-list;
+            }
+            .mens{
+              @include categpry-list;
+            }
+            .appliances{
+              @include categpry-list;
+            }
+            .toys{
+              @include categpry-list;
+            }
+          }
+        }
+      }
+      &__items{
+        padding: 30px 0px 60px;
+        &__ladies{
+          @include item-list;
+        }
+        &__mens{
+          @include item-list;
+        }
+        &__appliances{
+          @include item-list;
+        }
+        &__toys{
+          @include item-list;
+        }
+      }
+    }
+  }
+  &__exhibit{
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 160px;
+    height: 160px;
+    font-size: 22px;
+    text-align: center;
+    z-index: 2;
+    &__link{
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      &__circle{
+        padding-top: 22px;
+        text-align: center;
+        height: 160px;
+        width: 160px;
+        background-color: rgb(234, 53, 45);
+        border-radius: 50%;
+        &__title{
+          font-size: 22px;
+          color: rgb(255, 255, 255);
+          margin-bottom: 5px; 
+        }
+        .camera__icon{
+          max-width: 100%;
+          max-height: 100%;
+          color: rgb(255, 255, 255);
+          display: block;
+          margin: 5px auto 0px;
+          overflow: hidden;
+          font-size: 60px;
+          
+        }
+      }
+    }
+  }
+  &__advert{
+    height: 260px;
+    @include advert;
+  }
+  &__footer{
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 0px 20px 10px;
+    display: block;
+    width: 100%;
+    overflow-x: scroll; 
+    &__guide{
+      width: 100%;
+      margin: 0px auto;
+      &__cellbox{
+        display: flex;
+        @include cell;
+      }
+      &__cell-2{
+        margin-top: 18px;
+        margin-right: 0px;
+        h2{
+          font-size: 16px;
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin: 0;
+          padding: 0;
+        }
+        &__box{
+          display: flex;
+          &__cell{
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+            padding: 0 10px 0 0;
+            margin-right: 10px;
+            ul{
+              li{
+                line-height: 1.4em;
+                margin: 16px 0px 0px;
+                .link{
+                  color: rgb(255, 255, 255);
+                  opacity: 0.7;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__country{
+        display: inline-block;
+        margin-top: 18px;
+        vertical-align: top;
+        width: 20%;
+        padding-right: 10px;
+        margin-right: 30px;
+        h2{
+          font-size: 16px;
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin: 0;
+          padding: 0;
+        }
+        ul{
+          display: flex;
+          li{
+            line-height: 1.4em;
+            margin: 16px 0 0 0;
+            padding-right: 10px;
+            .link{
+              color: white;
+              opacity: 0.7;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    &__end{
+      width: 1020px;
+      margin: 30px auto 20px;
+      -webkit-box-align: center;
+      align-items: center;
+      display: flex;
+      .link{
+        text-align: center;
+        color: inherit;
+        text-decoration: none;
+        img{
+          height: 33px;
+          width: 124px;
+          vertical-align: middle;
+        }
+      }
+      span{
+        text-align: center;
+        padding-left: 15px;
+        width: 75%;
+        font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+      }
+    }
+  }
+}

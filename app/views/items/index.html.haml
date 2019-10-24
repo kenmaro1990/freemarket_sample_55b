@@ -1,0 +1,146 @@
+#main-top
+  .main-top
+    = render 'shared/header'
+    .main-top__contents
+      .main-top__contents__center
+        .main-top__contents__center__screen
+          = render "slide"
+        .main-top__contents__center__pop-category
+          %h2 人気のカテゴリー
+          .main-top__contents__center__pop-category__list
+            %ul.list
+              %li.ladies
+                レディース
+              %li.mens
+                メンズ
+              %li.appliances
+                家電・スマホ・カメラ
+              %li.toys
+                おもちゃ・ホビー・グッズ
+        .main-top__contents__center__items
+          .main-top__contents__center__items__ladies
+            .main-top__contents__center__items__ladies__title
+              %h3 レディース新着アイテム
+              = link_to "http://google.co.jp", class: "link" do
+                %storng もっと見る
+                %i.far.fa-angle-rigth
+            %ul.main-top__contents__center__items__ladies__list
+              -# - @items.each do |item|
+              %li.main-top__contents__center__items__ladies__list__item
+                = link_to "http://google.co.jp", class: "link" do
+                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                  %span.price ¥2,900
+                  %figcaption
+                    %span 総レースワンピース
+          .main-top__contents__center__items__mens
+            .main-top__contents__center__items__mens__title
+              %h3 メンズ新着アイテム
+              = link_to "http://google.co.jp", class: "link" do
+                %storng もっと見る
+                %i.far.fa-angle-rigth
+            %ul.main-top__contents__center__items__mens__list
+              %ul.main-top__contents__center__items__mens__list__item
+                = link_to "http://google.co.jp", class: "link" do
+                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                  %span.price ¥2,900
+                  %figcaption
+                    %span 総レースワンピース
+          .main-top__contents__center__items__appliances
+            .main-top__contents__center__items__appliances__title
+              %h3 家電・スマホ・カメラ新着アイテム
+              = link_to "http://google.co.jp", class: "link" do
+                %storng もっと見る
+                %i.far.fa-angle-rigth
+            %ul.main-top__contents__center__items__appliances__list
+              %ul.main-top__contents__center__items__appliances__list__item
+                = link_to "http://google.co.jp", class: "link" do
+                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                  %span.price ¥2,900
+                  %figcaption
+                    %span 総レースワンピース  
+          .main-top__contents__center__items__toys
+            .main-top__contents__center__items__toys__title
+              %h3 おもちゃ・ホビー・グッズ新着アイテム
+              = link_to "http://google.co.jp", class: "link" do
+                %storng もっと見る
+                %i.far.fa-angle-rigth
+            %ul.main-top__contents__center__items__toys__list
+              %ul.main-top__contents__center__items__toys__list__item
+                = link_to "http://google.co.jp", class: "link" do
+                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                  %span.price ¥2,900
+                  %figcaption
+                    %span 総レースワンピース 
+        .main-top__contents__center__pop-category
+          %h2 人気のブランド
+          .main-top__contents__center__pop-category__list
+            %ul.list
+              %li.ladies
+                シャネル
+              %li.mens
+                ルイヴィトン
+              %li.appliances
+                シュプリーム
+              %li.toys
+                ナイキ
+        .main-top__contents__center__items
+          .main-top__contents__center__items__ladies
+            .main-top__contents__center__items__ladies__title
+              %h3 シャネル新着アイテム
+              = link_to "http://google.co.jp", class: "link" do
+                %storng もっと見る
+                %i.far.fa-angle-rigth
+            %ul.main-top__contents__center__items__ladies__list
+              -# - @items.each do |item|
+              %li.main-top__contents__center__items__ladies__list__item
+                = link_to "http://google.co.jp", class: "link" do
+                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                  %span.price ¥2,900
+                  %figcaption
+                    %span 総レースワンピース
+          .main-top__contents__center__items__mens
+            .main-top__contents__center__items__mens__title
+              %h3 ルイヴィトン新着アイテム
+              = link_to "http://google.co.jp", class: "link" do
+                %storng もっと見る
+                %i.far.fa-angle-rigth
+            %ul.main-top__contents__center__items__mens__list
+              %ul.main-top__contents__center__items__mens__list__item
+                = link_to "http://google.co.jp", class: "link" do
+                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                  %span.price ¥2,900
+                  %figcaption
+                    %span 総レースワンピース
+          .main-top__contents__center__items__appliances
+            .main-top__contents__center__items__appliances__title
+              %h3 シュプリーム新着アイテム
+              = link_to "http://google.co.jp", class: "link" do
+                %storng もっと見る
+                %i.far.fa-angle-rigth
+            %ul.main-top__contents__center__items__appliances__list
+              %ul.main-top__contents__center__items__appliances__list__item
+                = link_to "http://google.co.jp", class: "link" do
+                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                  %span.price ¥2,900
+                  %figcaption
+                    %span 総レースワンピース  
+          .main-top__contents__center__items__toys
+            .main-top__contents__center__items__toys__title
+              %h3 ナイキ新着アイテム
+              = link_to "http://google.co.jp", class: "link" do
+                %storng もっと見る
+                %i.far.fa-angle-rigth
+            %ul.main-top__contents__center__items__toys__list
+              %ul.main-top__contents__center__items__toys__list__item
+                = link_to "http://google.co.jp", class: "link" do
+                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                  %span.price ¥2,900
+                  %figcaption
+                    %span 総レースワンピース 
+    .main-top__exhibit
+      = link_to "http://google.co.jp", class: "main-top__exhibit__link" do
+        .main-top__exhibit__link__circle
+          .main-top__exhibit__link__circle__title 出品
+          = fa_icon "camera", class: "camera__icon"
+    = render partial: "shared/footer"
+    

@@ -76,7 +76,7 @@ gem 'pry-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'rails-i18n'
 gem 'payjp'
-
+gem 'ancestry'
 
 group :production do
   gem 'unicorn', '5.4.1'
