@@ -165,7 +165,6 @@ $fontSizeNormal: 14px;
 }
 
 .register-text {
-  width: 700px;
   height: 97px; 
   margin: 0 auto;
   background-color: #ffffff;
@@ -215,7 +214,6 @@ $fontSizeNormal: 14px;
 }
 
 .step1-main{
-  height: 1260px;
   @include login-background();
   padding-bottom:75px; 
 }
@@ -251,6 +249,8 @@ $fontSizeNormal: 14px;
    &__nameform {
     font-size: $fontSizeNormal;
     text-align: center;
+    margin: auto 0;
+    width: 342px;
     &--textarea {
       width: 165.5px;
       resize: none;
@@ -272,6 +272,9 @@ $fontSizeNormal: 14px;
    &__kana-nameform {
     font-size: 14px;
     text-align: center;
+    margin: auto 0;
+    width: 343px;
+
     &--textarea {
       width: 165.5px;
       resize: none;
@@ -305,7 +308,7 @@ $fontSizeNormal: 14px;
     &--caution {
       color: #888888;
       font-size:14px;
-      margin-top: 8px;
+      margin-top: 40px;
     }
   }
   &__captcha{
@@ -345,7 +348,6 @@ $fontSizeNormal: 14px;
 }
 
 .step2-main{
-  height: 403px;
   @include login-background();
   padding-bottom:75px; 
 }
@@ -390,7 +392,6 @@ $fontSizeNormal: 14px;
 }
 
 .step3-main{
-  height: 1110px;
   @include login-background();
   padding-bottom:75px; 
 }
@@ -581,10 +582,12 @@ $fontSizeNormal: 14px;
   font-size: 11px;
 }
 
+.field_with_errors {
+  width: 165.5px;
+}
 .error__red{
   color: #ea352d;
   font-size: 14px;
   margin-top: 8px ;
-
 }
 /*# sourceMappingURL=style.css.map */
