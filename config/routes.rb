@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     collection do
       get 'login'
       post'login'
-      delete 'login'
+      delete 'logout'
       get 'register'
       get 'information'
       get 'phonenumber'
