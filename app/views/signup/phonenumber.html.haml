@@ -16,13 +16,12 @@
 .step2-main
   .register-text  電話番号の確認
   .register-phonenumber
-    .register-phonenumber__box
-      %label.register-phonenumber__box--label 携帯電話の番号
-      %textarea.register-phonenumber__box--textarea{cols: "40", name: "phonenumber", placeholder: "携帯電話の番号を入力", rows: "1"}
-      .register-phonenumber__box--description 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-    = link_to "SMSを送信する", address_signup_index_path, class: "register-phonenumber__nextpage"
-    .register-phonenumber__description ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-    = link_to address_signup_index_path, class: "register-phonenumber__reason",method: :get do
-      電話番号の確認が必要な理由
-      %i.fa.fa-arrow-right
+    = form_for @user, url: address_signup_index_path, method: :get, html: {class: 'register-phonenumber__box'} do |f|
+      = f.text_field :phone_number, placeholder: '携帯電話の番号を入力', class: "register-profile__kana-nameform--textarea"
+      = render partial: 'layouts/error_messages', locals: {user: @user, column: "phone_number"}
+      = f.submit '次へ進む', class: 'register-profile__nextpage'
+      .register-phonenumber__description ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+      = link_to address_signup_index_path, class: "register-phonenumber__reason",method: :get do
+        電話番号の確認が必要な理由
+        %i.fa.fa-arrow-right
 = render "login-footer"
