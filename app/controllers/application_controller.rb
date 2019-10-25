@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_persons
   protect_from_forgery with: :exception
 
+
   private
 
   def production?

@@ -57,4 +57,57 @@ ActiveRecord::Schema.define(version: 20191023233209) do
   end
 
   add_foreign_key "item_images", "items"
+  
+ActiveRecord::Schema.define(version: 20191020033951) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "address_first_name",      null: false
+    t.string   "address_last_name",       null: false
+    t.string   "address_first_name_kana", null: false
+    t.string   "address_last_name_kana",  null: false
+    t.string   "postal_code",             null: false
+    t.integer  "prefecture_id"
+    t.string   "city",                    null: false
+    t.string   "block",                   null: false
+    t.string   "building"
+    t.string   "address_phone_number"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "customer_id"
+    t.string   "card_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nickname",                                          null: false
+    t.string   "email",                                             null: false
+    t.string   "first_name",                                        null: false
+    t.string   "last_name",                                         null: false
+    t.string   "first_name_kana",                                   null: false
+    t.string   "last_name_kana",                                    null: false
+    t.string   "phone_number",                                      null: false
+    t.text     "self_introduction",      limit: 65535
+    t.string   "encrypted_password",                   default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.integer  "birthyear",                                         null: false
+    t.integer  "birthmonth",                                        null: false
+    t.integer  "birthday",                                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
 end

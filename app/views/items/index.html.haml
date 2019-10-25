@@ -1,6 +1,9 @@
 #main-top
   .main-top
-    = render 'shared/header'
+    -if user_signed_in?  
+      =render partial: "shared/header-after-login"
+    -else
+      =render partial: "shared/header"
     .main-top__contents
       .main-top__contents__center
         .main-top__contents__center__screen

@@ -21,3 +21,5 @@ module FreemarketSample55b
     config.i18n.default_locale = :ja
   end
 end
+
+
