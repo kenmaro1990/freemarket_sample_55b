@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+%html
+  %head
+  %body
+    = render partial: "shared/header-after-login"
+    .category
+      .category-contents
+        .category-contents__title
+          %h2 カテゴリー一覧
+        .category-contents__parents
+          - @parents.each do |parent|
+            = link_to "#{parent.name}", "#root_category-#{parent.id}"
+        .category-contents__list
+          - @parents.each do |parent|
+            .category-contents__list__box
+              .category-contents__list__box__title 
+                %div{id: "root_category-#{parent.id}"}
+                  %h2
+                    = parent.name
+              .category-contents__list__box__inner
+                = link_to "すべて", category_path(parent), id: "#{parent.id}"
+                - parent.children.each do |child|
+                  .child_list
+                    %h2
+                      =child.name 
+                  .grandchild_list
+                    - child.children.each do |grandchild|
+                      .grandchild_list__name
+                        %p
+                          = link_to "#{grandchild.name}", category_path(grandchild),id: "#{grandchild.id}"  
+    = render partial: "shared/exhibit" 
+    = render partial: "shared/footer"
