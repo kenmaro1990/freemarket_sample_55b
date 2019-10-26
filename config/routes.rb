@@ -29,5 +29,10 @@ Rails.application.routes.draw do
       get 'transaction'
     end
   end
+
+  resources :categories do
+  end
   
+  resources :brands do
+  end
 end
