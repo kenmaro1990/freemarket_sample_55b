@@ -1,0 +1,59 @@
+.header
+  .header-image_mercari
+    = image_tag "/logo.svg", alt: "logo"
+.single-main
+  .buy-cheak-main
+    .buy-cheak-block 
+      .buy-cheak-block__title
+        %h2 購入内容の確認
+      .buy-cheak-block__content
+        .content-post
+          .content-post__detail
+            .content-post__detail__image
+              = image_tag "bag.jpg", size: "64x64", alt: "buy-item-image"
+            %p.content-post__detail__name
+              ピンクのバッグ
+          .content-post__buy-form
+            .buy-post-price
+              .buy-post-price__fee
+                ¥ 2,000
+              .buy-post-price__cost
+                送料込み
+            %ul.buy-post-point
+              %li.buy-post-point__result
+                ポイントはありません
+            %ul.buy-post-payment
+              %li.buy-post-payment.detail
+                .buy-post-payment__fee
+                  支払い金額
+                .buy-post-payment__price
+                  ¥ 2,000
+            .buy-post-submit
+              購入する
+      .buy-cheak-block__address
+        .address-post
+          %h3 配送先
+          %address.address-post__info-text
+            〒111-1111
+            %br
+            東京都○○区○○町１−１−１
+            %br
+            山田太郎
+          .address-post__entry-bottom
+            %span 変更する
+            %i.fa.fa-chevron-right
+
+      .buy-cheak-block__pay
+        .pay-post
+          %h3 支払い方法
+          .pay-post__credit-number
+            **** **** ****
+            %br
+            01/00  
+          .pay-post__credit-image
+            = image_tag "jcb.svg", size: "34x20", alt: "credit-image"
+          .pay-post__entry-bottom
+            %span 変更する
+            %i.fa.fa-chevron-right
+
+= render "single-footer"
