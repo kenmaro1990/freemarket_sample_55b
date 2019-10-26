@@ -13,9 +13,11 @@
         .main-top__header__box__menu__search__category
           = fa_icon "list-ul", class: "list__icon"
           = link_to 'カテゴリーから探す', 'http://google.co.jp', class: 'link'
+          = render 'categories/window'
         .main-top__header__box__menu__search__brand
           = fa_icon "tags", class: "tags__icon"
           = link_to 'ブランドから探す', 'http://google.co.jp', class: 'link'
+          = render 'brands/window'
       .main-top__header__box__menu__other
         %li.header__liked-items
           =link_to "http://google.co.jp", class:"header_box_menu" do

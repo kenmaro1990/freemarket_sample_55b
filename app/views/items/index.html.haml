@@ -28,13 +28,16 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__ladies__list
-              -# - @items.each do |item|
-              %li.main-top__contents__center__items__ladies__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース
+              - @items.each do |item|
+                %li.main-top__contents__center__items__ladies__list__item
+                  = link_to "http://google.co.jp", class: "link" do
+                    = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
+                    %span.price
+                      ¥
+                      =item.price
+                    %figcaption
+                      %span
+                        =item.name
           .main-top__contents__center__items__mens
             .main-top__contents__center__items__mens__title
               %h3 メンズ新着アイテム
@@ -140,10 +143,6 @@
                   %span.price ¥2,900
                   %figcaption
                     %span 総レースワンピース 
-    .main-top__exhibit
-      = link_to new_item_path, class: "main-top__exhibit__link" do
-        .main-top__exhibit__link__circle
-          .main-top__exhibit__link__circle__title 出品
-          = fa_icon "camera", class: "camera__icon"
+    = render partial: "shared/exhibit"
     = render partial: "shared/footer"
     
