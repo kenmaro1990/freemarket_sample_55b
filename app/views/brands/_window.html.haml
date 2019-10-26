@@ -1,0 +1,4 @@
+.brand_list 
+  .persons_list
+    - @persons.each do |person|
+      = link_to "#{person.name}", brand_path(person),class: "person_brand", id: "#{person.id}"
