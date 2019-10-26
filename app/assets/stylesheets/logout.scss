@@ -1,0 +1,20 @@
+.mypage__logout{
+  padding: 64px;
+  &__content{
+  max-width: 320px;
+  margin: 0 auto;  
+  }
+  .btn{
+    background: #ea352d;
+    border: 1px solid #fd837d;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+}

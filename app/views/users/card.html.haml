@@ -1,0 +1,31 @@
+%html
+  %head
+  %body
+    =render partial: "shared/header"
+
+    .mypage__wrapper
+      .mypage__identification
+        %h2.mypage__identification__head
+          支払い方法
+        .mypage__card__content
+          %section
+            .mypage__card__content--head
+              %h3.mypage__card__content--head-text
+                クレジットカード一覧
+            .mypage__card__content--content
+              %li
+                .payment__information
+                  .payment__information--visa-image
+                    = image_tag 'visa.svg', class: "visa-image"
+                  .payment__information--num
+                    ************0000
+                  .payment__information--num
+                    10/25
+                  %button.payment__information--remove
+                    削除する
+            .mypage__card__content--bottom
+              =link_to "http://google.co.jp", class:"payment__method" do
+                %span 支払い方法について
+                =fa_icon "chevron-right"
+      =render partial:"sidebar"
+    = render partial: "shared/footer"

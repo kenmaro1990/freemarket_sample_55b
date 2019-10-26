@@ -1,0 +1,19 @@
+%html
+  %head
+  %body
+    =render partial: "shared/header-after-login"
+
+    .mypage__wrapper
+      .mypage-content
+        %section.mypage-content__edit-profile
+          %h2 プロフィール
+          = form_for "http://google.co.jp" , html:{class: "mypage-content__edit-profile__form"} do |f|
+            .mypage-content__edit-profile__form__name
+              =image_tag ("face.jpg"), class:"header_face_icon"
+              = f.text_field :nickname, class: "mypage-content__edit-profile__form__name__user", placeholder: "例)　AYA☆セール中"
+            .mypage-content__edit-profile__form__text
+              = f.text_area :introduce, class: "mypage-content__edit-profile__form__text__introduce", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+              .mypage-content__edit-profile__form__text__bottun
+                = f.submit "変更する", class: 'mypage-content__edit-profile__form__text__bottun__btn'
+      =render partial:"sidebar"
+    = render partial: "shared/footer"
