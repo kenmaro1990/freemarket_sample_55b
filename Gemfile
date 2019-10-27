@@ -73,9 +73,9 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'pry-rails'
-gem 'recaptcha', require: "recaptcha/rails"
 gem 'rails-i18n'
 gem 'ancestry'
+gem 'pry-rails'
 
 group :production do
   gem 'unicorn', '5.4.1'
