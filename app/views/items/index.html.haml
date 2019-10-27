@@ -1,6 +1,9 @@
 #main-top
   .main-top
-    = render 'shared/header'
+    -if user_signed_in?  
+      =render partial: "shared/header-after-login"
+    -else
+      =render partial: "shared/header"
     .main-top__contents
       .main-top__contents__center
         .main-top__contents__center__screen
@@ -21,33 +24,25 @@
           .main-top__contents__center__items__ladies
             .main-top__contents__center__items__ladies__title
               %h3 レディース新着アイテム
-              = link_to "http://google.co.jp", class: "link" do
-                %storng もっと見る
-                %i.far.fa-angle-rigth
+              = render "right-icon"
             %ul.main-top__contents__center__items__ladies__list
               = render partial: "item", collection: @ladies_items, as: "item"
           .main-top__contents__center__items__mens
             .main-top__contents__center__items__mens__title
               %h3 メンズ新着アイテム
-              = link_to "http://google.co.jp", class: "link" do
-                %storng もっと見る
-                %i.far.fa-angle-rigth
+              = render "right-icon"
             %ul.main-top__contents__center__items__mens__list
               = render partial: "item", collection: @mens_items, as: "item"
           .main-top__contents__center__items__appliances
             .main-top__contents__center__items__appliances__title
               %h3 家電・スマホ・カメラ新着アイテム
-              = link_to "http://google.co.jp", class: "link" do
-                %storng もっと見る
-                %i.far.fa-angle-rigth
+              = render "right-icon"
             %ul.main-top__contents__center__items__appliances__list
               = render partial: "item", collection: @electrical_appliances, as: "item"
           .main-top__contents__center__items__toys
             .main-top__contents__center__items__toys__title
               %h3 おもちゃ・ホビー・グッズ新着アイテム
-              = link_to "http://google.co.jp", class: "link" do
-                %storng もっと見る
-                %i.far.fa-angle-rigth
+              = render "right-icon"
             %ul.main-top__contents__center__items__toys__list
               = render partial: "item", collection: @toys, as: "item"
         .main-top__contents__center__pop-category
@@ -66,39 +61,27 @@
           .main-top__contents__center__items__ladies
             .main-top__contents__center__items__ladies__title
               %h3 シャネル新着アイテム
-              = link_to "http://google.co.jp", class: "link" do
-                %storng もっと見る
-                %i.far.fa-angle-rigth
+              = render "right-icon"
             %ul.main-top__contents__center__items__ladies__list
               = render partial: "item", collection: @chanel, as: "item"
           .main-top__contents__center__items__mens
             .main-top__contents__center__items__mens__title
               %h3 ルイヴィトン新着アイテム
-              = link_to "http://google.co.jp", class: "link" do
-                %storng もっと見る
-                %i.far.fa-angle-rigth
+              = render "right-icon"
             %ul.main-top__contents__center__items__mens__list
               = render partial: "item", collection: @louis_vuitton, as: "item"
           .main-top__contents__center__items__appliances
             .main-top__contents__center__items__appliances__title
               %h3 シュプリーム新着アイテム
-              = link_to "http://google.co.jp", class: "link" do
-                %storng もっと見る
-                %i.far.fa-angle-rigth
+              = render "right-icon"
             %ul.main-top__contents__center__items__appliances__list
               = render partial: "item", collection: @supreme, as: "item"
           .main-top__contents__center__items__toys
             .main-top__contents__center__items__toys__title
               %h3 ナイキ新着アイテム
-              = link_to "http://google.co.jp", class: "link" do
-                %storng もっと見る
-                %i.far.fa-angle-rigth
+              = render "right-icon"
             %ul.main-top__contents__center__items__toys__list
               = render partial: "item", collection: @nike, as: "item"
-    .main-top__exhibit
-      = link_to "http://google.co.jp", class: "main-top__exhibit__link" do
-        .main-top__exhibit__link__circle
-          .main-top__exhibit__link__circle__title 出品
-          = fa_icon "camera", class: "camera__icon"
+    = render partial: "shared/exhibit"
     = render partial: "shared/footer"
     

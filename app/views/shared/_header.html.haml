@@ -13,11 +13,13 @@
         .main-top__header__box__menu__search__category
           = fa_icon "list-ul", class: "list__icon"
           = link_to 'カテゴリーから探す', 'http://google.co.jp', class: 'link'
+          = render 'categories/window'
         .main-top__header__box__menu__search__brand
           = fa_icon "tags", class: "tags__icon"
           = link_to 'ブランドから探す', 'http://google.co.jp', class: 'link'
+          = render 'brands/window'
       .main-top__header__box__menu__login
         .main-top__header__box__menu__login__new
           = link_to '新規会員登録', register_signup_index_path, class: 'login-new'
         .main-top__header__box__menu__login__in
-          = link_to 'ログイン', login_signup_index_path, class: 'login-in'
+          = link_to 'ログイン', new_user_session_path, class: 'login-in'

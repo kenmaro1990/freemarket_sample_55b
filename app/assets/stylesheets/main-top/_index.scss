@@ -7,6 +7,7 @@
   box-sizing: border-box;
 }
 
+
 .app_img:hover{
   opacity: 0.6;
 }
@@ -348,10 +349,10 @@
     font-size: 22px;
     text-align: center;
     z-index: 2;
+    text-decoration: none; 
     &__link{
       display: block;
       color: inherit;
-      text-decoration: none;
       &__circle{
         padding-top: 22px;
         text-align: center;
