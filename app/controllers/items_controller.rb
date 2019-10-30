@@ -2,6 +2,9 @@ class ItemsController < ApplicationController
   def new
   end
 
+  def show
+  end
+
   def index
     @items = Item.includes(:item_images).order('id DESC').limit(10)
     @ladies_items = Item.includes(:item_images).where(category_id: 1).limit(10).order('id DESC')
