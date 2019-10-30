@@ -297,5 +297,6 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
 
   config.scoped_views = true
+  config.secret_key = '6aa48ea8e19b15aeb4d78a376d3bf134028e428435d502e0dc61fee758aaa8f4ef56acd7fc5e626984c74fb1f2ea7f799f6fcc995ab9f27c48534e1b9cdca6ae'
 
 end
