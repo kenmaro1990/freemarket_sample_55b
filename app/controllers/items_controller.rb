@@ -17,4 +17,13 @@ class ItemsController < ApplicationController
     @nike = Item.includes(:item_images).where(brand_id: 4).limit(10).order('id DESC')
   end
   
+  def destroy
+    if @item.destroy
+      # 仮でルートへ遷移させる
+      redirect_to root, notice: '出品を削除しました'
+    else
+      render @item
+    end
+  end
+
 end

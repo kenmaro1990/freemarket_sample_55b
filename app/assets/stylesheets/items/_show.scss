@@ -110,6 +110,36 @@
   }
  } 
 
+  .item-edit-content {
+    height: 262px;
+    margin: 40px auto 0;
+    padding: 24px 40px 40px 40px;
+    width: 700px;
+    background-color: #fff;
+
+    .edit-btn {
+      display: block;
+      width: 620px;
+      margin-top: 16px;
+      background: #ea352d;
+      text-align: center;
+      font-size: 24px;
+      line-height: 50px;
+      color: #fff;
+    }
+
+    .destroy-btn {
+      display: block;
+      width: 620px;
+      margin-top: 16px;
+      background-color: #AAAAAA;
+      text-align: center;
+      font-size: 24px;
+      line-height: 50px;
+      color: #fff;
+    }
+  }
+
   .item-detail-message {
     height: 262px;
     margin: 40px auto 0;
