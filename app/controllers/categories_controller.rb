@@ -11,6 +11,16 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def create
+  def show
+    @categories = Category.find(params[:id])
   end
+
+  # def child
+  #   @child = Category.where(ancestry: nil).children
+  # end
+  
+  # def grandchild
+  #   @grandchild = Category.where(ancestry: nil).children.children
+  # end
+  
 end

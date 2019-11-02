@@ -12,12 +12,38 @@
 
 ActiveRecord::Schema.define(version: 20191023233209) do
 
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "address_first_name",      null: false
+    t.string   "address_last_name",       null: false
+    t.string   "address_first_name_kana", null: false
+    t.string   "address_last_name_kana",  null: false
+    t.string   "postal_code",             null: false
+    t.integer  "prefecture_id"
+    t.string   "city",                    null: false
+    t.string   "block",                   null: false
+    t.string   "building"
+    t.string   "address_phone_number"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "ancestry"
     t.index ["ancestry"], name: "index_brands_on_ancestry", using: :btree
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "customer_id"
+    t.string   "card_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -56,36 +82,6 @@ ActiveRecord::Schema.define(version: 20191023233209) do
     t.datetime "updated_at",                    null: false
   end
 
-  add_foreign_key "item_images", "items"
-  
-ActiveRecord::Schema.define(version: 20191020033951) do
-
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.string   "address_first_name",      null: false
-    t.string   "address_last_name",       null: false
-    t.string   "address_first_name_kana", null: false
-    t.string   "address_last_name_kana",  null: false
-    t.string   "postal_code",             null: false
-    t.integer  "prefecture_id"
-    t.string   "city",                    null: false
-    t.string   "block",                   null: false
-    t.string   "building"
-    t.string   "address_phone_number"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
-  end
-
-  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.string   "customer_id"
-    t.string   "card_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
-  end
-
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                                          null: false
     t.string   "email",                                             null: false
@@ -110,4 +106,5 @@ ActiveRecord::Schema.define(version: 20191020033951) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "item_images", "items"
 end

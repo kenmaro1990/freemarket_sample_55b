@@ -1,3 +1,6 @@
+@mixin link_hover {
+  text-decoration: underline;
+}
 @mixin cell {
   &__cell{
     display: inline-block;
@@ -112,7 +115,10 @@
   border-radius: 15px;
   padding: 8px 16px;
   color: inherit;
-  text-decoration: none;
+  a{
+    text-decoration: none;
+    color: gray;
+  }
 }
 
 @mixin item-list{
