@@ -72,10 +72,12 @@
       margin-top: 16px;
       background: #ea352d;
       text-align: center;
-      font-size: 24px;
-      line-height: 60px;
-      color: #fff;
-      font-weight: 600;
+      &--link {
+        font-size: 24px;
+        line-height: 60px;
+        color: #fff;
+        font-weight: 600;
+      } 
     }
   
   .item-description {

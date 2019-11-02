@@ -68,7 +68,7 @@
       %span.item__shipping-fee
         送料込み
     %button.item__buy-btn 
-      購入画面に進む
+      = link_to "購入画面に進む", transaction_items_path, class: "item__buy-btn--link"
     .item-description 
       %p.item-description__inner
         商品説明 商品説明 商品説明 商品説明 商品説明
