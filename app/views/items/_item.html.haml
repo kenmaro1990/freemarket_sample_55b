@@ -1,0 +1,10 @@
+%li.main-top__contents__center__items__ladies__list__item
+  = link_to "http://google.co.jp", class: "link" do
+    -image = item.item_images[0]
+    =image_tag "#{image.image}"
+    %span.price
+      ¥
+      =item.price
+    %figcaption
+      %span
+        =item.name
