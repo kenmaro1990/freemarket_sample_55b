@@ -1,0 +1,25 @@
+$(function(){
+  $('.input-price-area').on('keyup', function(e){
+    var input = $("#item_price").val();
+
+    $.ajax({
+      type: 'GET',
+      url: '/items/new',
+      data: { keyword: input },
+      dataType: 'json',
+    })
+    .done(function(data){
+      if (data.price >= 300) {
+        $('#item_fee').text(data.fee);
+        $('#item_profit').text(data.profit);
+      }
+      else{
+        $('#item_fee').text('-')
+        $('#item_profit').text('-')
+      }
+    })
+    .fail(function(){
+      alert('無効な値です');
+    })
+  })
+})
