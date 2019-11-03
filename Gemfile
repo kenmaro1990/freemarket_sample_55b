@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
   gem  "better_errors"
   gem 'binding_of_caller'
   gem 'rspec-rails'
@@ -51,7 +52,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'faker'
   gem 'capybara'
-
 end
 
 group :development do
@@ -73,7 +73,6 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'pry-rails'
-gem 'recaptcha', require: "recaptcha/rails"
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'pry-rails'
@@ -81,4 +80,8 @@ gem "gretel"
 
 group :production do
   gem 'unicorn', '5.4.1'
+end
+
+group :test do
+  gem 'faker'
 end

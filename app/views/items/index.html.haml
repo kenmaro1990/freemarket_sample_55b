@@ -30,16 +30,7 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__ladies__list
-              - @items.each do |item|
-                %li.main-top__contents__center__items__ladies__list__item
-                  = link_to "http://google.co.jp", class: "link" do
-                    = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                    %span.price
-                      ¥
-                      =item.price
-                    %figcaption
-                      %span
-                        =item.name
+              = render partial: "item", collection: @ladies_items, as: "item"
           .main-top__contents__center__items__mens
             .main-top__contents__center__items__mens__title
               %div{id: "root_index-2"}
@@ -48,12 +39,7 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__mens__list
-              %ul.main-top__contents__center__items__mens__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース
+              = render partial: "item", collection: @mens_items, as: "item"
           .main-top__contents__center__items__appliances
             .main-top__contents__center__items__appliances__title
               %div{id: "root_index-3"}
@@ -62,12 +48,7 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__appliances__list
-              %ul.main-top__contents__center__items__appliances__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース  
+              = render partial: "item", collection: @electrical_appliances, as: "item"
           .main-top__contents__center__items__toys
             .main-top__contents__center__items__toys__title
               %div{id: "root_index-4"}
@@ -76,12 +57,7 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__toys__list
-              %ul.main-top__contents__center__items__toys__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース 
+              = render partial: "item", collection: @toys, as: "item"
         .main-top__contents__center__pop-category
           %h2 人気のブランド
           .main-top__contents__center__pop-category__list
@@ -103,13 +79,7 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__ladies__list
-              -# - @items.each do |item|
-              %li.main-top__contents__center__items__ladies__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース
+              = render partial: "item", collection: @chanel, as: "item"
           .main-top__contents__center__items__mens
             .main-top__contents__center__items__mens__title
               %div{id: "root_index-6"}
@@ -118,12 +88,7 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__mens__list
-              %ul.main-top__contents__center__items__mens__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース
+              = render partial: "item", collection: @louis_vuitton, as: "item"
           .main-top__contents__center__items__appliances
             .main-top__contents__center__items__appliances__title
               %div{id: "root_index-7"}
@@ -132,12 +97,7 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__appliances__list
-              %ul.main-top__contents__center__items__appliances__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース  
+              = render partial: "item", collection: @supreme, as: "item"
           .main-top__contents__center__items__toys
             .main-top__contents__center__items__toys__title
               %div{id: "root_index-8"}
@@ -146,12 +106,7 @@
                 %storng もっと見る
                 %i.far.fa-angle-rigth
             %ul.main-top__contents__center__items__toys__list
-              %ul.main-top__contents__center__items__toys__list__item
-                = link_to "http://google.co.jp", class: "link" do
-                  = image_tag 'https://static.mercdn.net/thumb/photos/m83493915413_1.jpg?1565708570', height: '188', width: '188'
-                  %span.price ¥2,900
-                  %figcaption
-                    %span 総レースワンピース 
+              = render partial: "item", collection: @nike, as: "item"
     = render partial: "shared/exhibit"
     = render partial: "shared/footer"
     
