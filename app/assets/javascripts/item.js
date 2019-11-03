@@ -9,7 +9,7 @@ $(function(){
       dataType: 'json',
     })
     .done(function(data){
-      if (data.price >= 300) {
+      if (data.price >= 300 && data.price <= 9999999) {
         $('#item_fee').text(data.fee);
         $('#item_profit').text(data.profit);
       }
