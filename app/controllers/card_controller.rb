@@ -10,6 +10,8 @@ class CardController < ApplicationController
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     customer = Payjp::Customer.create(card: params[:payjpToken])
     @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: params[:payjpToken])
+    redirect_to complete_signup_index_path
+
   end
 
   def pay
@@ -20,6 +22,7 @@ class CardController < ApplicationController
     )
     @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
     @card.save
+    redirect_to complete_signup_index_path
   end
 
   def destroy

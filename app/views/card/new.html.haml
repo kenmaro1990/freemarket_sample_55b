@@ -1,55 +1,69 @@
-= form_tag( "/card/pay", method: :post, id:'charge-form') do
-  %span.charge-errors
-  .register-inner__content
+.header
+  .header__image--mercari
+    = link_to image_tag('/logo.svg'), root_path
+  %ol.progress-bar
+    %li.is-active
+      %span 会員情報
+    %li.is-active
+      %span 電話番号認証
+    %li.is-active
+      %span  お届け先住所入力
+    %li.is-active.is-active__last
+      %span 支払い方法
+    %li
+      %span 完了
+  
+.step4-main
+  = form_tag( "/card/pay", method: :post, id:'charge-form') do
+    %span.charge-errors
+    .register-card__number
+      .register-inner__content
+      .register-card__number
+        %span.register-card__number--label  カード番号
+        %span.register-required 必須
+        %input.register-card__number--textarea{maxlength: "16", name: "number", placeholder: "カード番号", type: "text", id: "payment_card_no"}/
 
-    .form-group
-      %span.registration_font カード番号
-      %span.require-icon 必須
-      %input.number.input-default{maxlength: "16", name: "number", placeholder: "カード番号", type: "text", id: "payment_card_no"}/
+      .register-card__date
+        %span.register-card__date--label 有効期限
+        %span.register-required 必須
+        .expiration_date_box
+          .expiration_date_box__wrap
+            %select.register-card__date--select#payment_expiration_date_1i{maxlength: "2", name: "exp_month", type: "text"}
+              %option{value: "1"}01
+              %option{value: "2"}02
+              %option{value: "3"}03
+              %option{value: "4"}04
+              %option{value: "5"}05
+              %option{value: "6"}06
+              %option{value: "7"}07
+              %option{value: "8"}08
+              %option{value: "9"}09
+              %option{value: "10"}10
+              %option{value: "11"}11
+              %option{value: "12"}12
+            %i.fa.fa-angle-down.payment-select-icon
+            %text.expiration_date_box__text 月
 
-    .form-group
-      %span.registration_font 有効期限
-      %span.require-icon 必須
-      .expiration_date_box
-        .expiration_date_box__wrap
-          %select.exp_month#payment_expiration_date_1i{maxlength: "2", name: "exp_month", type: "text"}
-            %option{value: "1"}01
-            %option{value: "2"}02
-            %option{value: "3"}03
-            %option{value: "4"}04
-            %option{value: "5"}05
-            %option{value: "6"}06
-            %option{value: "7"}07
-            %option{value: "8"}08
-            %option{value: "9"}09
-            %option{value: "10"}10
-            %option{value: "11"}11
-            %option{value: "12"}12
-          %i.fas.fa-angle-down.payment-select-icon
-          %text.expiration_date_box__text 月
+            %select.register-card__date--select#payment_expiration_date_2i{maxlength: "4", name: "exp_year", type: "text"}
+              %option{value: "2019"}19
+              %option{value: "2020"}20
+              %option{value: "2021"}21
+              %option{value: "2022"}22
+              %option{value: "2023"}23
+              %option{value: "2024"}24
+              %option{value: "2025"}25
+              %option{value: "2026"}26
+              %option{value: "2027"}27
+              %option{value: "2028"}28
+              %option{value: "2029"}29
+            %i.fa.fa-angle-down.payment-select-icon
+            %text.expiration_date_box__text 年
 
-      .expiration_date_box
-        .expiration_date_box__wrap
-          %select.exp_year#payment_expiration_date_2i{maxlength: "4", name: "exp_year", type: "text"}
-            %option{value: "2019"}19
-            %option{value: "2020"}20
-            %option{value: "2021"}21
-            %option{value: "2022"}22
-            %option{value: "2023"}23
-            %option{value: "2024"}24
-            %option{value: "2025"}25
-            %option{value: "2026"}26
-            %option{value: "2027"}27
-            %option{value: "2028"}28
-            %option{value: "2029"}29
-          %i.fas.fa-angle-down.payment-select-icon
-          %text.expiration_date_box__text 年
-
-    .form-group
-      %span.registration_font セキュリティー番号
-      %span.require-icon 必須
-      %input.cvc.input-default{maxlength: "3", name: "cvc", placeholder: "カード背面もしくは４桁もしくは３桁の番号", type: "text", id: "payment_card_cvc"}
-      .card-indo
-        カード裏面の番号とは
-    .actions
-      %button.register-member#submit-button{type: "submit"} 登録完了
+      .register-card__code
+        %span.register-card__code--label セキュリティー番号
+        %span.register-required 必須
+        %input.register-card__code--textarea{maxlength: "3", name: "cvc", placeholder: "カード背面もしくは４桁もしくは３桁の番号", type: "text", id: "payment_card_cvc"}
+          %i.fa.fa-question-circle  カード裏面の番号とは？
+      .actions
+        %button.register-profile__nextpage#submit-button{type: "submit"} 登録完了
+= render "signup/login-footer"

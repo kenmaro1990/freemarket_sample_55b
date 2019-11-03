@@ -42,7 +42,7 @@ class SignupController < ApplicationController
   end
 
   def complete
-    sign_in User.find(session[:id])
+    # sign_in User.find(session[:id])
   end
 
   def create
