@@ -38,6 +38,16 @@ class ItemsController < ApplicationController
       '2~3日で発送',
       '4~7日で発送'
     ]
+
+    @price  = params[:keyword].to_i
+    @fee    = @price * 0.1
+    @profit = @price - @fee
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
   end
 
   def show
@@ -46,7 +56,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save!
-    redirect_to root_path
   end
 
   def index
@@ -76,7 +85,7 @@ class ItemsController < ApplicationController
       :lead_time).merge(
         user_id: current_user.id,
         seller_id: current_user.id,
-        brand_id: 0,
+        brand_id: 1,
         shipping_method: "",
         display: "open"
       )
