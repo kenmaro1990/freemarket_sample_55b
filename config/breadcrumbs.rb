@@ -66,15 +66,6 @@ crumb :category do |category|
   parent :categories
 end
 
-crumb :category_child do |category|
-  link category.children.name, category_path(category.children)
-  parent :category
-end
-
-crumb :category_grand_child do |category|
-  link category.children.children.name, category_path(category.children.children)
-  parent :category_child
-end
 
 # crumb :brands do
 #   link "ブランド一覧"
