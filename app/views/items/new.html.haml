@@ -1,6 +1,7 @@
 .header
   .header-image_mercari
-    = image_tag "/logo.svg", alt: "logo"
+    =link_to root_path do
+      = image_tag "/logo.svg", alt: "logo"
 .single-main
   .sell-container
     .sell-container__inner
@@ -103,12 +104,12 @@
           .commission
             .l-left
               販売手数料(10%)
-            .l-right
+            .l-right{ id: "item_fee" }
               −
           .profits
             .l-left
               販売利益
-            .l-right
+            .l-right{ id: "item_profit" }
               −
 
         .sell-content
