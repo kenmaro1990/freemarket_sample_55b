@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'card/new'
+
+  get 'card/show'
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'items#index'
@@ -21,6 +25,14 @@ Rails.application.routes.draw do
       get 'address'
       get 'card'
       get 'complete'
+    end
+  end
+
+  resources :card do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
     end
   end
 
