@@ -5,21 +5,23 @@
 .single-main
   .sell-container
     .sell-container__inner
-      = form_for [@item] do |f|
+      = form_for @item do |f|
         .sell-container__inner__head
           %h2
             商品の情報を入力
-        -# .sell-upload-box
-        -#   =f.label :item_images, class:"form-label"
-        -#     出品画像
-        -#   %span.form-require
-        -#     必須
-        -#   %p
-        -#     最大10枚までアップロードできます
-        -#   .sell-dropbox-container
-        -#     %label.image-uploader
-        -#       .sell-upload-drop-box
-        -#         %pre ドロップアンドドロップ<br>またはクリックしてファイルをアップロード
+        .sell-upload-box
+          出品画像
+          %span.form-require
+            必須
+          %p
+            最大10枚までアップロードできます
+          .sell-dropbox-container
+            %label.image-uploader
+              .sell-upload-drop-box
+                %pre ドロップアンドドロップ<br>またはクリックしてファイルをアップロード
+                = f.fields_for :item_images do |i|
+                  = i.file_field :image, class:"form-label"
+
         
         .sell-content
           .form-group-first
