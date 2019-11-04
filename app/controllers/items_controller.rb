@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
+
   def new
     @item = Item.new
+    @item.item_images.build
 
     @category_array = [
       {id: "", name: "---"},
@@ -55,6 +57,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    binding.pry
     @item.save!
   end
 
@@ -82,7 +85,10 @@ class ItemsController < ApplicationController
       :condition, 
       :postage, 
       :departure_area, 
-      :lead_time).merge(
+      :lead_time,
+      item_images_attributes: [
+        :image
+      ]).merge(
         user_id: current_user.id,
         seller_id: current_user.id,
         brand_id: 1,
