@@ -42,7 +42,6 @@ class SignupController < ApplicationController
   end
 
   def complete
-    # sign_in User.find(session[:id])
   end
 
   def create
@@ -59,13 +58,13 @@ class SignupController < ApplicationController
       birthyear: session[:birthyear],
       birthmonth: session[:birthmonth],
       birthday: session[:birthday],
-      address_attributes: session[:address_attributes]
     )
-    @user.build_address(session[:address_attributes])
+    @user.build_address(user_params[:address_attributes])
     @user.save!
     if @user.save
       session[:id] = @user.id
-      redirect_to complete_signup_index_path
+      sign_in User.find(session[:id])
+      redirect_to new_card_path
     else 
     end
   end

@@ -14,56 +14,66 @@
       %span 完了
   
 .step4-main
-  = form_tag( "/card/pay", method: :post, id:'charge-form') do
-    %span.charge-errors
-    .register-card__number
-      .register-inner__content
+  .register-text 
+    支払い方法
+  .register-card
+    = form_tag( "/card/pay", method: :post, id:'charge-form', html: {class: 'register-card'}) do
+      %span.charge-errors
       .register-card__number
-        %span.register-card__number--label  カード番号
-        %span.register-required 必須
-        %input.register-card__number--textarea{maxlength: "16", name: "number", placeholder: "カード番号", type: "text", id: "payment_card_no"}/
+        .register-inner__content
+        .register-card__number
+          %span.register-card__number--label  カード番号
+          %span.register-required 必須
+          %input.register-card__number--textarea{maxlength: "16", name: "number", placeholder: "カード番号", type: "text", id: "payment_card_no"}/
+          =image_tag ("visa.png"), class: "register-card-icon",style: 'height: 20px;'
+          =image_tag ("mastercard.png"), class: "register-card-icon",style: 'height: 20px;'
+          =image_tag ("saison-card.png"), class: "register-card-icon",style: 'height: 20px;'
+          =image_tag ("jcb.png"), class: "register-card-icon",style: 'height: 20px;'
+          =image_tag ("americanExpress.png"), class: "register-card-icon",style: 'height: 20px;'
+          =image_tag ("dinersClub.png"), class: "register-card-icon",style: 'height: 20px;'
+          =image_tag ("discover.png"), class: "register-card-icon",style: 'height: 20px;'
 
-      .register-card__date
-        %span.register-card__date--label 有効期限
-        %span.register-required 必須
-        .expiration_date_box
-          .expiration_date_box__wrap
-            %select.register-card__date--select#payment_expiration_date_1i{maxlength: "2", name: "exp_month", type: "text"}
-              %option{value: "1"}01
-              %option{value: "2"}02
-              %option{value: "3"}03
-              %option{value: "4"}04
-              %option{value: "5"}05
-              %option{value: "6"}06
-              %option{value: "7"}07
-              %option{value: "8"}08
-              %option{value: "9"}09
-              %option{value: "10"}10
-              %option{value: "11"}11
-              %option{value: "12"}12
-            %i.fa.fa-angle-down.payment-select-icon
-            %text.expiration_date_box__text 月
+        .register-card__date
+          %span.register-card__date--label 有効期限
+          %span.register-required 必須
+          .expiration_date_box
+            .expiration_date_box__wrap
+              %select.register-card__date--select#payment_expiration_date_1i{maxlength: "2", name: "exp_month", type: "text"}
+                %option{value: "1"}01
+                %option{value: "2"}02
+                %option{value: "3"}03
+                %option{value: "4"}04
+                %option{value: "5"}05
+                %option{value: "6"}06
+                %option{value: "7"}07
+                %option{value: "8"}08
+                %option{value: "9"}09
+                %option{value: "10"}10
+                %option{value: "11"}11
+                %option{value: "12"}12
+              %i.fa.fa-angle-down.select-icon
+              %text.expiration_date_box__text 月
 
-            %select.register-card__date--select#payment_expiration_date_2i{maxlength: "4", name: "exp_year", type: "text"}
-              %option{value: "2019"}19
-              %option{value: "2020"}20
-              %option{value: "2021"}21
-              %option{value: "2022"}22
-              %option{value: "2023"}23
-              %option{value: "2024"}24
-              %option{value: "2025"}25
-              %option{value: "2026"}26
-              %option{value: "2027"}27
-              %option{value: "2028"}28
-              %option{value: "2029"}29
-            %i.fa.fa-angle-down.payment-select-icon
-            %text.expiration_date_box__text 年
+              %select.register-card__date--select#payment_expiration_date_2i{maxlength: "4", name: "exp_year", type: "text"}
+                %option{value: "2019"}19
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
+              %i.fa.fa-angle-down.select-icon
+              %text.expiration_date_box__text 年
 
-      .register-card__code
-        %span.register-card__code--label セキュリティー番号
-        %span.register-required 必須
-        %input.register-card__code--textarea{maxlength: "3", name: "cvc", placeholder: "カード背面もしくは４桁もしくは３桁の番号", type: "text", id: "payment_card_cvc"}
-          %i.fa.fa-question-circle  カード裏面の番号とは？
-      .actions
-        %button.register-profile__nextpage#submit-button{type: "submit"} 次に進む
+        .register-card__code
+          %span.register-card__code--label セキュリティー番号
+          %span.register-required 必須
+          %input.register-card__code--textarea{maxlength: "3", name: "cvc", placeholder: "カード背面もしくは４桁もしくは３桁の番号", type: "text", id: "payment_card_cvc"}
+            %i.fa.fa-question-circle  カード裏面の番号とは？
+        .actions
+          %button.register-profile__nextpage#submit-button{type: "submit"} 次に進む
 = render "signup/login-footer"
