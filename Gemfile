@@ -76,6 +76,7 @@ gem 'pry-rails'
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'pry-rails'
+gem 'dropzonejs-rails', '~> 0.7.3'
 
 group :production do
   gem 'unicorn', '5.4.1'
