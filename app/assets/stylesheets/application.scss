@@ -12,7 +12,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
+ *= require dropzone/basic
+ *= require dropzone/dropzone
  */
+
 
 
 @import "mixin/signup_mixin";
