@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',$(function(){
   $('.input-price-area').on('keyup', function(e){
     var input = $("#item_price").val();
 
@@ -22,4 +22,12 @@ $(function(){
       alert('無効な値です');
     })
   })
+})
+)
+
+$(function() {
+  $(".sell-dropbox-container").dropzone({
+    maxFilesize: 1,
+    addRemoveLinks: true
+  });
 })
