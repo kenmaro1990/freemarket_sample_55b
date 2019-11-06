@@ -57,7 +57,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save!
+    @item.save
+    respond_to do |format|
+      format.html
+      format.json
+    end
+    redirect_to root_path
   end
 
   def index
