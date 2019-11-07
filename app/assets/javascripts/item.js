@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load',$(function(){
+$(document).on('turbolinks:load', $(function(){
   $('.input-price-area').on('keyup', function(e){
     var input = $("#item_price").val();
 
@@ -23,11 +23,4 @@ $(document).on('turbolinks:load',$(function(){
     })
   })
 })
-)
-
-$(function() {
-  $(".sell-dropbox-container").dropzone({
-    maxFilesize: 1,
-    addRemoveLinks: true
-  });
-})
+);
