@@ -24,6 +24,29 @@ $(document).on('turbolinks:load', $(function() {
                       </div>`;
     $('#select_parent_category').append(grandchildSelectHtml);
   }
+
+  function appendSizeOption(size){
+    var html = `<option value="${size.size}">${size.size}</option>`;
+    return html;
+  }
+
+  function appendSizeBox(insertHTML){
+    var sizeSelectHtml = '';
+    sizeSelectHtml = `<div class="form-group">
+                        <label class="form-label">
+                          サイズ
+                        </label>
+                        <span class="form-require">
+                          必須
+                        </span>
+                        <div class="select-wrap">
+                          <select class="select-default" name="size_id" id="size"><option value="---">---</option>
+                            ${insertHTML}
+                          </select>
+                        </div>
+                      </div>`;
+    $('#select_parent_category').append(sizeSelectHtml);
+  }
   
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value;
@@ -89,4 +112,33 @@ $(document).on('turbolinks:load', $(function() {
       $('#brand_wrapper').remove();
     }
   });
+
+  $('#select_parent_category').on('change', '#grandchild_category', function(){
+    var grandchildID =$('#grandchild_category option:selected').data('category');
+    if (grandchildID != 0){
+      $.ajax({
+        url: 'get_size',
+        type: 'GET',
+        data: { grandchild_id: grandchildID },
+        dataType: 'json'
+      })
+      .done(function(sizes){
+        $('#size_wrapper').remove();
+        $('#brand_wrapper').remove();
+        if (sizes.length != 0){
+          var insertHTML = '';
+          sizes.forEach(function(size){
+            insertHTML += appendSizeOption(size);
+          });
+          appendSizeBox(insertHTML);
+        }
+      })
+      .fail(function(){
+        alert('サイズ取得に失敗しました');
+      })
+    }else{
+      $('#size_wrapper').remove();
+      $('#brand_wrapper').remove();
+    }
+  })
 }))
