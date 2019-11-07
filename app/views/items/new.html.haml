@@ -21,7 +21,7 @@
                 = i.label :image, class: "dropzone-box", for: "upload-image" do
                   .sell-upload-drop-box
                     %pre ドロップアンドドロップ<br>またはクリックしてファイルをアップロード
-                    = i.file_field :image, class:"dropzone", name:'item_images[image][]'
+                    = i.file_field :image, class:"image", name:'item_images[image][]'
 
         
         .sell-content
@@ -47,8 +47,8 @@
                 カテゴリー
               %span.form-require
                 必須
-              .select-wrap
-                = f.select :category_id, options_for_select(@category_array.map{|c|[c[:name], c[:id]]}), {}, class: "select-default"
+              .select-wrap#select_parent_category
+                = f.select :category_id, @category_parent_array, {}, {class: "select-default", id: "parent_category"}
             
             .form-group
               %label.form-label
