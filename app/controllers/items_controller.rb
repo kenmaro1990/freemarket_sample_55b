@@ -4,22 +4,11 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.item_images.build
 
-    @category_array = [
-      {id: "", name: "---"},
-      {id: 1, name: "レディース"},
-      {id: 2, name: "メンズ"},
-      {id: 3, name: "ベビー・キッズ"},
-      {id: 3, name: "インテリア・住まい・小物"},
-      {id: 3, name: "本・音楽・ゲーム"},
-      {id: 3, name: "おもちゃ・ホビー・グッズ"},
-      {id: 3, name: "コスメ・香水・美容"},
-      {id: 3, name: "家電・スマホ・カメラ"},
-      {id: 3, name: "スポーツ・レジャー"},
-      {id: 3, name: "ハンドメイド"},
-      {id: 3, name: "チケット"},
-      {id: 3, name: "自動車・オートバイ"},
-      {id: 3, name: "その他"}
-    ]
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
     @condition_array = [
       '---',
       '新品、未使用',
@@ -57,11 +46,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    @item.save!
     redirect_to root_path
   end
 
@@ -75,6 +60,14 @@ class ItemsController < ApplicationController
     @louis_vuitton = Item.includes(:item_images).where(brand_id: 3).limit(10).order('id DESC')
     @supreme = Item.includes(:item_images).where(brand_id: 4).limit(10).order('id DESC')
     @nike = Item.includes(:item_images).where(brand_id: 2).limit(10).order('id DESC')
+  end
+
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
   private
