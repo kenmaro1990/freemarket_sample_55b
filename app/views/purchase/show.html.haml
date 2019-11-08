@@ -1,0 +1,66 @@
+.header
+  .header-image_mercari
+    = image_tag "/logo.svg", alt: "logo"
+.single-main
+  .buy-cheak-main
+    .buy-cheak-block 
+      .buy-cheak-block__title
+        %h2 購入内容の確認
+      .buy-cheak-block__content
+        .content-post
+          .content-post__detail
+            .content-post__detail__image
+              = image_tag "bag.jpg", size: "64x64", alt: "buy-item-image"
+            %p.content-post__detail__name
+              = @item.name
+          .content-post__buy-form
+            .buy-post-price
+              .buy-post-price__fee
+                = @item.price
+              .buy-post-price__cost
+                送料込み
+            %ul.buy-post-point
+              %li.buy-post-point__result
+                ポイントはありません
+            %ul.buy-post-payment
+              %li.buy-post-payment.detail
+                .buy-post-payment__fee
+                  支払い金額
+                .buy-post-payment__price
+                  = @item.price
+            = form_tag(action: :pay, method: :post,html: {class: 'buy-post-submit'}) do
+              %button 購入する
+      .buy-cheak-block__address
+        .address-post
+          %h3 配送先
+          %address.address-post__info-text
+            〒
+            =  @user.address.postal_code
+            %br
+            = @address.prefecture.name?
+            =  @user.address.city
+            =  @user.address.block
+            =  @user.address.building
+            %br
+            =  @user.address.address_last_name
+            =  @user.address.address_first_name
+
+          .address-post__entry-bottom
+            %span 変更する
+            %i.fa.fa-chevron-right
+
+      .buy-cheak-block__pay
+        .pay-post
+          %h3 支払い方法
+          .pay-post__credit-number
+            = "**** **** **** " + @customer_card.last4
+            - exp_month = @customer_card.exp_month.to_s
+            - exp_year = @customer_card.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+          .pay-post__credit-image
+            = image_tag "jcb.svg", size: "34x20", alt: "credit-image"
+          .pay-post__entry-bottom
+            %span 変更する
+            %i.fa.fa-chevron-right
+
+= render "items/single-footer"

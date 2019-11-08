@@ -24,7 +24,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_hash (3.0.0)
+    active_hash (2.3.0)
       activesupport (>= 5.0.0)
     activejob (5.0.7.2)
       activesupport (= 5.0.7.2)
@@ -338,7 +338,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_hash
+  active_hash (~> 2.3.0)
   ancestry
   better_errors
   binding_of_caller
