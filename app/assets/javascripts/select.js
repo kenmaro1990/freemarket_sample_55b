@@ -40,12 +40,27 @@ $(document).on('turbolinks:load', $(function() {
                           必須
                         </span>
                         <div class="select-wrap">
-                          <select class="select-default" name="size_id" id="size"><option value="---">---</option>
+                          <select class="select-default" name="item[size_id]" id="size"><option value="---">---</option>
                             ${insertHTML}
                           </select>
                         </div>
                       </div>`;
-    $('#select_parent_category').append(sizeSelectHtml);
+    $('#select_parent_category').after(sizeSelectHtml);
+  }
+                    
+  function appendBrandBox(){
+    var brandBoxHtml = `<div class="form-group" id="brand-wrapper">
+                        <label class="form-label">
+                          ブランド
+                        </label>
+                        <span class="form-arbitrary">
+                          任意
+                        </span>
+                        <div class="select-wrap">
+                          <input class="input-brand" value="" placeholder="例）シャネル" type="text" name="item[brand_id]" >
+                        </div>
+                      </div>`;
+    return brandBoxHtml;
   }
   
   $('#parent_category').on('change', function(){
@@ -141,4 +156,14 @@ $(document).on('turbolinks:load', $(function() {
       $('#brand_wrapper').remove();
     }
   })
+
+  $('#select_parent_category').on('change', '#grandchild_category', function(){
+    var categoryName = $('#parent_category option:selected').val();
+    if (categoryName != "本・音楽・ゲーム"&& categoryName != "おもちゃ・ホビー・グッズ" && categoryName != "ハンドメイド" && categoryName != "チケット" && categoryName != "その他"){
+      $('#select_parent_category').after(appendBrandBox);
+    }else{
+    $('#brand_wrapper').remove();
+    }
+  });
+
 }))
