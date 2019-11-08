@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', $(function() {
 
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
 
@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', $(function() {
   }
 
   function appendSizeOption(size){
-    var html = `<option value="${size.size}">${size.size}</option>`;
+    var html = `<option value="${size.id}">${size.size}</option>`;
     return html;
   }
 
@@ -56,13 +56,54 @@ $(document).on('turbolinks:load', $(function() {
                         <span class="form-arbitrary">
                           任意
                         </span>
-                        <div class="select-wrap">
+                        <div class="select-wrap" name="item[brand_id]">
                           <input class="input-brand" value="" placeholder="例）シャネル" type="text" name="item[brand_id]" >
                         </div>
                       </div>`;
     return brandBoxHtml;
   }
   
+  function appendShipOption(shipping){
+    var html = `<option value="${shipping}">${shipping}</option>`;
+    return html;
+  }
+
+  function appendPostage_seller(insertHTML){
+    var postageSelectHtml = `<div class="form-group" id="shipping_method_select">
+                        <label class="form-label">
+                          配送の方法
+                        </label>
+                        <span class="form-require">
+                          必須
+                        </span>
+                        <div class="select-wrap">
+                          <select class="select-default" name="item[shipping_method]" id="shipping_method">
+                          <option value="---">---</option>
+                          ${insertHTML}
+                          </select>
+                        </div>
+                      </div>`;
+    return postageSelectHtml;
+  }
+
+  function appendPostage_buyer(insertHTML){
+    var postageSelectHtml = `<div class="form-group" id="shipping_method_select">
+                        <label class="form-label">
+                          配送の方法
+                        </label>
+                        <span class="form-require">
+                          必須
+                        </span>
+                        <div class="select-wrap">
+                          <select class="select-default" name="item[shipping_method]" id="size">
+                          <option value="---">---</option>
+                            ${insertHTML}
+                          </select>
+                        </div>
+                      </div>`;
+    return postageSelectHtml;
+  }
+
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value;
     
@@ -163,6 +204,27 @@ $(document).on('turbolinks:load', $(function() {
       $('#select_parent_category').after(appendBrandBox);
     }else{
     $('#brand_wrapper').remove();
+    }
+  });
+
+  $('#postage').on('change',  function(){
+    var postage = $('#postage option:selected').val();
+    if (postage == "送料込み(出品者負担)"){
+      var insertHTML = '';
+      var shipping_method = ['未定','らくらくメルカリ便','ゆうメール','普通郵便(定形、定形外)','レターパック','クロネコヤマト','ゆうパック','クリップポスト','ゆうパケット'];
+      shipping_method.forEach(function(shipping){
+        insertHTML += appendShipOption(shipping);
+      });
+      $('#postage').after(appendPostage_seller(insertHTML));
+    }else if(postage == "着払い(購入者負担)" ){
+      var insertHTML = '';
+      var shipping_method = ['未定','クロネコヤマト','ゆうパック','ゆうメール'];
+      shipping_method.forEach(function(shipping){
+        insertHTML += appendShipOption(shipping);
+      });
+      $('#postage').after(appendPostage_buyer(insertHTML));
+    }else{
+      $("#shipping_method_select").remove();
     }
   });
 
