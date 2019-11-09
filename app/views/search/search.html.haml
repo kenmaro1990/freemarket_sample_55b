@@ -1,1 +1,200 @@
-%p #{@keyword}の検索結果
+-if user_signed_in?  
+  = render partial: "shared/header-after-login"
+-else
+  = render partial: "shared/header"
+
+.search-main
+  .search-container
+    .search-side
+      %select{name: :sort_order, class: 'sort-order'}
+        %option{value: "", name: ""}
+          並び替え
+        %option{value: "", name: ""}
+          価格の安い順
+        %option{value: "", name: ""}
+          価格の高い順
+        %option{value: "", name: ""}
+          出品の古い順
+        %option{value: "", name: ""}
+          出品の新しい順
+        %option{value: "", name: ""}
+          いいね！の多い順
+
+      .search-extend-form
+        = form_tag('/', method: :GET) do
+          %h3 詳細検索
+          .form-group
+            %i.fa.fa-plus
+            %span キーワードを追加する
+            %input.input-default{placeholder: "例）値下げ"}
+          .form-group
+            %i.fa.fa-list-ul
+            %span カテゴリーを選択する
+            %select.select-default
+              %option{value: "", name: ""}
+                すべて
+              %option{value: "", name: ""}
+                レディース
+              %option{value: "", name: ""}
+                メンズ
+              %option{value: "", name: ""}
+                ベビー・キッズ
+              %option{value: "", name: ""}
+                インテリア・住まい・小物
+              %option{value: "", name: ""}
+                本・音楽・ゲーム
+              %option{value: "", name: ""}
+                おもちゃ・ホビー・グッズ
+              %option{value: "", name: ""}
+                コスメ・香水・美容
+              %option{value: "", name: ""}
+                家電・スマホ・カメラ
+              %option{value: "", name: ""}
+                スポーツ・レジャー
+              %option{value: "", name: ""}
+                ハンドメイド
+              %option{value: "", name: ""}
+                チケット
+              %option{value: "", name: ""}
+                自動車・オートバイ
+              %option{value: "", name: ""}
+                その他
+          .form-group
+            %i.fa.fa-tag
+            %span ブランド名から探す
+            %input.input-default{placeholder: "例）シャネル"}
+          .form-group
+            %i.fa.fa-arrows-alt
+            %span サイズを指定する
+            %select.select-default
+              %option{value: "", name: ""}
+                すべて
+              %option{value: "", name: ""}
+                洋服のサイズ
+              %option{value: "", name: ""}
+                メンズ靴のサイズ
+              %option{value: "", name: ""}
+                レディース靴のサイズ
+              %option{value: "", name: ""}
+                スカートのサイズ
+              %option{value: "", name: ""}
+                キッズ服のサイズ
+              %option{value: "", name: ""}
+                ベビー・キッズ靴のサイズ
+              %option{value: "", name: ""}
+                ベビー服のサイズ
+              %option{value: "", name: ""}
+                テレビのサイズ
+              %option{value: "", name: ""}
+                カメラレンズのサイズ
+              %option{value: "", name: ""}
+                オートバイのサイズ
+              %option{value: "", name: ""}
+                ヘルメットのサイズ
+              %option{value: "", name: ""}
+                タイヤのサイズ
+              %option{value: "", name: ""}
+                スキーのサイズ
+              %option{value: "", name: ""}
+                スノーボードのサイズ
+          .form-group
+            %i.fa.fa-jpy
+            %span 価格
+            %select.select-default
+              %option{value: "", name: ""}
+                選択してください
+              %option{value: "", name: ""}
+                300 ~ 1000
+              %option{value: "", name: ""}
+                1000 ~ 5000
+              %option{value: "", name: ""}
+                5000 ~ 10000
+              %option{value: "", name: ""}
+                10000 ~ 30000
+              %option{value: "", name: ""}
+                30000 ~ 50000
+              %option{value: "", name: ""}
+                50000 ~
+            %input.input-default.search-price{placeholder: "¥ Min"}
+            %span ~
+            %input.input-default.search-price{placeholder: "¥ Max"}
+          .form-group
+            %i.fa.fa-star
+            %span 商品の状態
+            %div
+              .checkbox-default
+                = check_box_tag :condition_all
+                = label_tag :condition_all, "すべて" 
+              .checkbox-default
+                = check_box_tag :item_condition_id[1]
+                = label_tag :item_condition_id[1], "新品、未使用"
+              .checkbox-default
+                = check_box_tag :item_condition_id[2]
+                = label_tag :item_condition_id[2], "未使用に近い" 
+              .checkbox-default
+                = check_box_tag :item_condition_id[3]
+                = label_tag :item_condition_id[3], "目立った傷や汚れなし"
+              .checkbox-default
+                = check_box_tag :item_condition_id[4]
+                = label_tag :item_condition_id[4], "やや傷や汚れあり"
+              .checkbox-default
+                = check_box_tag :item_condition_id[5]
+                = label_tag :item_condition_id[5], "傷や汚れあり"
+              .checkbox-default
+                = check_box_tag :item_condition_id[6]
+                = label_tag :item_condition_id[6], "全体的に状態が悪い"
+          .form-group
+            %i.fa.fa-truck
+            %span 配送料の負担
+            %div
+              .checkbox-default
+                = check_box_tag :shipping_payer_all
+                = label_tag :shipping_payer_all, "すべて" 
+              .checkbox-default
+                = check_box_tag :shipping_payer_id[1]
+                = label_tag :shipping_payer_id[1], "着払い(購入者負担)"
+              .checkbox-default
+                = check_box_tag :shipping_payer_id[2]
+                = label_tag :shipping_payer_id[2], "送料込み(出品者負担)" 
+          .form-group
+            %i.fa.fa-shopping-cart
+              %span 販売状況
+              %div
+                .checkbox-default
+                  = check_box_tag :status_all
+                  = label_tag :status_all, "すべて" 
+                .checkbox-default
+                  = check_box_tag :status_on_sale
+                  = label_tag :status_on_sale, "販売中"
+                .checkbox-default
+                  = check_box_tag :status_trading_sold_out
+                  = label_tag :status_trading_sold_out, "売り切れ" 
+          .search-extend-btn.clearfix
+            .btn-default.btn-gray クリア
+            %submit.btn-default.btn-red 完了
+    
+    .search-content
+      .search-result-head
+        %h2 #{@keyword}
+        %span の検索結果
+      - if @items.present?
+        .search-result-number
+          %p 1-#{@items.length}件表示
+        .items-box-content
+          - @items.each do |item|
+            .items-box
+              .items-box__photo
+                - image = item.item_images[0]
+                = image_tag "#{image.image}"
+              .items-box__name.blur
+                = item.name
+              .items-box__price
+                ¥
+                = item.price
+      - else
+        .search-result-description
+          %p 該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+        .search-result-no-head
+          %h3 新着商品
+= render partial: "shared/exhibit"
+= render partial: "shared/footer"
