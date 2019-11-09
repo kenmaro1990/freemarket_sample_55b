@@ -17,7 +17,6 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-
     @user = current_user
     @item = Item.find(6)
     card = current_user.card
@@ -27,6 +26,7 @@ class PurchaseController < ApplicationController
       currency: 'jpy'
     )
     @item.update!(buyer_id: current_user.id)
+    redirect_to root_path
   end
 
   def complete
