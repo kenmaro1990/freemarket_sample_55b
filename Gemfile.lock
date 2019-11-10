@@ -339,7 +339,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
-  dropzonejs-rails (~> 0.7.3)
+  dropzonejs-rails
   factory_bot_rails
   faker
   fog-aws
