@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.build
+    @brands = Brand.where('ame LIKE(?)',"%#{params[:keyword]}%").limit(5)
 
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
@@ -47,7 +48,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save!
-    redirect_to root_path
+    redirect_to root_path, notice: '出品が完了しました'
   end
 
   def index
@@ -80,7 +81,11 @@ class ItemsController < ApplicationController
           @sizes = related_size_parent.children 
        end
     end
- end
+  end
+
+  def search_brand
+    @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%").limit(5)
+  end
 
   private
 
@@ -88,20 +93,21 @@ class ItemsController < ApplicationController
     params.require(:item).permit(
       :name, 
       :description, 
-      :category_id, 
       :size_id,
       :price, 
       :condition, 
       :postage, 
       :departure_area, 
       :lead_time,
+      :category_id,
+      :brand_name,
+      :brand_id,
+      :shipping_method,
       item_images_attributes: [
         :image
       ]).merge(
         user_id: current_user.id,
         seller_id: current_user.id,
-        brand_id: 1,
-        shipping_method: "",
         display: "open"
       )
   end
