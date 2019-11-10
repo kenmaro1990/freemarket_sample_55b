@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :user, foreign_key: 'user_id'
+  belongs_to :user, foreign_key: 'user_id', optional: true
   belongs_to :category
   belongs_to :brand
   has_many :item_images
