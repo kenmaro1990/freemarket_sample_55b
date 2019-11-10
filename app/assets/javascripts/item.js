@@ -1,7 +1,9 @@
 $(document).on('turbolinks:load', $(function(){
+  
+ // -----------------------販売価格表示----------------------------
+ 
   $('.input-price-area').on('keyup', function(e){
     var input = $("#item_price").val();
-
     $.ajax({
       type: 'GET',
       url: '/items/new',
