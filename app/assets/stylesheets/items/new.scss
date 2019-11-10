@@ -315,3 +315,30 @@ p {
   text-align: center;
   font-size: 11px;
 }
+
+.form-suggest-list{
+  overflow: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 280px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+  -webkit-overflow-scrolling: touch;
+  li{
+    padding: 16px 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  li:hover{
+    background-color: #b3d4fc;
+    color: #fff;
+    text-shadow: none;
+    }
+}
+
+.display-none{
+  display:none;
+}
