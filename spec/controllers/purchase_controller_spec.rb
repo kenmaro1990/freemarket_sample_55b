@@ -7,7 +7,7 @@ describe PurchaseController do
     end
   end
 
-  describe 'GET #show' do
+  describe 'POST #pay' do
     it "renders the user_path" do
       expect(response).to have_http_status(:success)
     end

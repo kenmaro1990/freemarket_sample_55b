@@ -29,7 +29,8 @@
                 .buy-post-payment__price
                   = @item.price
             = form_tag(action: :pay, method: :post, id: @item.id, html: {class: 'buy-post-submit'}) do
-              %button 購入する
+              %button.buy-post-submit 購入する            
+
       .buy-cheak-block__address
         .address-post
           %h3 配送先
