@@ -17,7 +17,7 @@
   .register-text 
     支払い方法
   .register-card
-    = form_tag( "/card/show", method: :post, id:'charge-form', html: {class: 'register-card'}) do
+    = form_tag( "/card/pay", method: :post, id:'charge-form', html: {class: 'register-card'}) do
       %span.charge-errors
       .register-card__number
         .register-inner__content

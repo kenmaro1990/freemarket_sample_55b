@@ -1,11 +1,15 @@
 require 'rails_helper'
 
 describe PurchaseController do
-  describe 'GET #pay' do
-  
-    it "renders the :index template" do
-      expect(response).to redirect_to root_path
+  describe 'GET #show' do
+    it "renders the :show template" do
+      expect(response).to have_http_status(:success)
     end
-    
+  end
+
+  describe 'GET #show' do
+    it "renders the user_path" do
+      expect(response).to have_http_status(:success)
+    end
   end
 end
