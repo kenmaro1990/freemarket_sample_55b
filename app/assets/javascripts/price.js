@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', $(function(){
     var input = $("#item_price").val();
     $.ajax({
       type: 'GET',
-      url: '/items/new',
+      url: 'get_price',
       data: { keyword: input },
       dataType: 'json',
     })
