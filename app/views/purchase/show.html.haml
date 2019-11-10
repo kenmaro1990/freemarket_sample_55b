@@ -36,15 +36,15 @@
           %h3 配送先
           %address.address-post__info-text
             〒
-            =  @user.address.postal_code
+            =  @address.postal_code
             %br
             =  @address.prefecture.name
-            =  @user.address.city
-            =  @user.address.block
-            =  @user.address.building
+            =  @address.city
+            =  @address.block
+            =  @address.building
             %br
-            =  @user.address.address_last_name
-            =  @user.address.address_first_name
+            =  @address.address_last_name
+            =  @address.address_first_name
 
           .address-post__entry-bottom
             %span 変更する
