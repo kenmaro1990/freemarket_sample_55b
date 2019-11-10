@@ -78,8 +78,8 @@ gem 'pry-rails'
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'pry-rails'
+gem "gretel"
 gem 'payjp'
-
 
 group :production do
   gem 'unicorn', '5.4.1'
