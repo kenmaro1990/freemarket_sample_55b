@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require nested_form_fields
 //= require dropzone

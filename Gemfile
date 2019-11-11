@@ -76,6 +76,7 @@ gem 'pry-rails'
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'pry-rails'
+gem 'nested_form_fields'
 gem 'dropzonejs-rails'
 
 group :production do
