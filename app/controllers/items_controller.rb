@@ -10,35 +10,9 @@ class ItemsController < ApplicationController
       @category_parent_array << parent.name
     end
 
-    @condition_array = [
-      '---',
-      '新品、未使用',
-      '未使用に近い',
-      '目立った傷や汚れなし',
-      'やや傷や汚れあり',
-      '傷や汚れあり',
-      '全体的に状態が悪い'
-    ]
-    @postage_array = [
-      '---',
-      '送料込み(出品者負担)',
-      '着払い(購入者負担)'
-    ]
-    @lead_time_array = [
-      '---',
-      '1~2日で発送',
-      '2~3日で発送',
-      '4~7日で発送'
-    ]
-
-    @price  = params[:keyword].to_i
-    @fee    = @price * 0.1
-    @profit = @price - @fee
-
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    @condition_array = ['---','新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い']
+    @postage_array = ['---','送料込み(出品者負担)','着払い(購入者負担)']
+    @lead_time_array = ['---','1~2日で発送','2~3日で発送','4~7日で発送']
 
   end
 
@@ -61,6 +35,18 @@ class ItemsController < ApplicationController
     @louis_vuitton = Item.includes(:item_images).where(brand_id: 3).limit(10).order('id DESC')
     @supreme = Item.includes(:item_images).where(brand_id: 4).limit(10).order('id DESC')
     @nike = Item.includes(:item_images).where(brand_id: 2).limit(10).order('id DESC')
+  end
+
+  def get_price
+    @price  = params[:keyword].to_i
+    @fee    = @price * 0.1
+    @profit = @price - @fee
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
   end
 
   def get_category_children
