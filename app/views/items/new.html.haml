@@ -13,17 +13,15 @@
           出品画像
           %span.form-require
             必須
-          %p
-            最大10枚までアップロードできます
+          %p 最大10枚までアップロードできます
           .sell-dropbox-container
             = f.fields_for :item_images do |i|
               %label.image-uploader
-                = i.label :image, class: "dropzone-box", for: "upload-image" do
-                  .sell-upload-drop-box
-                    %pre ドロップアンドドロップ<br>またはクリックしてファイルをアップロード
-                    = i.file_field :image, class:"image", name:'item_images[image][]'
+                .sell-upload-drop-box
+                  %pre ドロップアンドドロップ<br>またはクリックしてファイルをアップロード
+                  = i.file_field :image
+            .sell-form__image__error
 
-        
         .sell-content
           .form-group-first
             %label.form-label
