@@ -6,8 +6,8 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :brand, optional: true
   belongs_to :size, optional: true
-  has_many :item_images
-  accepts_nested_attributes_for :item_images, allow_destroy: true
+  has_many :item_images, dependent: :delete_all
+  accepts_nested_attributes_for :item_images
 
   has_many :comments
   has_many :messages
