@@ -68,7 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
-gem 'mini_magick'
+gem 'mini_magickz'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'active_hash'
@@ -77,6 +77,10 @@ gem 'rails-i18n'
 gem 'ancestry'
 gem 'pry-rails'
 gem "gretel"
+gem 'dotenv-rails'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 group :production do
   gem 'unicorn', '5.4.1'
