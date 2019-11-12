@@ -102,6 +102,27 @@ Things you may want to cover:
 ### Association
 - has_many :items
 
+# sizesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|size|integer||
+|ancestry|string||
+
+### Association
+- has_many :items
+- has_many :category_sizes
+- has_many :categories, through: :category_sizes
+
+# category_sizeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category|references|null: false, foreign_key: true|
+|size|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :category
+- belongs_to :size
+  
 # brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
