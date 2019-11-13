@@ -52,8 +52,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'faker'
   gem 'capybara'
-  gem 'dotenv-rails'
-
 end
 
 group :development do
@@ -70,26 +68,21 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
-gem 'mini_magickz'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'active_hash', '~> 2.3.0'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'ancestry'
-gem 'pry-rails'
 gem "gretel"
-gem 'dotenv-rails'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'payjp'
+gem "mini_magick"
 
 
 group :production do
   gem 'unicorn', '5.4.1'
 end
 
-group :test do
-  gem 'faker'
-end
