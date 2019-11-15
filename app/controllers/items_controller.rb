@@ -21,10 +21,17 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    # if @item.save & save_images(@item, image_params)
+    #   redirect_to root_path, notice: '出品しました。'
+    # else
+    #   @item.item_images.build
+    #   format.html{render action: 'new'}
+    # end
+
     # @item.save!
     # binding.pry
     # redirect_to root_path, notice: '出品が完了しました'
-    binding.pry
+    
     respond_to do |format|
       if @item.save
           params[:item_images][:image].each do |image|
@@ -106,12 +113,28 @@ class ItemsController < ApplicationController
       :brand_id,
       :shipping_method,
       item_images_attributes: [
-        {image: []}
-      ]).merge(
+        [:image]
+      ]
+    ).merge(
         user_id: current_user.id,
         seller_id: current_user.id,
         display: "open"
       )
   end
+
+  # def image_params
+  #   params.require(:item_images).require(:image).permit(params[:item_images][:image].keys) if params[:item_images].present?
+  # end
+
+  # def save_images(item, images)
+  #   if images.present?
+  #     images.values.each do |name|
+  #       @image = item.item_images.create(image: name)
+  #     end
+  #   else
+  #     @image_error = "画像がありません"
+  #     return false
+  #   end
+  # end
 
 end
