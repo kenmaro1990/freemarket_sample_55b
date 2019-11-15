@@ -21,8 +21,21 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save!
-    redirect_to root_path, notice: '出品が完了しました'
+    # @item.save!
+    # binding.pry
+    # redirect_to root_path, notice: '出品が完了しました'
+    binding.pry
+    respond_to do |format|
+      if @item.save
+          params[:item_images][:image].each do |image|
+            @item.item_images.create(image: image, item_id: @item.id)
+          end
+        format.html{redirect_to root_path}
+      else
+        @item.item_images.build
+        format.html{render action: 'new'}
+      end
+    end
   end
 
   def index
@@ -73,6 +86,9 @@ class ItemsController < ApplicationController
     @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%").limit(5)
   end
 
+  def get_image
+  end
+
   private
 
   def item_params
@@ -90,7 +106,7 @@ class ItemsController < ApplicationController
       :brand_id,
       :shipping_method,
       item_images_attributes: [
-        :image
+        {image: []}
       ]).merge(
         user_id: current_user.id,
         seller_id: current_user.id,
