@@ -109,28 +109,23 @@ p {
 }
 
 .sell-upload-box {
-  height: 303px;
   border-top: 1px solid #f5f5f5;
   padding: 40px;
   line-height: 30px; 
 }
 
 .sell-dropbox-container {
-  display: block;
   margin: 0 auto;
   width: 620px;
 }
 
-.sell-upload-drop-box {
-  width:620px;
+.image-box{
+  display: flex;
   height: 184px;
-  flex: 1;
-  position: relative;
-  min-height: 116px;
-  background: #f5f5f5;
-  border: 1px dashed #cccccc;
-  transition: box-shadow ease-out .3s;
-  cursor: pointer;
+  width: 610px;
+}
+
+.sell-upload-drop-box {
   pre {
     position: absolute;
     top: 50%;
@@ -271,9 +266,30 @@ p {
 }
 
 .image-uploader {
-  input {
-    display: none;
-  }
+  width:620px;
+  height: 184px;
+  flex: 1;
+  position: relative;
+  min-height: 116px;
+  background: #f5f5f5;
+  border: 1px dashed #cccccc;
+  transition: box-shadow ease-out .3s;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.image-uploader2 {
+  width:620px;
+  height: 184px;
+  flex: 1;
+  position: relative;
+  min-height: 116px;
+  background: #f5f5f5;
+  border: 1px dashed #cccccc;
+  transition: box-shadow ease-out .3s;
+  cursor: pointer;
+  margin-left: 10px;
+  display: none;
 }
 
 .single-footer {
@@ -345,4 +361,83 @@ p {
 
 .form-group-first-select{
   width: 100%;
+}
+
+.dropzone-area{
+  width:620px;
+  height: 184px;
+  flex: 1;
+  position: relative;
+  min-height: 116px;
+  background: #f5f5f5;
+  border: 1px dashed #cccccc;
+  transition: box-shadow ease-out .3s;
+  cursor: pointer;
+  p {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    right:16px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    transform: translate(0, -50%);
+    pointer-events: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+.upload-image{
+  display: none;
+}
+
+.img_view{
+  width: 116px;
+  margin: 0 0 10px 10px;
+  height: 184px;
+  background-color: #f5f5f5;
+  img{
+    width: 116px;
+    height: 116px;
+  }
+}
+
+.sell-upload-button{
+  display: flex;
+  a{
+    width: 50%;
+    background: #f5f5f5;
+    line-height: 44px;
+    text-align: center;
+  }
+}
+
+#preview{
+  display: flex;
+}
+
+.post__drop__box__container{
+  width:620px;
+  height: 184px;
+  flex: 1;
+  position: relative;
+  min-height: 116px;
+  background: #f5f5f5;
+  border: 1px dashed #cccccc;
+  transition: box-shadow ease-out .3s;
+  cursor: pointer;
+  p {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    right:16px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    transform: translate(0, -50%);
+    pointer-events: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
 }
