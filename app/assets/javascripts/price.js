@@ -23,6 +23,8 @@ $(document).on('turbolinks:load', $(function(){
     .fail(function(){
       alert('無効な値です');
     })
-  })
+  });  
+  
 })
+
 );
