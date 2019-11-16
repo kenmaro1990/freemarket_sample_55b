@@ -80,14 +80,17 @@ ActiveRecord::Schema.define(version: 20191108022320) do
     t.string   "order_status"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "uid"
-    t.string   "provider"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "uid",                      null: false
+    t.string   "provider",                 null: false
+    t.text     "token",      limit: 65535
+    t.integer  "user_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
   end
 
@@ -116,5 +119,6 @@ ActiveRecord::Schema.define(version: 20191108022320) do
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "item_images", "items"
+  add_foreign_key "items", "users"
   add_foreign_key "sns_credentials", "users"
 end
