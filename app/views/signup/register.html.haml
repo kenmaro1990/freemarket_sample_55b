@@ -8,10 +8,10 @@
       = link_to information_signup_index_path, class: "register-new__email", method: :get do
         %i.fa.fa-envelope
         メールアドレスで登録
-      = link_to information_signup_index_path, class: "register-new__facebook", method: :get do
+      = link_to user_facebook_omniauth_authorize_path, class: "register-new__facebook", method: :post do
         %i.fa.fa-facebook-square
         Facebookで登録
-      = link_to information_signup_index_path, class: "register-new__google", method: :get do
+      = link_to user_google_oauth2_omniauth_authorize_path, class: "register-new__google", method: :post do
         %i.fa.fa-google
         Googleで登録
 = render "login-footer"

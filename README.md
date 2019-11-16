@@ -29,8 +29,9 @@ Things you may want to cover:
 - has_many :items
 - has_many :messages
 - has_many :comments
-  has_one :address
-  has_one :card
+- has_one :address
+- has_one :card
+- has_many :sns_credentials
 
 # addressesテーブル
 |Column|Type|Options|
@@ -42,6 +43,17 @@ Things you may want to cover:
 |block|string|null: false|
 |building|string||
 |phone_number|string||
+
+### Association
+- belongs_to :user
+
+# sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|uid|string|null: false, unique: true|
+|provider|string|null: false|
+|token|text|--|
+|user_id|references|null: false, index: true, foreign_key: true|
 
 ### Association
 - belongs_to :user
