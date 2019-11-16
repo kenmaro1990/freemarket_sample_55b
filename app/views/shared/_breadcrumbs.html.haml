@@ -1,0 +1,50 @@
+- unless current_page?(root_path)
+  .breadcrumbs-box
+    - case params.values_at :controller, :action
+
+    - when ['items', 'index']
+      - breadcrumb :root
+
+    - when ['items', 'show']
+      - breadcrumb :item
+
+    - when ['users', 'index']
+      - breadcrumb :mypage
+
+    - when ['users', 'show']
+      - breadcrumb :show_profile
+
+    - when ['users', 'identification']
+      - breadcrumb :identification
+
+    - when ['users', 'edit_profile']
+      - breadcrumb :edit_profile
+
+    - when ['users', 'card']
+      - breadcrumb :card
+
+    - when ['users', 'logout']
+      - breadcrumb :logout
+
+    - when ['categories', 'index']
+      - breadcrumb :categories
+
+    - when ['categories', 'show']
+      - breadcrumb :category, @category
+
+    -# - when ['brands', 'index']
+    -#   - breadcrumb :brands
+
+    -# - when ['brand', 'show']
+    -#   - breadcrumb :brand
+
+    -# - when ['areas', 'index']
+    -#   - breadcrumb :areas
+
+    -# - when ['area', 'index']
+    -#   - breadcrumb :area
+
+    -# - when ['search', 'index']
+    -#   - breadcrumb :search
+
+    = breadcrumbs separator: " #{content_tag(:i, '', class: 'fas fa-angle-right', id: 'breadcrumbs-icon')}"

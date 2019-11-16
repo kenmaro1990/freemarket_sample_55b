@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   end
 
   resources :categories do
+    member do
+      get 'child'
+      get 'grandchild'
+    end
   end
   
   resources :brands do
