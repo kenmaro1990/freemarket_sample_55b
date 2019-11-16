@@ -27,20 +27,50 @@ class User < ApplicationRecord
   validates :birthday,            presence: true
   validates :phone_number,        presence: true, uniqueness: true
 
-  def self.find_for_oauth(auth)
-    sns = SnsCredential.where(uid: auth.uid, provider: auth.provider).first
-    unless sns
-      @user = User.create(
-      email:    auth.info.email,
-      password: Devise.friendly_token[0,20]
-      )
-      sns = SnsCredential.create(
-      user_id: @user.id,
-      uid: auth.uid,
-      provider: auth.provider
+  def self.without_sns_data(auth)
+    user = User.where(email: auth.info.email).first
+
+      if user.present?
+        sns = SnsCredential.create(
+          uid: auth.uid,
+          provider: auth.provider,
+          user_id: user.id
+        )
+      else
+        user = User.new(
+          nickname: auth.info.name,
+          email: auth.info.email,
+        )
+        sns = SnsCredential.new(
+          uid: auth.uid,
+          provider: auth.provider
+        )
+      end
+      return { user: user ,sns: sns}
+    end
+
+   def self.with_sns_data(auth, snscredential)
+    user = User.where(id: snscredential.user_id).first
+    unless user.present?
+      user = User.new(
+        nickname: auth.info.name,
+        email: auth.info.email,
       )
     end
-    sns
-    @user
+    return {user: user}
+   end
+
+   def self.find_oauth(auth)
+    uid = auth.uid
+    provider = auth.provider
+    snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    if snscredential.present?
+      user = with_sns_data(auth, snscredential)[:user]
+      sns = snscredential
+    else
+      user = without_sns_data(auth)[:user]
+      sns = without_sns_data(auth)[:sns]
+    end
+    return { user: user ,sns: sns}
   end
 end
