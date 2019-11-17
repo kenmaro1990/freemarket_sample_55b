@@ -1,6 +1,6 @@
 $(function(){
 
-  var image_file = $('.sell-upload-drop-box');
+  var image_file = $('.image-box');
   var image_count = 1;
   var image_tag;
   var file_tag;
@@ -17,7 +17,7 @@ $(function(){
   };
 
   function buildFileTag(num){
-    var html = `<input type="file" class="upload-image"  multiple= "multiple" name="item_images[image][]" id="item_item_images_attributes_${num}_image" data-image= ${num}>`
+    var html = `<input type="file" class="upload-image"  multiple= "multiple" name="item_images[image][${num}]" id="item_item_images_attributes_${num}_image" data-image= ${num}>`
     return html;
   };
 
@@ -58,32 +58,32 @@ $(function(){
       file_reader.readAsDataURL(file);
   });
 
-  $(document).on('click','.delete', function(){
-    var target_image = $(this).parent().parent();
-    var img_num = target_image.children('img').attr('alt');
-    target_image.remove();
-    $(`#item_item_images_attributes_${img_num}_image`).remove();
-    image_count -= 1;
-    if (image_count <= 4){
-      $(".image-uploader").css({display: 'block'});
-      $('.image-uploader2').css({'display': 'none'}); 
-      $('.image-box2').css({'display': 'none'});
-      $('.sell-upload-drop-box').css({'display': 'block'})
-    }
-    if(image_count == 5){
-      $('.image-uploader').css({'display': 'none'});
-      $('.image-box2').css({'display': 'flex'});
-      $('.image-uploader2').css({'display': 'block'});
-    }
-    if ((image_count >= 6) && (image_count <= 9)){
-      $('.sell-upload-drop-box').css({'display': 'none'});
-      $('.image-box2').css({'display': 'flex'});
-    }
-    if (image_count == 10){
-      $('.sell-upload-drop-box').css({'display': 'none'});
-      $('.image-uploader2').css({'display': 'none'});
-    }
-  })
+  // $(document).on('click','.delete', function(){
+  //   var target_image = $(this).parent().parent();
+  //   var img_num = target_image.children('img').attr('alt');
+  //   target_image.remove();
+  //   $(`#item_item_images_attributes_${img_num}_image`).remove();
+  //   image_count -= 1;
+  //   if (image_count <= 4){
+  //     $(".image-uploader").css({display: 'block'});
+  //     $('.image-uploader2').css({'display': 'none'}); 
+  //     $('.image-box2').css({'display': 'none'});
+  //     $('.sell-upload-drop-box').css({'display': 'block'})
+  //   }
+  //   if(image_count == 5){
+  //     $('.image-uploader').css({'display': 'none'});
+  //     $('.image-box2').css({'display': 'flex'});
+  //     $('.image-uploader2').css({'display': 'block'});
+  //   }
+  //   if ((image_count >= 6) && (image_count <= 9)){
+  //     $('.sell-upload-drop-box').css({'display': 'none'});
+  //     $('.image-box2').css({'display': 'flex'});
+  //   }
+  //   if (image_count == 10){
+  //     $('.sell-upload-drop-box').css({'display': 'none'});
+  //     $('.image-uploader2').css({'display': 'none'});
+  //   }
+  // })
 
 
 });
