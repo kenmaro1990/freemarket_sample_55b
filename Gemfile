@@ -43,7 +43,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'pry-rails'
-  gem  "better_errors"
+  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
@@ -74,7 +74,7 @@ gem 'fog-aws'
 gem 'active_hash', '~> 2.3.0'
 gem 'rails-i18n'
 gem 'ancestry'
-gem "gretel"
+gem 'gretel'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth'
 gem 'omniauth-facebook'
