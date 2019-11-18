@@ -2,9 +2,8 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.build
+    5.times{@item.item_images.build}
     @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%").limit(5)
-    # @image = ItemImage.new
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
@@ -21,30 +20,8 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # binding.pry
-    # @item.save! & save_images(@item, image_params)
-    #   redirect_to root_path, notice: '出品しました。'
-    # else
-    #   @item.item_images.build
-    #   format.html{render action: 'new'}
-    # end
-
-    # binding.pry
-    # @item.save!
-    # redirect_to root_path, notice: '出品が完了しました'
-    
-    binding.pry
-    respond_to do |format|
-      if @item.save
-          params[:item_images][:image].each do |image|
-            @item.item_images.create(image: image, item_id: @item.id)
-          end
-        format.html{redirect_to root_path}
-      else
-        @item.item_images.build
-        format.html{render action: 'new'}
-      end
-    end
+    @item.save!
+    redirect_to root_path, notice: '出品が完了しました'
   end
 
   def index
@@ -122,23 +99,8 @@ class ItemsController < ApplicationController
     )
   end
 
-  # def image_params
-  #   params.require(:item).require(:item_images_attributes).permit(:image)
-  # end
-
-  # def image_params
-  #   params.require(:item_images).require(:image).permit(params[:item_images][:image].keys) if params[:item_images].present?
-  # end
-
-  # def save_images(item, images)
-  #   if images.present?
-  #     images.values.each do |name|
-  #       @image = item.item_images.create(image: name)
-  #     end
-  #   else
-  #     @image_error = "画像がありません"
-  #     return false
-  #   end
-  # end
+  def image_params
+    @images = params.require(:item_images).permit(:image)
+  end
 
 end
