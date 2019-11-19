@@ -35,10 +35,8 @@ $(document).on('turbolinks:load', $(function() {
     var target_id =target_label.attr('id');
     var target_num = Number(target_id.replace('image-label-',''));
     var display_num = target_num+1;
-    console.log(change_count);
-    console.log(change_count_2);
-    console.log(target_num);
 
+    // image_countの個数によって、previewとlabelの表示する箇所を変える
     file_reader.onload = (function(){
       return function (e) {
         image_tag = buildImageTag(target_num, e.target.result);
@@ -70,6 +68,7 @@ $(document).on('turbolinks:load', $(function() {
     })(file);
     
     file_reader.readAsDataURL(file);
+
     
     // インプット要素が変更された時にラベルを１つずつ表示させる
     // label4まで表示されたら、deleteされた要素から１つずつ取り出して表示
