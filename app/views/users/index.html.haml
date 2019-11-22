@@ -14,7 +14,7 @@
             .mypage__link
               =image_tag ("face.jpg"), class: "mypage__link--photo"
               %h2.mypage__link--name.bold
-                aaa
+                =current_user.nickname
               .mypage__link__number
                 .mypage__link__number__evaluation
                   評価
@@ -90,48 +90,21 @@
                 過去の取引
           .mypage__bought__content
             %li
-              =link_to 'http://google.co.jp', class: 'mypage__bought__content--link' do
-                =image_tag "cloth.jpg", class: "items"
-                .bought__body
-                  .bought__body--text
-                    洋服洋服洋服洋服洋服洋服
-                  .bought__body--status
-                    取引完了
-                  .bought__body--next
-                    =fa_icon "chevron-right"
-            %li
-              =link_to 'http://google.co.jp', class: 'mypage__bought__content--link' do
-                =image_tag "bag.jpg", class: "items"
-                .bought__body
-                  .bought__body--text
-                    カバンカバンカバンカバンカバン
-                  .bought__body--status
-                    取引完了
-                  .bought__body--next
-                    =fa_icon "chevron-right"
-            %li
-              =link_to 'http://google.co.jp', class: 'mypage__bought__content--link' do
-                =image_tag "bag.jpg", class: "items"
-                .bought__body
-                  .bought__body--text
-                    文具文具文具文具文具
-                  .bought__body--status
-                    取引完了
-                  .bought__body--next
-                    =fa_icon "chevron-right"
-            %li
-              =link_to 'http://google.co.jp', class: 'mypage__bought__content--link' do
-                =image_tag "cloth.jpg", class: "items"
-                .bought__body
-                  .bought__body--text
-                    服服服服服服
-                  .bought__body--status
-                    取引完了
-                  .bought__body--next
-                    =fa_icon "chevron-right"
+              - @items.each do |item|
+                =link_to item_path(item), class: 'mypage__bought__content--link' do
+                  -image = item.item_images[0]
+                  =image_tag "#{image.image}", class: "items"
+                  .bought__body
+                    .bought__body--text
+                      = item.name
+                    .bought__body--status
+                      取引完了
+                    .bought__body--next
+                      =fa_icon "chevron-right"
+
             %li
               .mypage__bought__content--all
-                =link_to 'http://google.co.jp', class: 'notification-all' do
+                =link_to purchased_users_path, class: 'notification-all' do
                   一覧を見る
       =render partial:"sidebar"
     = render partial: "shared/exhibit"

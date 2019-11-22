@@ -33,13 +33,28 @@ crumb :identification do
   parent :mypage
 end
 
-crumb :listings do
-  link "出品した商品 - 出品中", listing_users_path
+crumb :selling do
+  link "出品した商品 - 出品中", selling_users_path
+  parent :mypage
+end
+
+crumb :in_progress do
+  link "出品した商品 - 取引中", in_progress_users_path
   parent :mypage
 end
 
 crumb :completed do
   link "出品した商品 - 売却済", completed_users_path
+  parent :mypage
+end
+
+crumb :purchase do
+  link "購入した商品 - 取引中", purchase_users_path
+  parent :mypage
+end
+
+crumb :purchased do
+  link "購入した商品 - 過去の取引", purchased_users_path
   parent :mypage
 end
 

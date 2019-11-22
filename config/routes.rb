@@ -12,6 +12,11 @@ Rails.application.routes.draw do
       get 'card'
       get 'logout'
       get 'edit_profile'
+      get 'selling'
+      get 'in_progress'
+      get 'completed'
+      get 'purchase'
+      get 'purchased'
     end 
   end
   

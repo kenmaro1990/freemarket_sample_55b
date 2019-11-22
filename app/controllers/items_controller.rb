@@ -16,5 +16,4 @@ class ItemsController < ApplicationController
     @supreme = Item.includes(:item_images).where(brand_id: 3).limit(10).order('id DESC')
     @nike = Item.includes(:item_images).where(brand_id: 4).limit(10).order('id DESC')
   end
-  
 end
