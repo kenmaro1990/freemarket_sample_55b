@@ -20,14 +20,15 @@
               = f.fields_for :item_images do |i|
                 =i.label :image, class: 'image-uploader', id: "image-label-#{i.index}" do
                   .sell-upload-drop-box
-                    %pre ドロップアンドドロップ<br>またはクリックしてファイルをアップロード
+                    %pre クリックしてファイルをアップロード
                     = i.file_field :image, type: "file", class: "upload-image"
+            = render partial: 'shared/error', locals: { key: "item_images"}
             .image-box2
               #preview2
               = f.fields_for :item_images do |i|
                 =i.label :image, class: 'image-uploader2', id: "image-label-#{i.index}" do
                   .sell-upload-drop-box2
-                    %pre ドロップアンドドロップ<br>またはクリックしてファイルをアップロード
+                    %pre クリックしてファイルをアップロード
                     = i.file_field :image, type: "file", class: "upload-image"
 
         .sell-content
@@ -37,13 +38,15 @@
             %span.form-require
               必須
             = f.text_field  :name, class:"input-default", placeholder: "商品名（必須40文字まで）", size: "40"
+            = render partial: 'shared/error', locals: { item: @item, key: "name"}
           .form-group
             %label.form-label
               商品の説明
             %span.form-require
               必須
             = f.text_area :description, class:"textarea-default", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-        
+            = render partial: 'shared/error', locals: { key: "description"}
+
         .sell-content
           %h3.sell-sub-head
             商品の詳細
@@ -55,15 +58,18 @@
                 必須
               .select-wrap#select_parent_category
                 = f.select :category_id, @category_parent_array, {}, {class: "select-default", id: "parent_category"}
-            
+                = render partial: 'shared/error', locals: { key: "category_id"}
+
+
             .form-group
               %label.form-label
                 商品の状態
               %span.form-require
                 必須
               .select-wrap
-                =f.select :condition, @condition_array, {}, class: "select-default"
-        
+                = f.collection_select :condition, ItemCondition.all, :name, :name, { prompt: "---"}, class: "select-default"
+              = render partial: 'shared/error', locals: { key: "condition"}
+
         .sell-content
           %h3.sell-sub-head
             配送について
@@ -76,23 +82,26 @@
               %span.form-require
                 必須
               .select-wrap
-                =f.select :postage, @postage_array, {}, class: "select-default"
-            
+                = f.collection_select :postage, ItemPostage.all, :name, :name, { prompt: "---"}, class: "select-default"
+              = render partial: 'shared/error', locals: { key: "postage"}
+
             .form-group
               %label.form-label
                 発送元の地域
               %span.form-require
                 必須
               .select-wrap
-                =f.collection_select :departure_area, Prefecture.all, :id, :name, {}, class: "select-default"
+                =f.collection_select :departure_area, Prefecture.all, :id, :name,  { prompt: "---"}, class: "select-default"
+                = render partial: 'shared/error', locals: { key: "departure_area"}
             .form-group
               %label.form-label
                 発送までの日数
               %span.form-require
                 必須
               .select-wrap
-                =f.select :lead_time, @lead_time_array, {}, class: "select-default"
-        
+                = f.collection_select :lead_time, ItemLeadTime.all, :name, :name,  { prompt: "---"}, class: "select-default"
+              = render partial: 'shared/error', locals: { key: "lead_time"}
+
         .sell-content
           %h3.sell-sub-head
             販売価格（300〜9,999,999）
@@ -109,7 +118,8 @@
             .input-price
               ¥
               =f.text_field :price, class:"input-price-area", placeholder: "例）300", size: "20"
-          
+              = render partial: 'shared/error', locals: { key: "price"}
+
           .commission
             .l-left
               販売手数料(10%)
