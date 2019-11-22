@@ -1,17 +1,15 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @item = Item.new
     5.times{@item.item_images.build}
     @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%").limit(5)
+
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
-
-    @condition_array = ['---','新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い']
-    @postage_array = ['---','送料込み(出品者負担)','着払い(購入者負担)']
-    @lead_time_array = ['---','1~2日で発送','2~3日で発送','4~7日で発送']
 
   end
 
@@ -19,9 +17,13 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    @item.save!
-    redirect_to root_path, notice: '出品が完了しました'
+    @item = Item.new(item_params)    
+    if @item.save
+      redirect_to root_path, notice: '出品が完了しました'
+    else
+      flash[:error] = @item.errors.keys.map { |key|[key, @item.errors.full_messages_for(key)]}.to_h
+      redirect_to new_item_path
+    end
   end
 
   def index
@@ -97,10 +99,6 @@ class ItemsController < ApplicationController
       seller_id: current_user.id,
       display: "open"
     )
-  end
-
-  def image_params
-    @images = params.require(:item_images).permit(:image)
   end
 
 end
