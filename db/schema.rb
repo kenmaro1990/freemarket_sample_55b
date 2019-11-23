@@ -103,6 +103,16 @@ ActiveRecord::Schema.define(version: 20191109144240) do
     t.index ["ancestry"], name: "index_sizes_on_ancestry", using: :btree
   end
 
+  create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "uid",                      null: false
+    t.string   "provider",                 null: false
+    t.text     "token",      limit: 65535
+    t.integer  "user_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                                          null: false
     t.string   "email",                                             null: false
@@ -132,4 +142,5 @@ ActiveRecord::Schema.define(version: 20191109144240) do
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "sizes"
   add_foreign_key "items", "users"
+  add_foreign_key "sns_credentials", "users"
 end

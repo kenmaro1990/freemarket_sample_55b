@@ -34,6 +34,7 @@
 @import "./categories";
 @import "modules/main-top";
 @import "modules/sidebar";
+@import "modules/breadcrumbs";
 @import "./mypage";
 @import "./error";
 @import "items/new.scss";
@@ -43,3 +44,5 @@
 @import "identification.scss";
 @import "card.scss";
 @import "logout.scss";
+@import "search.scss";
+@import "mixin/blur";
