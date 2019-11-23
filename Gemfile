@@ -5,8 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'dotenv-rails', groups: [:development, :test]
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7', '>= 5.0.7.2'
 # Use mysql as the database for Active Record
@@ -44,7 +42,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem  "better_errors"
+  gem 'pry-rails'
+  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
@@ -76,9 +75,7 @@ gem 'fog-aws'
 gem 'active_hash', '~> 2.3.0'
 gem 'rails-i18n'
 gem 'ancestry'
-gem 'pry-rails'
-gem "gretel"
-gem 'dotenv-rails'
+gem 'gretel'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -87,8 +84,4 @@ gem 'payjp'
 
 group :production do
   gem 'unicorn', '5.4.1'
-end
-
-group :test do
-  gem 'faker'
 end

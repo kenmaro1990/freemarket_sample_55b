@@ -12,7 +12,6 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :address
 
   has_one :card
-  accepts_nested_attributes_for :card
   
   VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
