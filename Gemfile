@@ -44,7 +44,6 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem 'pry-rails'
   gem  "better_errors"
   gem 'binding_of_caller'
   gem 'rspec-rails'
@@ -68,13 +67,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
+
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'active_hash', '~> 2.3.0'
-gem 'pry-rails'
 gem 'rails-i18n'
 gem 'ancestry'
 gem 'pry-rails'
