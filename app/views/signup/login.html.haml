@@ -11,7 +11,7 @@
       %i.fa.fa-facebook-square.login-social__facebook--icon
       Facebookでログイン
     = link_to user_google_oauth2_omniauth_authorize_path, class: "login-social__google",method: :post do
-      %i.fa.fa-google.login-social__google--icon
+      = image_tag ("google.png"), height: '20', width: '20'
       Googleでログイン
       
   .login-email

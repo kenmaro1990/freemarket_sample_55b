@@ -85,7 +85,7 @@ $fontSizeNormal: 14px;
     line-height: 50px;
     text-decoration: none;
     position: relative;
-    & i {
+    & img {
       @include icon-size();
     }
   }
@@ -183,12 +183,12 @@ $fontSizeNormal: 14px;
   font-size: 14px;
   &__email {
     @include register-box-size();
-    background-color: #eeeeee;
-    color: #000000;
+    background-color: #ea352d;
+    color: #fff;
     position: relative;
     & i {
       @include icon-size();
-      color: gray;
+      color: #fff;
     }
   }
   &__facebook {
@@ -208,7 +208,7 @@ $fontSizeNormal: 14px;
     color: #333333;       
     position: relative;
     border: 1px solid gray;
-    & i {
+    & img {
       @include icon-size();
     }
   }
