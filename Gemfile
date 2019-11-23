@@ -75,7 +75,6 @@ gem 'active_hash'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'ancestry'
-gem 'pry-rails'
 gem 'dropzonejs-rails'
 
 group :production do
