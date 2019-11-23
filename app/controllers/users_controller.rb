@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+  before_action :check_sign_in
+
   def index
     @items = Item.where(buyer_id: current_user.id).limit(4)
   end
@@ -34,6 +35,10 @@ class UsersController < ApplicationController
 
   def purchased
     @items = Item.where(buyer_id: current_user.id).order(updated_at: "DESC")
+  end
+
+  def check_sign_in
+    redirect_to root_path unless user_signed_in?	
   end
   
 end
