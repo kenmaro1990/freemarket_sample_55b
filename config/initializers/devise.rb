@@ -3,12 +3,15 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], skip_jwt: true
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '91c005a4b056ffa640c659f0e32262d4b308b35cbfbdb2dd24838f5a0974c37b607f66a3b5092c0a4dab06c6495c05221b6d2bfd3006d5a765d1f7c45a77cdc3'
+  # config.secret_key = '16902325aab0eb124cc6d60480dfb679842a2cab6f655156bac2095c196dbd12888397bdd96bebfc3bb705b0a856ed62afe7141cefb81ea9bdf5bd9b12eb677e'
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -113,7 +116,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'b5a66c9e97478a98d5d9b6e7d6ad26dc1f305a314f079519d06ee02521bc55eea607400652b3946f198c2201fdeb130ebd2a53891a0a8317b3f95bf12a76a01a'
+  # config.pepper = '286e3a0079c678415aae2687c705eff2c0d64549bd0366def0ba329ef71b1a921b96dfa9da5d85b7eb9ca06d91544a7a32e4dc47cfa4f40339872a319f3ebb74'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -295,7 +298,4 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-
-  config.scoped_views = true
-
 end

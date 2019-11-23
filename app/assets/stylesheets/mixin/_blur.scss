@@ -1,0 +1,16 @@
+.blur {
+  width: 100%; /*ボックスサイズは適当にどうぞ*/
+  overflow: hidden;
+  position: relative;
+  white-space: pre-wrap;
+}
+.blur:after {
+  background-image: linear-gradient(to right, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%);
+  content: '';
+  display: block;
+  height: 40%;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

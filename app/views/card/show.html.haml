@@ -1,0 +1,36 @@
+%html
+  %head
+  %body
+    =render partial: "shared/header"
+
+    .mypage__wrapper
+      .mypage__identification
+        %h2.mypage__identification__head
+          支払い方法
+        .mypage__card__content
+          %section
+            .mypage__card__content--head
+              %h3.mypage__card__content--head-text
+                クレジットカード一覧
+            .mypage__card__content--content
+              %li
+                .payment__information
+                  .payment__information--visa-image
+                    = image_tag 'visa.svg', class: "visa-image"
+                  .payment__information--num
+                    = "**** **** **** " + @customer_card.last4
+                  .payment__information--num
+                    - exp_month = @customer_card.exp_month.to_s
+                    - exp_year = @customer_card.exp_year.to_s.slice(2,3)
+                    = exp_month + " / " + exp_year
+                  = link_to delete_card_index_path ,method: :delete, class:"payment__information--remove" do
+                    %button{type: "submit", class:"payment__information--button"}
+                      削除する
+            .mypage__card__content--bottom
+              =link_to "http://google.co.jp", class:"payment__method" do
+                %span 支払い方法について
+                =fa_icon "chevron-right"
+
+      = render partial:"users/sidebar"
+    = render partial: "shared/exhibit"
+    = render partial: "shared/footer"
