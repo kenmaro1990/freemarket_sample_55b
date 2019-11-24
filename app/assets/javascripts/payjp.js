@@ -1,4 +1,5 @@
-$(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', $(function() {
+
   var form = $("#charge-form");
   Payjp.setPublicKey('pk_test_0135c27319dd3f1724c01eba');
   $(document).on("click", "#submit-button", function(e) {
@@ -28,4 +29,4 @@ $(document).on('turbolinks:load', function() {
       }
     });
   });
-});
+}));
