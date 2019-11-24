@@ -75,6 +75,7 @@ gem 'fog-aws'
 gem 'active_hash', '~> 2.3.0'
 gem 'rails-i18n'
 gem 'ancestry'
+gem 'dropzonejs-rails'
 gem 'gretel'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth'

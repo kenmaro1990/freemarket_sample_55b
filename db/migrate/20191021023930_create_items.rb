@@ -7,7 +7,6 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.integer :seller_id,       null: false, foreign_key: true
       t.integer :buyer_id,        foreign_key: true
       t.integer :category_id,     foreign_key: true
-      t.string  :size
       t.integer :brand_id,        foreign_key: true
       t.string  :condition,       null: false
       t.string  :postage,         null: false
@@ -16,6 +15,9 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string  :lead_time,       null: false
       t.string  :display,         null: false
       t.string  :order_status
+      t.string  :brand_name
+      t.references :user, foreign_key: true
+      t.references :size, foreign_key: true
       t.timestamps
     end
   end

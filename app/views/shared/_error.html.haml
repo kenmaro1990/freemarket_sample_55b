@@ -1,0 +1,4 @@
+- if flash[:error].present? && flash[:error][key].present?
+  - flash[:error][key].each do |message|
+    %p.error-message
+      = message
