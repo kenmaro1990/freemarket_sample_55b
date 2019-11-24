@@ -70,6 +70,7 @@ end
 
 crumb :logout do
   link "ログアウト", logout_users_path
+  parent :mypage
 end
 
 crumb :categories do

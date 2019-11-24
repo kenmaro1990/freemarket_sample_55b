@@ -66,6 +66,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
+
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'mini_magick'
@@ -74,6 +75,7 @@ gem 'fog-aws'
 gem 'active_hash', '~> 2.3.0'
 gem 'rails-i18n'
 gem 'ancestry'
+gem 'dropzonejs-rails'
 gem 'gretel'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth'

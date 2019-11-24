@@ -7,11 +7,11 @@
     %p.login-new-account__text アカウントをお持ちでない方はこちら
     = link_to "新規会員登録", register_signup_index_path, class: "login-new-account__link"
   .login-social
-    = link_to register_signup_index_path, class: "login-social__facebook",method: :get do
+    = link_to user_facebook_omniauth_authorize_path, class: "login-social__facebook",method: :post do
       %i.fa.fa-facebook-square.login-social__facebook--icon
       Facebookでログイン
-    = link_to register_signup_index_path, class: "login-social__google",method: :get do
-      %i.fa.fa-google.login-social__google--icon
+    = link_to user_google_oauth2_omniauth_authorize_path, class: "login-social__google",method: :post do
+      = image_tag ("google.png"), height: '20', width: '20'
       Googleでログイン
 
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

@@ -15,7 +15,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :card
 
   has_many :items
-  
+
   VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :nickname,            presence: true, length: { maximum: 20 }
