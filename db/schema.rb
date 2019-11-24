@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20191108022320) do
     t.integer  "size_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "size"
     t.index ["size_id"], name: "index_items_on_size_id", using: :btree
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
