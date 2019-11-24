@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191109144240) do
+ActiveRecord::Schema.define(version: 20191108022320) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -86,11 +86,11 @@ ActiveRecord::Schema.define(version: 20191109144240) do
     t.string   "lead_time",                     null: false
     t.string   "display",                       null: false
     t.string   "order_status"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "brand_name"
     t.integer  "user_id"
     t.integer  "size_id"
-    t.string   "brand_name"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.index ["size_id"], name: "index_items_on_size_id", using: :btree
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
