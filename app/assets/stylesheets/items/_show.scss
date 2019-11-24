@@ -40,8 +40,9 @@
         td {
           padding: 8px;
         }
-        a {
-        color: #0099E8;
+        .icon-arrow {
+          color: #0099e8;
+          font-size: .9em
         }
       }
      
@@ -148,6 +149,10 @@
     }
     &--next {
       float: right;
+    }
+    .icon-arrow {
+      color: #0099e8;
+      font-size: .9em
     }
   }
   .item-social-media{

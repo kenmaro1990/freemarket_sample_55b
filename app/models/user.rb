@@ -23,4 +23,5 @@ class User < ApplicationRecord
   validates :birthday,            presence: true
   validates :phone_number,        presence: true, uniqueness: true
 
+  has_many :items
 end
