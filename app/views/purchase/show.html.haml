@@ -10,7 +10,8 @@
         .content-post
           .content-post__detail
             .content-post__detail__image
-              = image_tag "bag.jpg", size: "64x64", alt: "buy-item-image"
+              -image = @item.item_images[0]
+              =image_tag "#{image.image}", size: "64x64", alt: "buy-item-image"
             %p.content-post__detail__name
               = @item.name
           .content-post__buy-form
