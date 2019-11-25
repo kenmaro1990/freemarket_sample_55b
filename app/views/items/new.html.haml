@@ -91,7 +91,7 @@
               %span.form-require
                 必須
               .select-wrap
-                =f.collection_select :departure_area, Prefecture.all, :id, :name,  { prompt: "---"}, class: "select-default"
+                =f.collection_select :departure_area, Prefecture.all, :name, :name,  { prompt: "---"}, class: "select-default"
                 = render partial: 'shared/error', locals: { key: "departure_area"}
             .form-group
               %label.form-label
