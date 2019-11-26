@@ -113,7 +113,6 @@ $(document).on('turbolinks:load', $(function() {
       deletes.shift();
     }
     image_count -= 1;
-
   })
 
 }));

@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_items, only: [:edit, :update]
 
   def new
     @item = Item.new
@@ -10,10 +11,22 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
-
   end
 
   def show
+  end
+
+  def edit
+    @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%").limit(5)
+
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+  end
+
+  def update
+    @item.update!(item_params)
   end
 
   def create
@@ -99,6 +112,10 @@ class ItemsController < ApplicationController
       seller_id: current_user.id,
       display: "open"
     )
+  end
+
+  def set_items
+    @item = Item.find(params[:id])
   end
 
 end
