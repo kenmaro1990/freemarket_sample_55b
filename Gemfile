@@ -82,6 +82,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'payjp'
+gem 'bootstrap-sass'
+gem 'data-confirm-modal'
+
 
 group :production do
   gem 'unicorn', '5.4.1'
