@@ -17,6 +17,7 @@
           .sell-dropbox-container
             .image-box
               #preview
+              = render partial: 'image-box', collection: @item.item_images, as: "photo"
               = f.fields_for :item_images do |i|
                 =i.label :image, class: 'image-uploader', id: "image-label-#{i.index}" do
                   .sell-upload-drop-box
