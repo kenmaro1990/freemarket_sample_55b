@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20191108022320) do
     t.integer  "seller_id",                     null: false
     t.integer  "buyer_id"
     t.integer  "category_id"
+    t.string   "size"
     t.integer  "brand_id"
     t.string   "condition",                     null: false
     t.string   "postage",                       null: false
@@ -86,12 +87,9 @@ ActiveRecord::Schema.define(version: 20191108022320) do
     t.string   "lead_time",                     null: false
     t.string   "display",                       null: false
     t.string   "order_status"
-    t.string   "brand_name"
-    t.integer  "user_id"
-    t.integer  "size_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.index ["size_id"], name: "index_items_on_size_id", using: :btree
+    t.integer  "user_id"
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
@@ -140,7 +138,6 @@ ActiveRecord::Schema.define(version: 20191108022320) do
   add_foreign_key "category_sizes", "categories"
   add_foreign_key "category_sizes", "sizes"
   add_foreign_key "item_images", "items"
-  add_foreign_key "items", "sizes"
   add_foreign_key "items", "users"
   add_foreign_key "sns_credentials", "users"
 end
