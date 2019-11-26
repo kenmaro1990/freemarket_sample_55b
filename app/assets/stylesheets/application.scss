@@ -12,7 +12,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
+ *= require dropzone/basic
+ *= require dropzone/dropzone
  */
+
 
 
 @import "mixin/signup_mixin";
@@ -41,3 +44,5 @@
 @import "identification.scss";
 @import "card.scss";
 @import "logout.scss";
+@import "search.scss";
+@import "mixin/blur";

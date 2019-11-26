@@ -5,8 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'dotenv-rails', groups: [:development, :test]
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7', '>= 5.0.7.2'
 # Use mysql as the database for Active Record
@@ -45,13 +43,15 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'pry-rails'
-  gem  "better_errors"
+  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'faker'
   gem 'capybara'
+  gem 'dotenv-rails'
+
 end
 
 group :development do
@@ -66,22 +66,23 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
+
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'fog-aws'
-gem 'active_hash'
-gem 'pry-rails'
+gem 'active_hash', '~> 2.3.0'
 gem 'rails-i18n'
 gem 'ancestry'
-gem 'pry-rails'
-gem "gretel"
+gem 'dropzonejs-rails'
+gem 'gretel'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'payjp'
 
 group :production do
   gem 'unicorn', '5.4.1'
-end
-
-group :test do
-  gem 'faker'
 end

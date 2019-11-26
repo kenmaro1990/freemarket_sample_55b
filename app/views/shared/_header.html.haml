@@ -4,7 +4,7 @@
       .main-top__header__box__form__logo
         %span.image
           = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", size: "134x36"
-      = form_tag('/', class: 'search-form') do
+      = form_tag('/search', method: :get, class: 'search-form') do
         %input.search-form__input{name: "keyword", placeholder: "何をお探しですか？", type: "text", value: ""}
         %button.btn-search{title: "検索", type: "submit"}
           = fa_icon "search", class: "search-form__icon"

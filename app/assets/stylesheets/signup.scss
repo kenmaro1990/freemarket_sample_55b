@@ -85,7 +85,7 @@ $fontSizeNormal: 14px;
     line-height: 50px;
     text-decoration: none;
     position: relative;
-    & i {
+    & img {
       @include icon-size();
     }
   }
@@ -166,6 +166,7 @@ $fontSizeNormal: 14px;
 
 .register-text {
   height: 97px; 
+  width: 700px;
   margin: 0 auto;
   background-color: #ffffff;
   border-bottom: 1px solid #f5f5f5;
@@ -182,12 +183,12 @@ $fontSizeNormal: 14px;
   font-size: 14px;
   &__email {
     @include register-box-size();
-    background-color: #eeeeee;
-    color: #000000;
+    background-color: #ea352d;
+    color: #fff;
     position: relative;
     & i {
       @include icon-size();
-      color: gray;
+      color: #fff;
     }
   }
   &__facebook {
@@ -207,7 +208,7 @@ $fontSizeNormal: 14px;
     color: #333333;       
     position: relative;
     border: 1px solid gray;
-    & i {
+    & img {
       @include icon-size();
     }
   }
@@ -493,11 +494,15 @@ $fontSizeNormal: 14px;
       width: 76px;
       resize: none;
       border: 1px solid #ccc;
+      background-color: #ffffff;
       border-radius: 4px;
       font-size: 16px;
       box-sizing: border-box;
       padding: 10px;
       margin-top: 8px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
     }
   }
   &__code {
@@ -589,5 +594,14 @@ $fontSizeNormal: 14px;
   color: #ea352d;
   font-size: 14px;
   margin-top: 8px ;
+}
+
+.select-icon{
+  background-color: #ffffff;
+  z-index: 1;
+  margin-left:-20px ;
+  margin-right: 10px ;
+  pointer-events: none;
+
 }
 /*# sourceMappingURL=style.css.map */
