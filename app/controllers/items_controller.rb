@@ -38,6 +38,21 @@ class ItemsController < ApplicationController
     @nike = Item.includes(:item_images).where(brand_id: 2).limit(10).order('id DESC')
   end
 
+  def destroy
+    if @item.seller_id == current_user.id
+      @item.destroy
+      redirect_to root_path
+      flash[:alert] = '商品を削除しました'
+    else
+      redirect_to item_path(@item)
+      flash[:alert] = '商品削除に失敗しました'
+    end
+  end
+
+  def purchase
+    @item = Item.new
+  end
+
   def get_price
     @price  = params[:keyword].to_i
     @fee    = @price * 0.1
