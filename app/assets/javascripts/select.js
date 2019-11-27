@@ -136,16 +136,14 @@ function appendBrandBox(){
 
 // -----------------------カテゴリ選択----------------------------
   $('#parent_category').on('change', function(){
-    var parentCategory = document.getElementById('parent_category').value;
-    
+    var parentCategory = $('#parent_category').val();
     if (parentCategory != "---"){
       $.ajax({
-        url: 'get_category_children',
+        url: '/items/get_category_children',
         type: 'GET',
         data: { parent_name: parentCategory },
         dataType: 'json'
       })
-
     .done(function(children){
       $('#children_wrapper').remove();
       $('#grandchildren_wrapper').remove();
@@ -173,7 +171,7 @@ function appendBrandBox(){
     var childId = $('#child_category option:selected').data('category');
     if (childId != ""){
       $.ajax({
-        url: 'get_category_grandchildren',
+        url: '/items/get_category_grandchildren',
         type: 'GET',
         data: { child_id: childId },
         dataType: 'json'
@@ -206,7 +204,7 @@ function appendBrandBox(){
     var grandchildID =$('#grandchild_category option:selected').data('category');
     if (grandchildID != 0){
       $.ajax({
-        url: 'get_size',
+        url: '/items/get_size',
         type: 'GET',
         data: { grandchild_id: grandchildID },
         dataType: 'json'
@@ -246,7 +244,7 @@ $(document).on('keyup','.input-brand', function(){
   var input = $(".input-brand").val();
   if (input != "") {
     $.ajax({
-      url: 'search_brand',
+      url: '/items/search_brand',
       type: 'GET',
       data: { keyword: input },
       dataType: 'json',
