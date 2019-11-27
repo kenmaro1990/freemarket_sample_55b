@@ -29,7 +29,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    binding.pry
     @item.update!(item_params)
   end
 
