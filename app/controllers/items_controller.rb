@@ -51,18 +51,6 @@ class ItemsController < ApplicationController
     @nike = Item.includes(:item_images).where(brand_id: 2).limit(10).order('id DESC')
   end
 
-  def get_price
-    @price  = params[:keyword].to_i
-    @fee    = @price * 0.1
-    @profit = @price - @fee
-
-    respond_to do |format|
-      format.html
-      format.json
-    end
-
-  end
-
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
