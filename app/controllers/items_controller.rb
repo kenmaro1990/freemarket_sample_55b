@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_items, only: [:edit, :update]
+  before_action :set_category, only: [:edit, :update]
+  before_action :set_size_array, only: [:edit, :update]
+  
 
   def new
     @item = Item.new
@@ -26,6 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    binding.pry
     @item.update!(item_params)
   end
 
@@ -104,6 +108,20 @@ class ItemsController < ApplicationController
 
   def set_items
     @item = Item.find(params[:id])
+  end
+
+  def set_category
+    @grand_children = Category.find(@item.category_id)
+    @grand_children_array = Category.where(ancestry: @grand_children.ancestry)
+    @children = @grand_children.parent
+    @children_array = Category.where(ancestry: @children.ancestry)
+    @parent = @children.parent
+    @parent_array = Category.where(ancestry: @parent.ancestry)
+  end
+
+  def set_size_array
+    @size = Size.find(@item.size_id)
+    @size_array = Size.where(ancestry: @size.ancestry)
   end
 
 end

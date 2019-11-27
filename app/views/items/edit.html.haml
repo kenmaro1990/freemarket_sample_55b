@@ -22,7 +22,7 @@
                 =i.label :image, class: 'image-uploader', id: "image-label-#{i.index}" do
                   .sell-upload-drop-box
                     %pre クリックしてファイルをアップロード
-                    = i.file_field :image, type: "file", class: "upload-image"
+                    = i.file_field :image, type: "file", class: "upload-image", name: "item[images_attributes][#{i.index}][image]"
             = render partial: 'shared/error', locals: { key: "item_images"}
             .image-box2
               #preview2
@@ -58,9 +58,28 @@
               %span.form-require
                 必須
               .select-wrap#select_parent_category
-                = f.select :category_id, @category_parent_array, {}, {class: "select-default", id: "parent_category"}
+                = f.collection_select :category_id, @parent_array,:name, :name, {selected: @parent.name}, class: "select-default", id: "parent_category"
                 = render partial: 'shared/error', locals: { key: "category_id"}
-
+              .select-wrap#children_wrapper
+                = f.collection_select :category_id, @children_array,:name, :name, {selected: @children.name}, class: "select-default", id: "child_category"
+                = render partial: 'shared/error', locals: { key: "category_id"}
+              .select-wrap#grandchildren_wrapper
+                = f.collection_select :category_id, @grand_children_array,:name, :name, {selected: @grand_children.name}, class: "select-default", id: "grandchild_category"
+                = render partial: 'shared/error', locals: { key: "category_id"}
+              .form-group#size_wrapper
+                %label.form-label
+                  サイズ
+                %span.form-require
+                  必須
+                .select-wrap
+                  =f.collection_select :size_id, @size_array, :id, :size, {prompt: "---"}, class:"select-default", id:"size"
+            .form-group#brand_wrapper
+              %label.form-label
+                ブランド
+              %span.form-arbitrary
+                任意
+              .select-wrap
+                = f.text_field :brand_name, class:"input-brand",value: "#{@item.brand_name}",placeholder:"例）シャネル", type:"text"
 
             .form-group
               %label.form-label
@@ -92,7 +111,7 @@
               %span.form-require
                 必須
               .select-wrap
-                =f.collection_select :departure_area, Prefecture.all, :id, :name,  { prompt: "---"}, class: "select-default"
+                =f.collection_select :departure_area, Prefecture.all, :name, :name,  { prompt: "---"}, class: "select-default"
                 = render partial: 'shared/error', locals: { key: "departure_area"}
             .form-group
               %label.form-label
