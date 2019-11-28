@@ -58,13 +58,13 @@
               %span.form-require
                 必須
               .select-wrap#select_parent_category
-                = f.collection_select :category_id, @parent_array,:name, :name, {selected: @parent.name}, class: "select-default", id: "parent_category"
+                = f.collection_select :category_id, @parent_array,:id, :name, {selected: @parent.id}, class: "select-default", id: "parent_category"
                 = render partial: 'shared/error', locals: { key: "category_id"}
               .select-wrap#children_wrapper
-                = f.collection_select :category_id, @children_array,:name, :name, {selected: @children.name}, class: "select-default", id: "child_category"
+                = f.collection_select :category_id, @children_array,:id, :name, {selected: @children.id}, class: "select-default", id: "child_category"
                 = render partial: 'shared/error', locals: { key: "category_id"}
               .select-wrap#grandchildren_wrapper
-                = f.collection_select :category_id, @grand_children_array,:name, :name, {selected: @grand_children.name}, class: "select-default", id: "grandchild_category"
+                = f.collection_select :category_id, @grand_children_array,:id, :name, {selected: @grand_children.id}, class: "select-default", id: "grandchild_category"
                 = render partial: 'shared/error', locals: { key: "category_id"}
               .form-group#size_wrapper
                 %label.form-label
