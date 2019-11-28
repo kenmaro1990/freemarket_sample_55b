@@ -141,7 +141,7 @@ function appendBrandBox(){
       $.ajax({
         url: '/items/get_category_children',
         type: 'GET',
-        data: { parent_name: parentCategory },
+        data: { parent_id: parentCategory },
         dataType: 'json'
       })
     .done(function(children){

@@ -10,10 +10,8 @@ class ItemsController < ApplicationController
     5.times{@item.item_images.build}
     @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%").limit(5)
 
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+    @category_parent_array = Category.where(ancestry: nil)
+
   end
 
   def show
@@ -21,11 +19,6 @@ class ItemsController < ApplicationController
 
   def edit
     @brands = Brand.where('name LIKE(?)',"%#{params[:keyword]}%").limit(5)
-
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
   end
 
   def update
@@ -55,7 +48,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
   end
 
   def get_category_grandchildren
