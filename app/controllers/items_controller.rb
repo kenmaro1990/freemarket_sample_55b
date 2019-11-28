@@ -22,7 +22,8 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update!(item_params)
+    @item.update!(item_update_params)
+    redirect_to root_path
   end
 
   def create
@@ -91,6 +92,28 @@ class ItemsController < ApplicationController
       :brand_id,
       :shipping_method,
       item_images_attributes: [:image]
+    ).merge(
+      user_id: current_user.id,
+      seller_id: current_user.id,
+      display: "open"
+    )
+  end
+
+  def item_update_params
+    params.require(:item).permit(
+      :name, 
+      :description, 
+      :size_id,
+      :price, 
+      :condition, 
+      :postage, 
+      :departure_area, 
+      :lead_time,
+      :category_id,
+      :brand_name,
+      :brand_id,
+      :shipping_method,
+      item_images_attributes: [:id, :image]
     ).merge(
       user_id: current_user.id,
       seller_id: current_user.id,

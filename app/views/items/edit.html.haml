@@ -16,21 +16,22 @@
           %p 最大10枚までアップロードできます
           .sell-dropbox-container
             .image-box
-              #preview
               = render partial: 'image-box', collection: @item.item_images, as: "photo"
-              = f.fields_for :item_images do |i|
-                =i.label :image, class: 'image-uploader', id: "image-label-#{i.index}" do
-                  .sell-upload-drop-box
-                    %pre クリックしてファイルをアップロード
-                    = i.file_field :image, type: "file", class: "upload-image", name: "item[images_attributes][#{i.index}][image]"
-            = render partial: 'shared/error', locals: { key: "item_images"}
+              #preview
+              %label{for: "item_images_attributes_#{@item.item_images.length}", class: "image-uploader", id: "label-box--#{@item.item_images.length}", style:"display:block"}
+                .sell-upload-drop-box
+                  %pre クリックしてファイルをアップロード
+              .hidden-content
+                = f.fields_for :item_images do |image|
+                  = image.file_field :image , class: "hidden-field"
+                - @item.item_images.length.upto(4) do |i|
+                  %input{id: "item_images_attributes_#{i}", class: "update-image", name: "item[item_images_attributes][#{i}][image]", type: "file"}
             .image-box2
               #preview2
-              = f.fields_for :item_images do |i|
-                =i.label :image, class: 'image-uploader2', id: "image-label-#{i.index}" do
-                  .sell-upload-drop-box2
-                    %pre クリックしてファイルをアップロード
-                    = i.file_field :image, type: "file", class: "upload-image"
+              %label{for: "item_images_attributes_#{@item.item_images.length}", class: "image-uploader2", id: "label-box--#{@item.item_images.length}", style:"display:block"}
+                .sell-upload-drop-box
+                  %pre クリックしてファイルをアップロード
+            = render partial: 'shared/error', locals: { key: "item_images"}
 
         .sell-content
           .form-group-first
