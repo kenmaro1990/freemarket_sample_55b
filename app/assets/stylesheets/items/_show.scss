@@ -112,7 +112,23 @@
     background: #fff;
     padding: 8px 16px 8px 16px;
     width: 700px;
-    @include btn-style();
+    .btn-default{
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+    }
+    a{
+      text-decoration: none;
+    }
+    a:hover{
+      opacity: 0.5;
+    }
     p{
       font-size: 16px;
       text-align: center;

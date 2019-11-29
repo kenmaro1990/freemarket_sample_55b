@@ -18,7 +18,6 @@ a {
   display:flex;
   align-items:center;
   justify-content:center;
-  display: block;
   text-align: center;
 }
 
@@ -60,14 +59,14 @@ a {
   .close {
     font-family:$font;
     cursor:pointer;
-    color:#FFF;
+   
     width:50px;
     height:50px;
     text-align:center;
     line-height:50px;
     position:absolute;
     right:0;
-    color:#999;
+   
     font-size:200px;
     span {
         transform:rotate(45deg);
