@@ -1,0 +1,23 @@
+.flex1
+  .modalcontainer
+    .flex2
+      .modal
+        .close
+          %span 
+            +
+        .content
+          %h2 
+            削除確認
+          %p 
+            削除すると二度と復活できません。
+            %br
+            削除すると代わりに停止することもできます。
+            %br
+            %br
+            %br/
+            本当に削除しますか？
+        .buttons
+          =link_to "キャンセル", "#0"
+          =link_to "削除", item_path(@item), method: :delete
+ 
+  
