@@ -41,14 +41,14 @@ class ItemsController < ApplicationController
 
   def destroy
     item = Item.find(params[:id])
-    if item.seller_id == current_user.id
-      item.destroy
+    item.destroy if item.seller_id == current_user.id
       redirect_to root_path
-      flash[:alert] = '商品を削除しました'
-    else
-      redirect_to item_path(@item)
-      flash[:alert] = '商品削除に失敗しました'
+    #   flash[:alert] = '商品を削除しました'
+    # else
+    #   redirect_to item_path(@item)
+    #   flash[:alert] = '商品削除に失敗しました'
     end
+    
   end
 
   def purchase
