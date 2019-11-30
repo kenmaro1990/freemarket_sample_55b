@@ -2,67 +2,64 @@
   =render partial: "shared/header-after-login"
   .item
     %h1.item__name
-      商品名
+      = @item.name
     .item__content.clearfix
       .item__photo
-        =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_8.jpg?1568183693", size: "300x300"
+        =image_tag @image.image_url, size: "300x300", alt: "メイン画像", class: "mainImage"
         .item__photo--others
-          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_1.jpg?1569063127", size: "60x60"
-          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_2.jpg?1569063127", size: "60x60"
-          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_3.jpg?1569063127", size: "60x60"
-          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_4.jpg?1569063127", size: "60x60"
-          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_5.jpg?1569063127", size: "60x60"
-          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_6.jpg?1569063127", size: "60x60"
-
+          - @images.each do |image|
+            = image_tag "#{image.image_url}", size: "60x60", alt: "サムネイル", class: "thumb"
       %table{ class: "item__detail-table", border: "1"}
         %tr
           %th 
             出品者
             %td
-              =link_to "yamamoto"
+              =link_to @item.user.nickname, "/users/#{@item.user.id}"
         %tr
           %th 
             カテゴリー
             %td
-              =link_to "レディース"
+              = link_to @item.category.root.name, "/categories/#{@item.category.root.id}"
               %br
-              =link_to ">バッグ"
+              = fa_icon 'chevron-right', class: 'icon-arrow'
+              =link_to  @item.category.parent.name, "/categories/#{@item.category.parent.id}"
               %br
-              =link_to ">ショルダーバッグ"
+              = fa_icon 'chevron-right', class: 'icon-arrow'
+              =link_to @item.category.name, "/categories/#{@item.category.id}"
         %tr
           %th 
             ブランド
             %td
-              =link_to "コーチ"
+              =link_to @item.brand.name, "/brands/#{@item.brand.id}"
         %tr
           %th 
             商品の状態
             %td
-              目立った傷や汚れなし
+              =@item.condition
         %tr
           %th 
             配送料の負担
             %td
-              送料込み(出品者負担)
+              =@item.postage
         %tr
           %th 
             配送の方法
             %td
-              らくらくメルカリ便
+              =@item.shipping_method
         %tr
           %th 
             配送元地域
             %td
-              =link_to "北海道"
+              =link_to @item.departure_area, ""
         %tr
           %th 
             発送日の目安
             %td
-              =link_to "4~7日で発送"                         
+              =@item.lead_time
 
     .item__price-box
       %span.item__price
-        ¥7,000 
+        ="¥#{@item.price}" 
       %span.item__tax
         (税込)
       %span.item__shipping-fee
@@ -71,9 +68,7 @@
       = link_to "購入画面に進む", transaction_items_path, class: "item__buy-btn--link"
     .item-description 
       %p.item-description__inner
-        商品説明 商品説明 商品説明 商品説明 商品説明
-        商品説明
-        商品説明
+        =@item.description
     .item-button-container.clearfix
       .item-button--left
         %button{ class: "item-button--left--like", type: "button", name: "like"}

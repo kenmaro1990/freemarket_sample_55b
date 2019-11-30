@@ -9,7 +9,6 @@
         .item__photo--others
           - @images.each do |image|
             = image_tag "#{image.image_url}", size: "60x60", alt: "サムネイル", class: "thumb"
-
       %table{ class: "item__detail-table", border: "1"}
         %tr
           %th 
@@ -67,7 +66,7 @@
         送料込み
     .item-description 
       %p.item-description__inner
-      =@item.description
+        =@item.description
   .item__change-box
     =link_to "商品の編集", 'http://google.co.jp', class: 'btn-default btn-red'
     %p 
