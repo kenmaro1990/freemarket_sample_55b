@@ -33,7 +33,7 @@
               -if @item.brand_id
                 =link_to @item.brand.name, "/brands/#{@item.brand.id}" 
               -else
-                =link_to @item.brand.name, ""
+                =link_to @item.brand_name, ""
         %tr
           %th 
             商品の状態
