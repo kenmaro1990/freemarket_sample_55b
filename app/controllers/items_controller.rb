@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @user = User.find(@item.selller_id)
+    @item = Item.find(params[:id])
   end
 
   def create
@@ -40,14 +40,15 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy if @item.seller_id == current_user.id
-      
-    #   flash[:alert] = '商品を削除しました'
-    # else
-    #   redirect_to item_path(@item)
-    #   flash[:alert] = '商品削除に失敗しました'
+    item = Item.find(params[:id])
+    unless item.seller_id == current_user.id
+      item.destroy
+      redirect_to root_path
+      flash[:alert] = '商品を削除しました'
+    else
+      redirect_to item_path(@item)
+      flash[:alert] = '商品削除に失敗しました'
     end
-    
   end
 
   def purchase
