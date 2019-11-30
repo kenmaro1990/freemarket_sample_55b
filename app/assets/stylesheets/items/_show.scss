@@ -38,8 +38,9 @@
         td {
           padding: 8px;
         }
-        a {
-        color: #0099E8;
+        .icon-arrow {
+          color: #0099e8;
+          font-size: .9em
         }
       }
      
@@ -70,10 +71,12 @@
       margin-top: 16px;
       background: #ea352d;
       text-align: center;
-      font-size: 24px;
-      line-height: 60px;
-      color: #fff;
-      font-weight: 600;
+      &--link {
+        font-size: 24px;
+        line-height: 60px;
+        color: #fff;
+        font-weight: 600;
+      } 
     }
   
     .item-description {
@@ -179,6 +182,10 @@
     }
     &--next {
       float: right;
+    }
+    .icon-arrow {
+      color: #0099e8;
+      font-size: .9em
     }
   }
   .item-social-media{
