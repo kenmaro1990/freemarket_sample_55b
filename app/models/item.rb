@@ -36,8 +36,6 @@ class Item < ApplicationRecord
     presence: { message: "を選択して下さい" }
   validates :departure_area,
     presence: { message: "を選択して下さい" }
-  validates :brand,
-    length: { maximum: 40 }
   validates :category_id,
     numericality: { greater_than: 0, message: "を選択して下さい" }
 

@@ -41,6 +41,21 @@ class ItemsController < ApplicationController
     @nike = Item.includes(:item_images).where(brand_id: 2).limit(10).order('id DESC')
   end
 
+  def destroy 
+    @item.destroy 
+    if @item.seller_id == current_user.id
+      redirect_to root_path
+      flash[:alert] = '商品を削除しました'
+    else
+      redirect_to item_path(@item)
+      flash[:alert] = '商品削除に失敗しました'
+    end
+  end
+
+  def purchase
+    @item = Item.new
+  end
+
   def get_price
     @price  = params[:keyword].to_i
     @fee    = @price * 0.1
@@ -50,7 +65,6 @@ class ItemsController < ApplicationController
       format.html
       format.json
     end
-
   end
 
   def get_category_children
@@ -64,12 +78,12 @@ class ItemsController < ApplicationController
   def get_size
     selected_grandchild = Category.find("#{params[:grandchild_id]}")
     if related_size_parent = selected_grandchild.sizes[0]
-       @sizes = related_size_parent.children
+      @sizes = related_size_parent.children
     else
-       selected_child = Category.find("#{params[:grandchild_id]}").parent
-       if related_size_parent = selected_child.sizes[0]
-          @sizes = related_size_parent.children 
-       end
+      selected_child = Category.find("#{params[:grandchild_id]}").parent
+      if related_size_parent = selected_child.sizes[0]
+        @sizes = related_size_parent.children 
+      end
     end
   end
 
@@ -103,5 +117,4 @@ class ItemsController < ApplicationController
       display: "open"
     )
   end
-
 end

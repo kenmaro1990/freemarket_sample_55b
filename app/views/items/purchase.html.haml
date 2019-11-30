@@ -1,0 +1,118 @@
+.item-wrapper
+  =render partial: "shared/header-after-login"
+  .item
+    %h1.item__name
+      商品名
+    .item__content.clearfix
+      .item__photo
+        =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_8.jpg?1568183693", size: "300x300"
+        .item__photo--others
+          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_1.jpg?1569063127", size: "60x60"
+          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_2.jpg?1569063127", size: "60x60"
+          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_3.jpg?1569063127", size: "60x60"
+          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_4.jpg?1569063127", size: "60x60"
+          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_5.jpg?1569063127", size: "60x60"
+          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m84283729098_6.jpg?1569063127", size: "60x60"
+
+      %table{ class: "item__detail-table", border: "1"}
+        %tr
+          %th 
+            出品者
+            %td
+              =link_to "yamamoto"
+        %tr
+          %th 
+            カテゴリー
+            %td
+              =link_to "レディース"
+              %br
+              =link_to ">バッグ"
+              %br
+              =link_to ">ショルダーバッグ"
+        %tr
+          %th 
+            ブランド
+            %td
+              =link_to "コーチ"
+        %tr
+          %th 
+            商品の状態
+            %td
+              目立った傷や汚れなし
+        %tr
+          %th 
+            配送料の負担
+            %td
+              送料込み(出品者負担)
+        %tr
+          %th 
+            配送の方法
+            %td
+              らくらくメルカリ便
+        %tr
+          %th 
+            配送元地域
+            %td
+              =link_to "北海道"
+        %tr
+          %th 
+            発送日の目安
+            %td
+              =link_to "4~7日で発送"                         
+
+    .item__price-box
+      %span.item__price
+        ¥7,000 
+      %span.item__tax
+        (税込)
+      %span.item__shipping-fee
+        送料込み
+    %button.item__buy-btn 
+      = link_to "購入画面に進む", transaction_items_path, class: "item__buy-btn--link"
+    .item-description 
+      %p.item-description__inner
+        商品説明 商品説明 商品説明 商品説明 商品説明
+        商品説明
+        商品説明
+    .item-button-container.clearfix
+      .item-button--left
+        %button{ class: "item-button--left--like", type: "button", name: "like"}
+          %i.fa.fa-heart
+          いいね
+        %button{ class: "item-button--left--report", type: "button"}
+          %i.fa.fa-flag
+          不適切な商品の報告
+      .item-button--right
+        =link_to "" do
+          %i.fa.fa-lock
+          %span
+            あんしん・あんぜんへの取り組み
+
+  .item-detail-message
+    .message-container
+      .message-content
+        %p 
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。 
+        %textarea{type: "text", name: "body", class: "textarea-default"}
+        %button{type: "submit", class: "message-submit--btn-gray"}
+          %span
+            コメントする
+
+  %ul.item-link
+    %li.item-link--prev
+      =link_to "< 前の商品"
+    %li.item-link--next
+      =link_to "次の商品 >"
+
+  .item-social-media
+    %ul.item-social-media__list
+      %li
+        = link_to "", class: "facebook" do
+          %i.fa.fa-facebook-square
+      %li
+        = link_to "", class: "twitter" do
+          %i.fa.fa-twitter-square
+      %li
+        = link_to "", class: "pinterest" do
+          %i.fa.fa-pinterest-square
+  =render partial: "shared/footer"
