@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @user = User.find(@item.selller_id)
   end
 
   def create
@@ -40,9 +40,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy if item.seller_id == current_user.id
-      redirect_to root_path
+    @item.destroy if @item.seller_id == current_user.id
+      
     #   flash[:alert] = '商品を削除しました'
     # else
     #   redirect_to item_path(@item)
