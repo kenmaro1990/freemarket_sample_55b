@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    binding.pry
     @item.update!(item_update_params)
     redirect_to root_path
   end
@@ -74,6 +75,11 @@ class ItemsController < ApplicationController
 
   def get_image
   end
+
+  def delete_image
+    ItemImage.find(params[:id]).delete
+  end
+
 
   private
 
