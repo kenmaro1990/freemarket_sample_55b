@@ -40,12 +40,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy 
-   
     @item = Item.where(seller_id: current_user.id).find(params[:id])
     if @item.destroy
       redirect_to root_path
+      flash[:alert] = '商品を削除しました'
     else
       redirect_to item_path(@item)
+      flash[:alert] = '商品削除に失敗しました'
     end
   end
 
