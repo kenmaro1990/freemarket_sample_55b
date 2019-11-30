@@ -54,6 +54,10 @@ Rails.application.routes.draw do
       get 'search_brand', defaults: { format: 'json' }
       get 'get_image', defaults: { format: 'json' }
     end
+
+    member do
+      get 'purchase'
+    end
   end
 
   resources :categories do

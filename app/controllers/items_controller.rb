@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def create
@@ -36,6 +37,21 @@ class ItemsController < ApplicationController
     @louis_vuitton = Item.includes(:item_images).where(brand_id: 3).limit(10).order('id DESC')
     @supreme = Item.includes(:item_images).where(brand_id: 4).limit(10).order('id DESC')
     @nike = Item.includes(:item_images).where(brand_id: 2).limit(10).order('id DESC')
+  end
+
+  def destroy 
+    @item = Item.where(seller_id: current_user.id).find(params[:id])
+    if @item.destroy
+      redirect_to root_path
+      flash[:alert] = '商品を削除しました'
+    else
+      redirect_to item_path(@item)
+      flash[:alert] = '商品削除に失敗しました'
+    end
+  end
+
+  def purchase
+    @item = Item.new
   end
 
   def get_price

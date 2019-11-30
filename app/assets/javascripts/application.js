@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require dropzone
 //= require_tree .
+//= require bootstrap-sprockets
+//= require data-confirm-modal
