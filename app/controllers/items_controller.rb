@@ -54,8 +54,9 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    @item = Item.new
-  end
+    @item = Item.find(params[:id])
+    @images = @item.item_images
+    @image = @images.first  end
 
   def get_price
     @price  = params[:keyword].to_i
