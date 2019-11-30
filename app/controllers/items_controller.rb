@@ -39,15 +39,10 @@ class ItemsController < ApplicationController
     @nike = Item.includes(:item_images).where(brand_id: 2).limit(10).order('id DESC')
   end
 
-  def destroy
-    item = Item.find(params[:id])
-    if item.seller_id == current_user.id
-      item.destroy
+  def destroy 
+    @item = Item.where(seller_id: current_user.id).find(params[:id])
+    if @item.destroy
       redirect_to root_path
-      flash[:alert] = '商品を削除しました'
-    else
-      redirect_to item_path(@item)
-      flash[:alert] = '商品削除に失敗しました'
     end
   end
 
