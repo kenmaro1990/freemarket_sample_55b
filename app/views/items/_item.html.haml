@@ -1,5 +1,5 @@
 %li.main-top__contents__center__items__ladies__list__item
-  = link_to "http://google.co.jp", class: "link" do
+  = link_to purchase_item_path(item), class: "link" do
     -image = item.item_images[0]
     =image_tag "#{image.image}"
     %span.price
