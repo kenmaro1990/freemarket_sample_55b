@@ -82,9 +82,6 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'payjp'
-gem 'bootstrap-sass'
-gem 'bootstrap'
-gem 'data-confirm-modal'
 
 
 group :production do
