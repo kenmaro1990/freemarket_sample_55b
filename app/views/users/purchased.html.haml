@@ -22,7 +22,7 @@
           .mypage__bought__content
             %li
               - @items.each do |item|
-                =link_to item_path(item), class: 'mypage__bought__content--link' do
+                =link_to purchase_item_path(item), class: 'mypage__bought__content--link' do
                   -image = item.item_images[0]
                   =image_tag "#{image.image}", class: "items"
                   .bought__body
