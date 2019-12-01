@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    binding.pry
     @item.update!(item_update_params)
     redirect_to root_path
   end
@@ -77,7 +76,6 @@ class ItemsController < ApplicationController
   end
 
   def delete_image
-    binding.pry
     @ids = params[:id]
     @ids.each do |id|
       ItemImage.find(id).delete
@@ -139,6 +137,14 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def save_image
+    @images_id = params.require(:item).permit(item_images_attributes: [:id])
+    @images_id.each do |id|
+      @image = ItemImage.find(id)
+      @image.create
+    end
+  end
+
   def set_category
     @grand_children = Category.find(@item.category_id)
     @grand_children_array = Category.where(ancestry: @grand_children.ancestry)
@@ -149,8 +155,10 @@ class ItemsController < ApplicationController
   end
 
   def set_size_array
-    @size = Size.find(@item.size_id)
-    @size_array = Size.where(ancestry: @size.ancestry)
+    if @item.size_id != nil
+      @size = Size.find(@item.size_id)
+      @size_array = Size.where(ancestry: @size.ancestry)
+    end
   end
 
 end
