@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def completed
-    @items = Item.where(seller_id: current_user.id).order(updated_at: "DESC")
+    @items = Item.where(seller_id: current_user.id).where.not(buyer_id: nil).order(updated_at: "DESC")
   end
 
   def purchase
