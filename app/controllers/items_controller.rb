@@ -14,12 +14,13 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
     @images = @item.item_images
     @image = @images.first
-    if @item.seller_id != current_user.id
-      redirect_to purchase_item_path(@item)
-    end
+    # if @item.seller_id != current_user.id
+    #   redirect_to purchase_item_path(@item)
+    # end
+    
   end
 
   def create
