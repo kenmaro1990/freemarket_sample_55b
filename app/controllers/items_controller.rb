@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     @images = @item.item_images
     @image = @images.first
     if @item.seller_id != current_user.id
-      redirect_to purchase_item_path(item)
+      redirect_to purchase_item_path(@item)
     end
   end
 
