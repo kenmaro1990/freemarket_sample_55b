@@ -99,10 +99,7 @@ $(document).on('turbolinks:load', $(function() {
 
   });
   
-  $(document).on('click','#edit-submit', function(e){
-    e.preventDefault();
-    console.log('ok')
-    console.log(delete_ids);
+  $(document).on('click','#edit-submit', function(){
     $.ajax({
       url: '/items/delete_image',
       type: 'GET',

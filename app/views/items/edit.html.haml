@@ -75,13 +75,14 @@
               .select-wrap#grandchildren_wrapper
                 = f.collection_select :category_id, @grand_children_array,:id, :name, {selected: @grand_children.id}, class: "select-default", id: "grandchild_category"
                 = render partial: 'shared/error', locals: { key: "category_id"}
-              .form-group#size_wrapper
-                %label.form-label
-                  サイズ
-                %span.form-require
-                  必須
-                .select-wrap
-                  =f.collection_select :size_id, @size_array, :id, :size, {prompt: "---"}, class:"select-default", id:"size"
+              - if @item.size_id != nil
+                .form-group#size_wrapper
+                  %label.form-label
+                    サイズ
+                  %span.form-require
+                    必須
+                  .select-wrap
+                    =f.collection_select :size_id, @size_array, :id, :size, {prompt: "---"}, class:"select-default", id:"size"
             .form-group#brand_wrapper
               %label.form-label
                 ブランド
