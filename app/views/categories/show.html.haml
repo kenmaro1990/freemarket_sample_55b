@@ -3,9 +3,13 @@
   %body
     =render partial: "shared/header"
     =render 'shared/breadcrumbs'
-    .category-list
-      %p.category-list__title
-        #{@category.name}の商品一覧
-        .items-box-content__others__box
+    .category__index
+      .category__index__box
+        .category__index__box__list
+        .category__index__box__container
+          .category__index__box__container__title
+            %h1 #{@category.name}の商品一覧
+          .category__index__box__container__items
+
     = render partial: "shared/exhibit"
     = render partial: "shared/footer"

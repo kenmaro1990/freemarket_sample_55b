@@ -110,6 +110,14 @@ a:hover{
       }
     }
   }
+  &__index{
+    margin: 40px auto 0;
+    width: 1020px;
+    padding: 0 0 40px;
+    &__box{
+      width: 100%;
+    }
+  }
 }
 
 .main-top__header__box__menu__search__category:hover{
@@ -222,3 +230,5 @@ a:hover{
 .now-selected-gray{
   background-color: gray;
 }
+
+
