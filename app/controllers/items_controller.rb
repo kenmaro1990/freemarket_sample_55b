@@ -77,7 +77,11 @@ class ItemsController < ApplicationController
   end
 
   def delete_image
-    ItemImage.find(params[:id]).delete
+    binding.pry
+    @ids = params[:id]
+    @ids.each do |id|
+      ItemImage.find(id).delete
+    end
   end
 
 
@@ -125,6 +129,10 @@ class ItemsController < ApplicationController
       seller_id: current_user.id,
       display: "open"
     )
+  end
+  
+  def delete_item_params
+    params.require()
   end
 
   def set_items

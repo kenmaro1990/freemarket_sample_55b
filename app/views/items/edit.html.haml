@@ -16,21 +16,29 @@
           %p 最大10枚までアップロードできます
           .sell-dropbox-container
             .image-box
-              = render partial: 'image-box', collection: @item.item_images, as: "photo"
+              = render partial: 'image-box', collection: @item.item_images.limit(5), as: "photo"
               #preview
-              %label{for: "item_images_attributes_#{@item.item_images.length}", class: "image-uploader", id: "label-box--#{@item.item_images.length}", style:"display:block"}
-                .sell-upload-drop-box
-                  %pre クリックしてファイルをアップロード
-              .hidden-content
-                = f.fields_for :item_images do |image|
-                  = image.file_field :image , class: "hidden-field"
-                - @item.item_images.length.upto(9) do |i|
-                  %input{id: "item_images_attributes_#{i}", class: "update-image", name: "item[item_images_attributes][#{i}][image]", type: "file"}
+              -if @item.item_images.length <= 4
+                %label{for: "item_images_attributes_#{@item.item_images.length}", class: "image-uploader", id: "label-box--#{@item.item_images.length}", style:"display:block"}
+                  .sell-upload-drop-box
+                    %pre クリックしてファイルをアップロード
+                .hidden-content
+                  = f.fields_for :item_images do |image|
+                    = image.file_field :image , class: "hidden-field"
+                  - @item.item_images.length.upto(9) do |i|
+                    %input{id: "item_images_attributes_#{i}", class: "update-image", name: "item[item_images_attributes][#{i}][image]", type: "file"}
             .image-box2
+              -if @item.item_images.length >= 5
+                = render partial: 'image-box', collection: @item.item_images.offset(5), as: "photo"
               #preview2
-              %label{for: "item_images_attributes_#{@item.item_images.length}", class: "image-uploader2", id: "label-box--#{@item.item_images.length}", style:"display:block"}
-                .sell-upload-drop-box
-                  %pre クリックしてファイルをアップロード
+              -# %label{for: "item_images_attributes_#{@item.item_images.length}", class: "image-uploader2", id: "label-box--#{@item.item_images.length}", style:"display:block"}
+              -#   .sell-upload-drop-box
+              -#     %pre クリックしてファイルをアップロード
+              -# .hidden-content
+              -#   = f.fields_for :item_images do |image|
+              -#     = image.file_field :image , class: "hidden-field"
+              -#   - @item.item_images.length.upto(9) do |i|
+              -#     %input{id: "item_images_attributes_#{i}", class: "update-image", name: "item[item_images_attributes][#{i}][image]", type: "file"}
             = render partial: 'shared/error', locals: { key: "item_images"}
 
         .sell-content
@@ -164,7 +172,7 @@
           = link_to '加盟店規約', 'https://www.mercari.com/jp/seller_terms/', target: 'blank'
           に同意したことになります。
           .form-group
-            =f.submit '更新する', class: 'btn__sell_red'
+            =f.submit '更新する', class: 'btn__sell_red', id: 'edit-submit'
             = link_to 'もどる', root_path, class: "btn btn__gray"
 
 = render "single-footer"
