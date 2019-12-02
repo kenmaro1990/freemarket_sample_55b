@@ -12,6 +12,11 @@ Rails.application.routes.draw do
       get 'card'
       get 'logout'
       get 'edit_profile'
+      get 'selling'
+      get 'in_progress'
+      get 'completed'
+      get 'purchase'
+      get 'purchased'
     end 
   end
   resources :signup do
@@ -53,6 +58,10 @@ Rails.application.routes.draw do
       get 'search_brand', defaults: { format: 'json' }
       get 'get_image', defaults: { format: 'json' }
       get 'delete_image', defaults: { format: 'json' }
+    end
+
+    member do
+      get 'purchase'
     end
   end
 

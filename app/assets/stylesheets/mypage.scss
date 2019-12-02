@@ -208,9 +208,59 @@ html,body{
   }
 }
 
+
+.mypage__selling{
+  margin: 40px 0 0;
+  background: $white;
+  color:$fontblack;
+  &__head{
+    height: 75px;
+    font-size: 16px;
+    line-height: 75px;
+    padding: 0 16px;
+  }
+  &__tabs{
+    height: 75px;
+    line-height: 75px;
+    width: 700px;
+    text-align: center;
+    @include clearfix();
+    &--deactive{
+      float: left;
+      width: 233px;
+      background-color: $gray;
+      text-decoration: none;
+
+    }
+    &--active{
+      float: left;
+      width: 233px;
+      border-top: 2px solid #ea352d;
+    }
+  }
+  &__content{
+    list-style: none;
+    &--link{
+      display: block;
+      padding: 16px;
+      color: #333;
+      position: relative;
+      line-height: inherit;
+      text-decoration: none;
+    }
+    &--all{
+      padding: 16px;
+      line-height: 60px;
+      text-align: center;
+      min-height: 80px;
+    }
+  }
+}
+
 .bold{
   font-weight: bold;
   font-size: 16px;
+  color:$fontblack;
 }
 
 .items{
