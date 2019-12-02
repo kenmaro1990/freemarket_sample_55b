@@ -29,14 +29,17 @@ $(document).on('turbolinks:load', $(function() {
     return html;
   }
 
-  // 編集ページでイメージがクリックされた時
-  // labelのforの番号を入れ替える
+  function setLabel(num){
+    $('.image-uploader').css({'display': 'none'});
+    $('.image-box2').css({'display': 'flex'});
+    $('.image-uploader2').css({'display': 'block'});
+    $(`#label-box--${num}`).remove();
+  }
 
   $(document).on('change', '.update-image', function(){
     var target_id = $(this).attr('id');
     var target_num = Number(target_id.replace('item_images_attributes_',''));
     var display_num = target_num + 1;
-  
     var file = $(this).prop('files')[0];
     var file_reader = new FileReader();
 
@@ -51,18 +54,12 @@ $(document).on('turbolinks:load', $(function() {
         }
         if(target_num == 4){
           $('#preview').append(image_tag);
-          $('.image-uploader').css({'display': 'none'});
-          $('.image-box2').css({'display': 'flex'});
-          $('.image-uploader2').css({'display': 'block'});
-          $(`#label-box--${target_num}`).remove();
+          setLabel(target_num);
           $('#preview2').after(buildUpdatefile(display_num));      
         }
         if ((target_num >= 5) && (target_num <= 8)){
           $('#preview2').append(image_tag);
-          $('.image-uploader').css({'display': 'none'});
-          $('.image-box2').css({'display': 'flex'});
-          $('.image-uploader2').css({'display': 'block'});
-          $(`#label-box--${target_num}`).remove();
+          setLabel(target_num);
           $('#preview2').after(buildUpdatefile(display_num));      
         }
         if (target_num == 9){
@@ -77,25 +74,34 @@ $(document).on('turbolinks:load', $(function() {
 
   });
 
-  // 既存の画像のdelete
   $(document).on('click','.edit-delete', function(){
-
     var target_image = $(this).parent().parent();
     var img_num = Number(target_image.children('img').attr('alt'));
     var img_id = target_image.children('img').attr('id');
     var img_id_num = Number(img_id.replace('img_view_',''));
 
-    
     target_image.remove();
     delete_ids.push(img_num);
 
     $(`#item_item_images_attributes_${img_id_num}_image`).remove();
     $(`#item_item_images_attributes_${img_id_num}_id`).remove();
-    
     $('.image-uploader').remove();
     $('#preview2').after(buildUpdatefile(img_id_num));
     $('.hidden-content').append(buildInputbox(img_id_num));
 
+  });
+  
+  $(document).on('click','.update-delete', function(){
+    var target_image = $(this).parent().parent();
+    var img_num = Number(target_image.children('img').attr('alt'));
+
+    target_image.remove();
+    $(`#item_images_attributes_${img_num}`).remove();
+    $('.hidden-content').append(buildInputbox(img_num));
+    $('.image-uploader').remove();
+    $('#preview2').after(buildUpdatefile(img_num));
+    
+    deletes.push(img_num);
   });
   
   $(document).on('click','#edit-submit', function(){
@@ -106,22 +112,5 @@ $(document).on('turbolinks:load', $(function() {
       dataType: 'json'
     })
   });
-
-  //追加の画像のdelete
-  $(document).on('click','.update-delete', function(){
-
-    // previewを消す
-    var target_image = $(this).parent().parent();
-    target_image.remove();
-    
-    // inputを消す
-    var img_num = Number(target_image.children('img').attr('alt'));
-    $(`#item_images_attributes_${img_num}`).remove();
-    $('.hidden-content').append(buildInputbox(img_num));
-    $('.image-uploader').remove();
-    $('#preview2').after(buildUpdatefile(img_num));
-
-    deletes.push(img_num);
-  });
-
+  
 }));
