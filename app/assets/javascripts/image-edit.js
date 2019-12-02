@@ -35,15 +35,14 @@ $(document).on('turbolinks:load', $(function() {
   $(document).on('change', '.update-image', function(){
     var target_id = $(this).attr('id');
     var target_num = Number(target_id.replace('item_images_attributes_',''));
-    var display_num = target_num+1;
+    var display_num = target_num + 1;
+  
     var file = $(this).prop('files')[0];
     var file_reader = new FileReader();
 
-    // image_countの個数によって、previewとlabelの表示する箇所を変える
     file_reader.onload = (function(){
       return function (e) {
         image_tag = buildImageTag(target_num, e.target.result);
-        console.log(target_num);
 
         if (target_num <= 3){
           $('#preview').append(image_tag);
@@ -51,7 +50,6 @@ $(document).on('turbolinks:load', $(function() {
           $('#preview').after(buildUpdatefile(display_num));      
         }
         if(target_num == 4){
-          console.log('OK')
           $('#preview').append(image_tag);
           $('.image-uploader').css({'display': 'none'});
           $('.image-box2').css({'display': 'flex'});
@@ -60,7 +58,6 @@ $(document).on('turbolinks:load', $(function() {
           $('#preview2').after(buildUpdatefile(display_num));      
         }
         if ((target_num >= 5) && (target_num <= 8)){
-          console.log('OK')
           $('#preview2').append(image_tag);
           $('.image-uploader').css({'display': 'none'});
           $('.image-box2').css({'display': 'flex'});
@@ -94,8 +91,10 @@ $(document).on('turbolinks:load', $(function() {
 
     $(`#item_item_images_attributes_${img_id_num}_image`).remove();
     $(`#item_item_images_attributes_${img_id_num}_id`).remove();
+    
+    $('.image-uploader').remove();
+    $('#preview2').after(buildUpdatefile(img_id_num));
     $('.hidden-content').append(buildInputbox(img_id_num));
-
 
   });
   
@@ -117,18 +116,12 @@ $(document).on('turbolinks:load', $(function() {
     
     // inputを消す
     var img_num = Number(target_image.children('img').attr('alt'));
-    console.log(img_num);
     $(`#item_images_attributes_${img_num}`).remove();
     $('.hidden-content').append(buildInputbox(img_num));
+    $('.image-uploader').remove();
+    $('#preview2').after(buildUpdatefile(img_num));
 
     deletes.push(img_num);
-    if (img_num == 4 || img_num == 9){
-      var num = deletes[0];
-      $(`#label-box--${img_num}`).remove();
-      $('#preview').after(buildUpdatefile(num));
-        deletes.shift();
-    }
-    image_count -= 1;
   });
 
 }));
