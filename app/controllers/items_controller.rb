@@ -22,8 +22,12 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update!(item_update_params)
-    redirect_to root_path
+    if @item.update(item_update_params)
+      redirect_to root_path
+    else
+      flash[:error] = @item.errors.keys.map { |key|[key, @item.errors.full_messages_for(key)]}.to_h
+      redirect_to edit_item_path
+    end
   end
 
   def create
