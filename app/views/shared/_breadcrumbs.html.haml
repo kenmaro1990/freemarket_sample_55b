@@ -11,6 +11,21 @@
     - when ['users', 'index']
       - breadcrumb :mypage
 
+    - when ['users', 'selling']
+      - breadcrumb :selling
+
+    - when ['users', 'in_progress']
+      - breadcrumb :in_progress
+
+    - when ['users', 'completed']
+      - breadcrumb :completed
+  
+    - when ['users', 'purchase']
+      - breadcrumb :purchase
+
+    - when ['users', 'purchased']
+      - breadcrumb :purchased
+
     - when ['users', 'show']
       - breadcrumb :show_profile
 

@@ -183,14 +183,15 @@
         .items-box-content
           - @items.each do |item|
             .items-box
-              .items-box__photo
-                - image = item.item_images[0]
-                = image_tag "#{image.image}"
-              .items-box__name.blur
-                = item.name
-              .items-box__price
-                ¥
-                = item.price
+              = link_to purchase_item_path(item)  do
+                .items-box__photo
+                  - image = item.item_images[0]
+                  = image_tag "#{image.image}"
+                .items-box__name.blur
+                  = item.name
+                .items-box__price
+                  ¥
+                  = item.price
       - else
         .search-result-description
           %p 該当する商品が見つかりません。検索条件を変えて、再度お試しください。

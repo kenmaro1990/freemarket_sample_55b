@@ -6,13 +6,16 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
+         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   has_one :address
   accepts_nested_attributes_for :address
 
   has_one :card
-  
+  accepts_nested_attributes_for :card
+
+  has_many :items
+
   VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :nickname,            presence: true, length: { maximum: 20 }
@@ -26,6 +29,8 @@ class User < ApplicationRecord
   validates :birthday,            presence: true
   validates :phone_number,        presence: true, uniqueness: true
 
+
+  has_many :items
   def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
 
@@ -72,4 +77,5 @@ class User < ApplicationRecord
     end
     return { user: user ,sns: sns}
   end
+  
 end
