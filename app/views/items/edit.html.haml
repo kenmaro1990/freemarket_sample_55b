@@ -27,18 +27,31 @@
                     = image.file_field :image , class: "hidden-field"
                   - @item.item_images.length.upto(9) do |i|
                     %input{id: "item_images_attributes_#{i}", class: "update-image", name: "item[item_images_attributes][#{i}][image]", type: "file"}
-            .image-box2
-              -if @item.item_images.length >= 5
+            -if @item.item_images.length == 10
+              .image-box2{style:"display:flex"}
+                = render partial: 'image-box2', collection: @item.item_images.offset(5), as: "photo"
+                #preview2
+                .hidden-content
+                  = f.fields_for :item_images do |image|
+                    = image.file_field :image , class: "hidden-field"
+                  - @item.item_images.length.upto(9) do |i|
+                    %input{id: "item_images_attributes_#{i}", class: "update-image", name: "item[item_images_attributes][#{i}][image]", type: "file"}
+            -elsif (@item.item_images.length >= 5)
+              .image-box2{style:"display:flex"}
+                = render partial: 'image-box2', collection: @item.item_images.offset(5), as: "photo"
+                #preview2
+                %label{for: "item_images_attributes_#{@item.item_images.length}", class: "image-uploader2", id: "label-box--#{@item.item_images.length}", style:"display:block"}
+                  .sell-upload-drop-box
+                    %pre クリックしてファイルをアップロード
+                .hidden-content
+                  = f.fields_for :item_images do |image|
+                    = image.file_field :image , class: "hidden-field"
+                  - @item.item_images.length.upto(9) do |i|
+                    %input{id: "item_images_attributes_#{i}", class: "update-image", name: "item[item_images_attributes][#{i}][image]", type: "file"}
+            -else
+              .image-box2{style:"display:none"}
                 = render partial: 'image-box', collection: @item.item_images.offset(5), as: "photo"
-              #preview2
-              -# %label{for: "item_images_attributes_#{@item.item_images.length}", class: "image-uploader2", id: "label-box--#{@item.item_images.length}", style:"display:block"}
-              -#   .sell-upload-drop-box
-              -#     %pre クリックしてファイルをアップロード
-              -# .hidden-content
-              -#   = f.fields_for :item_images do |image|
-              -#     = image.file_field :image , class: "hidden-field"
-              -#   - @item.item_images.length.upto(9) do |i|
-              -#     %input{id: "item_images_attributes_#{i}", class: "update-image", name: "item[item_images_attributes][#{i}][image]", type: "file"}
+                #preview2
             = render partial: 'shared/error', locals: { key: "item_images"}
 
         .sell-content
