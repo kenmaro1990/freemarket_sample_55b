@@ -52,12 +52,12 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get 'transaction'
-      get 'get_price'
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_size', defaults: { format: 'json' }
       get 'search_brand', defaults: { format: 'json' }
       get 'get_image', defaults: { format: 'json' }
+      get 'delete_image', defaults: { format: 'json' }
     end
 
     member do
