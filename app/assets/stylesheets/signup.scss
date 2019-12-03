@@ -251,7 +251,6 @@ $fontSizeNormal: 14px;
     font-size: $fontSizeNormal;
     text-align: center;
     margin: auto 0;
-    width: 342px;
     &--textarea {
       width: 165.5px;
       resize: none;
@@ -274,7 +273,6 @@ $fontSizeNormal: 14px;
     font-size: 14px;
     text-align: center;
     margin: auto 0;
-    width: 343px;
 
     &--textarea {
       width: 165.5px;
@@ -354,12 +352,8 @@ $fontSizeNormal: 14px;
 }
 
 .register-phonenumber {
-  height: 403px;
-  width: 700px;
-  background-color: #ffffff;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 40px 40px 64px;
+  @include sign-up-contents();
+  padding: 40px 40px 180px;
   &__box {
     @include form();
     margin-top: 0;
@@ -397,6 +391,7 @@ $fontSizeNormal: 14px;
   padding-bottom:75px; 
 }
 .register-address {
+  @include sign-up-contents();
   &__name {
     width: 343px;
     margin: 0 auto;
@@ -594,6 +589,8 @@ $fontSizeNormal: 14px;
   color: #ea352d;
   font-size: 14px;
   margin-top: 8px ;
+  width: 320px;
+
 }
 
 .select-icon{
