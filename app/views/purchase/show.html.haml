@@ -17,7 +17,7 @@
           .content-post__buy-form
             .buy-post-price
               .buy-post-price__fee
-                = @item.price
+                = @item.price.to_s(:delimited)
               .buy-post-price__cost
                 送料込み
             %ul.buy-post-point
@@ -28,7 +28,7 @@
                 .buy-post-payment__fee
                   支払い金額
                 .buy-post-payment__price
-                  = @item.price
+                  = @item.price.to_s(:delimited)
             = form_tag(action: :pay, method: :post, id: @item.id, html: {class: 'buy-post-submit'}) do
               %button.buy-post-submit 購入する            
 
