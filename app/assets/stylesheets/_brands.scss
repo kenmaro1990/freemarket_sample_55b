@@ -1,0 +1,131 @@
+@mixin box-style(){
+  margin-bottom: 40px;
+  border-radius: 4px;
+  padding: 15px 30px 0 30px;
+  height: 50px;
+  display: flex;
+  h2{
+    margin-left: 20px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+.brand{
+  background: transparent;
+  margin: 40px auto;
+  background-color: #f5f5f5;
+  width: 700px;
+  z-index: 20;
+  .brand-contents{
+    display: block;
+    height: 100%;
+    &__title{
+      background-color: #f5f5f5;
+      h2{
+        padding: 8px 0;
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: bold;
+      }
+    }
+    &__list{
+      margin: 0px auto 0;
+      height: 100%;
+      border-radius: 4px;
+      &__box__1{
+        @include box-style();
+        color: #fff;
+        background-color: rgb(139, 218, 22);
+        border-color: black;
+      }
+      &__box__2{
+        @include box-style();
+        color: #fff;
+        background-color: rgb(253, 138, 6);
+      }
+      &__box__3{
+        @include box-style();
+        color: #fff;
+        background-color: rgb(69, 75, 77);
+      }
+      &__box__4{
+        @include box-style();
+        color: #fff;
+        background-color: rgb(255, 38, 0);
+      }
+      &__box__5{
+        @include box-style();
+        color: #fff;
+        background-color: rgb(0, 89, 255);
+      }
+      &__box__6{
+        @include box-style();
+        color: #fff;
+        background-color: rgb(0, 204, 255);
+      }
+      img{
+        position: relative;
+        bottom: 10px;
+      }
+    }
+  }
+}
+
+.brand-contents__list__box__1:hover{
+  opacity: 0.5;
+}
+
+.brand-contents__list__box__2:hover{
+  opacity: 0.5;
+}
+
+.brand-contents__list__box__3:hover{
+  opacity: 0.5;
+}
+
+.brand-contents__list__box__4:hover{
+  opacity: 0.5;
+}
+
+.brand-contents__list__box__5:hover{
+  opacity: 0.5;
+}
+
+.brand-contents__list__box__6:hover{
+  opacity: 0.5;
+}
+
+.main-top__header__box__menu__search__brand:hover{
+  color: rgb(0, 195, 255);
+  .brand_list{
+    position: absolute;
+    top: 44px;
+    left: 0px;
+    width: 220px;
+    display: block;
+    .persons_list{
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 10px 10px black;
+      .person_brand{
+        padding-left: 10px;
+        display: block;
+        color: black;
+        font-size: 14px;
+        font-weight: 300;
+        text-decoration: none;
+        color: black;
+        line-height: 50px;
+        width: 220px;
+      }
+      .person_brand:hover{
+        background-color: #ea352d;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.brand_list{
+  display: none;
+}

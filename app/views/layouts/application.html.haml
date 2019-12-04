@@ -6,8 +6,10 @@
     %title FreemarketSample55b
     %script{src: "https://js.pay.jp/", type: "text/javascript"}
     = csrf_meta_tags
+    %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel: "stylesheet"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
   %body
     = yield
