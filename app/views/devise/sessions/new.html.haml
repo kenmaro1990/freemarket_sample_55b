@@ -19,13 +19,4 @@
       = f.email_field :email, class: 'login-email__address--textarea', placeholder: 'メールアドレス'
       = f.password_field :password, class: 'login-email__password--textarea', placeholder: 'パスワード', autocomplete: "current-password"
       = f.submit 'ログイン', class: 'login-email__login'
-.footer
-  .policy
-    = link_to "プライバシーポリシー", register_signup_index_path, class: "policy__list"
-    = link_to "メルカリ利用規約", register_signup_index_path, class: "policy__list"
-    = link_to "特定商取引に関する表記", register_signup_index_path, class: "policy__list"
-  .footer-image
-    .footer-image__image
-      = link_to image_tag('/logo-gray.svg'), root_path
-  .footer-text
-    © 2019 Mercari
+= render "items/single-footer"
