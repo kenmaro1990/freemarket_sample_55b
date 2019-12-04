@@ -21,15 +21,15 @@
           = render 'brands/window'
       .main-top__header__box__menu__other
         %li.header__liked-items
-          =link_to "http://google.co.jp", class:"header_box_menu" do
+          =link_to root_path, class:"header_box_menu" do
             =fa_icon  "heart", class:"header_right_icon"
             %span いいね!一覧
         %li.header__notification
-          =link_to "http://google.co.jp", class:"header_box_menu" do
+          =link_to root_path, class:"header_box_menu" do
             =fa_icon  "bell", class:"header_right_icon"
             %span お知らせ
         %li.header__todo-list
-          =link_to "http://google.co.jp", class:"header_box_menu" do
+          =link_to root_path, class:"header_box_menu" do
             =fa_icon  "check", class:"header_right_icon"
             %span やることリスト
         %li.header__todo-list
