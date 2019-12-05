@@ -65,7 +65,7 @@
 
     .item__price-box
       %span.item__price
-        ="¥#{@item.price}" 
+        ="¥#{@item.price.to_s(:delimited)}" 
       %span.item__tax
         (税込)
       %span.item__shipping-fee
