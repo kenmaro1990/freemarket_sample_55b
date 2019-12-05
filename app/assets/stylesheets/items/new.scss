@@ -118,18 +118,18 @@ p {
   margin: 0 auto;
   width: 620px;
 }
-
-.image-box{
-  display: flex;
-  height: 184px;
-  width: 610px;
-}
-
-.image-box2{
-  display: none;
-  height: 184px;
-  width: 610px;
-  margin-top: 10px;
+.sell-dropbox-container{
+  .image-box{
+    display: flex;
+    height: 184px;
+    width: 610px;
+  }
+  .image-box2{
+    display: none;
+    height: 184px;
+    width: 610px;
+    margin-top: 10px;
+  }
 }
 
 .sell-upload-drop-box {
@@ -145,6 +145,7 @@ p {
     pointer-events: none;
     white-space: pre-wrap;
     word-wrap: break-word;
+    border: none;
   }
 }
 
@@ -161,6 +162,7 @@ p {
     pointer-events: none;
     white-space: pre-wrap;
     word-wrap: break-word;
+    border: none;
   }
 }
 
@@ -300,6 +302,9 @@ p {
   cursor: pointer;
   margin-left: 10px;
   display: none;
+  .upload-image{
+    display: none;
+  }
 }
 
 .image-uploader2 {
@@ -313,6 +318,9 @@ p {
   transition: box-shadow ease-out .3s;
   cursor: pointer;
   margin-left: 10px;
+  .upload-image{
+    display: none;
+  }
 }
 
 .single-footer {
@@ -411,9 +419,6 @@ p {
   }
 }
 
-.upload-image{
-  display: none;
-}
 
 .img_view{
   width: 116px;
