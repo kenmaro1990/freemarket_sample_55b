@@ -57,6 +57,47 @@ a:hover{
         color: #fff;
       }
     }
+    &__index{
+      margin: 40px auto 0;
+      width: 1020px;
+      padding: 0 0 40px;
+      &__box{
+        width: 100%;
+        &__container{
+          display: grid;
+          margin: 0 10px;
+          &__title{
+            font-size: 22px;
+            margin: 24px 0 8px;
+            line-height: 1.4;
+            font-weight: bold;
+          }
+          
+          &__description{
+            overflow: hidden;
+            border-radius: 4px;
+            margin-top: 30px;
+            &__title{
+              background-color: #ea352d;
+              text-align: center;
+              h3{
+                padding: 16px 8px;
+                color: #fff;
+                font-size: 22px;
+                font-weight: bold;
+              }
+            }
+            &__text{
+              padding: 30px;
+              background-color: #fff;
+              p{
+                line-height: 1.6em;
+              }
+            }
+          }
+        }
+      }
+    }
     &__list{
       margin: 250px auto 0;
       height: 100%;
@@ -109,47 +150,6 @@ a:hover{
                 margin-top: 8px;
                 margin-bottom: 8px;
               }
-            }
-          }
-        }
-      }
-    }
-  }
-  &__index{
-    margin: 40px auto 0;
-    width: 1020px;
-    padding: 0 0 40px;
-    &__box{
-      width: 100%;
-      &__container{
-        display: grid;
-        margin: 0 10px;
-        &__title{
-          font-size: 22px;
-          margin: 24px 0 8px;
-          line-height: 1.4;
-          font-weight: bold;
-        }
-        
-        &__description{
-          overflow: hidden;
-          border-radius: 4px;
-          margin-top: 30px;
-          &__title{
-            background-color: #ea352d;
-            text-align: center;
-            h3{
-              padding: 16px 8px;
-              color: #fff;
-              font-size: 22px;
-              font-weight: bold;
-            }
-          }
-          &__text{
-            padding: 30px;
-            background-color: #fff;
-            p{
-              line-height: 1.6em;
             }
           }
         }
