@@ -11,15 +11,15 @@
         .category__index__box__list
         .category__index__box__container
           %h2.category__index__box__container__title
-            #{@category.name}の商品一覧
+            #{@brand.name}の商品一覧
           .main-top__contents__center__items__ladies__list
             = render partial: "items/item", collection: @items, as: "item"
           .category__index__box__container__page
             = paginate(@items)
           .category__index__box__container__description
             .category__index__box__container__description__title
-              %h3 #{@category.name}
+              %h3 #{@brand.name}
             .category__index__box__container__description__text
-              %p  #{@category.description}
+              %p  #{@brand.description}
     = render partial: "shared/exhibit"
     = render partial: "shared/footer"

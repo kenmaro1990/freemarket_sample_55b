@@ -32,6 +32,7 @@
 @import "font-source";
 @import "font-awesome";
 @import "./categories";
+@import "./brands";
 @import "modules/main-top";
 @import "modules/sidebar";
 @import "modules/breadcrumbs";
@@ -45,5 +46,5 @@
 @import "identification.scss";
 @import "card.scss";
 @import "logout.scss";
-@import "search.scss";
+@import "./search.scss";
 @import "mixin/blur";

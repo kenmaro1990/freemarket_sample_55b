@@ -17,6 +17,7 @@ a:hover{
   margin: 40px auto;
   background-color: #f5f5f5;
   width: 700px;
+  z-index: 20;
   .category-contents{
     display: block;
     height: 100%;
@@ -32,6 +33,7 @@ a:hover{
     &__parents{
       text-align: center;
       background-color: #f5f5f5;
+      z-index: 20;
       a{
         list-style: none;
         float: left;
@@ -48,10 +50,52 @@ a:hover{
         background-color: #fff;
         text-decoration: none;
         cursor: pointer;
+        z-index: 20;
       }
       a:hover{
         background-color: #ea352d;
         color: #fff;
+      }
+    }
+    &__index{
+      margin: 40px auto 0;
+      width: 1020px;
+      padding: 0 0 40px;
+      &__box{
+        width: 100%;
+        &__container{
+          display: grid;
+          margin: 0 10px;
+          &__title{
+            font-size: 22px;
+            margin: 24px 0 8px;
+            line-height: 1.4;
+            font-weight: bold;
+          }
+          
+          &__description{
+            overflow: hidden;
+            border-radius: 4px;
+            margin-top: 30px;
+            &__title{
+              background-color: #ea352d;
+              text-align: center;
+              h3{
+                padding: 16px 8px;
+                color: #fff;
+                font-size: 22px;
+                font-weight: bold;
+              }
+            }
+            &__text{
+              padding: 30px;
+              background-color: #fff;
+              p{
+                line-height: 1.6em;
+              }
+            }
+          }
+        }
       }
     }
     &__list{
@@ -92,6 +136,11 @@ a:hover{
             padding-right: 20px;
             width: 100%;
             display:table;
+            .child{
+              float: left;
+              margin-right: 42%;
+              margin-top: 7px;
+            }
             &__name{
               float: left;
               width: 50%;
@@ -176,41 +225,6 @@ a:hover{
   display: none;
 }
 
-.main-top__header__box__menu__search__brand:hover{
-  color: rgb(0, 195, 255);
-  .brand_list{
-    position: absolute;
-    top: 44px;
-    left: 0px;
-    width: 220px;
-    display: block;
-    .persons_list{
-      background-color: rgb(255, 255, 255);
-      box-shadow: 0 10px 10px black;
-      .person_brand{
-        padding-left: 10px;
-        display: block;
-        color: black;
-        font-size: 14px;
-        font-weight: 300;
-        text-decoration: none;
-        color: black;
-        line-height: 50px;
-        width: 220px;
-      }
-      .person_brand:hover{
-        background-color: #ea352d;
-        color: #fff;
-      }
-    }
-  }
-}
-
-.brand_list{
-  display: none;
-}
-
-
 .now-selected-red{
   background-color: #ea352d;
   color: rgb(255, 255, 255);
@@ -219,3 +233,5 @@ a:hover{
 .now-selected-gray{
   background-color: gray;
 }
+
+

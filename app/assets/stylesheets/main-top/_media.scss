@@ -27,6 +27,7 @@
   .main-top__contents__center__items__ladies__list {
     grid-template-columns: repeat(5, 1fr);
     gap: 20px 20px;
+    list-style: none;
     img {
       height: auto;
     }
@@ -49,6 +50,14 @@
   }
   
   .main-top__contents__center__items__toys__list {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px 20px;
+    img {
+      height: auto;
+    }
+  }
+
+  .category__index__box__container__items{
     grid-template-columns: repeat(5, 1fr);
     gap: 20px 20px;
     img {
@@ -62,6 +71,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 6px 6px;
     width: 100%;
+    list-style: none;
     img {
       height: auto;
     }
@@ -86,6 +96,15 @@
   }
 
   .main-top__contents__center__items__toys__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px 6px;
+    width: 100%;
+    img {
+      height: auto;
+    }
+  }
+
+  .category__index__box__container__items {
     grid-template-columns: repeat(3, 1fr);
     gap: 6px 6px;
     width: 100%;

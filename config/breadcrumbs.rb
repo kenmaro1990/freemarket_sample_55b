@@ -83,14 +83,14 @@ crumb :category do |category|
 end
 
 
-# crumb :brands do
-#   link "ブランド一覧"
-# end
+crumb :brands do
+  link "ブランド一覧", brands_path
+end
 
-# crumb :brand do |brand|
-#   link brand.name, brand_path
-#   parent :brands
-# end
+crumb :brand do |brand|
+  link brand.name, brand_path(brand)
+  parent :brands
+end
 
 # crumb :areas do
 #   link "出品地域一覧"
