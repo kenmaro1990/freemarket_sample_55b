@@ -1,4 +1,4 @@
-@mixin box-style(){
+@mixin box-style{
   margin-bottom: 40px;
   border-radius: 4px;
   padding: 15px 30px 0 30px;
@@ -96,6 +96,10 @@
   opacity: 0.5;
 }
 
+.brand_list{
+  display: none;
+}
+
 .main-top__header__box__menu__search__brand:hover{
   color: rgb(0, 195, 255);
   .brand_list{
@@ -126,6 +130,3 @@
   }
 }
 
-.brand_list{
-  display: none;
-}
