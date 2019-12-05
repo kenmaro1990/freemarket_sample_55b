@@ -2,7 +2,10 @@
 %html
   %head
   %body
-    = render partial: "shared/header-after-login"
+    -if user_signed_in?  
+      =render partial: "shared/header-after-login"
+    -else
+      =render partial: "shared/header"
     =render 'shared/breadcrumbs'
     .category
       .category-contents
@@ -25,6 +28,7 @@
                     %h2
                       =child.name 
                   .grandchild_list
+                    = link_to "すべて", category_path(child), id: "#{child.id}", class: "child"
                     - child.children.each do |grandchild|
                       .grandchild_list__name
                         %p

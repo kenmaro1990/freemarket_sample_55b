@@ -17,19 +17,19 @@
           = render 'categories/window'
         .main-top__header__box__menu__search__brand
           = fa_icon "tags", class: "tags__icon"
-          = link_to 'ブランドから探す', 'http://google.co.jp', class: 'link'
+          = link_to 'ブランドから探す', brands_path(), class: 'link'
           = render 'brands/window'
       .main-top__header__box__menu__other
         %li.header__liked-items
-          =link_to "http://google.co.jp", class:"header_box_menu" do
+          =link_to root_path, class:"header_box_menu" do
             =fa_icon  "heart", class:"header_right_icon"
             %span いいね!一覧
         %li.header__notification
-          =link_to "http://google.co.jp", class:"header_box_menu" do
+          =link_to root_path, class:"header_box_menu" do
             =fa_icon  "bell", class:"header_right_icon"
             %span お知らせ
         %li.header__todo-list
-          =link_to "http://google.co.jp", class:"header_box_menu" do
+          =link_to root_path, class:"header_box_menu" do
             =fa_icon  "check", class:"header_right_icon"
             %span やることリスト
         %li.header__todo-list

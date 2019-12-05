@@ -10,7 +10,7 @@
     .mypage__wrapper
       .mypage-content
         %section.mypage-content__icon
-          =link_to "http://google.co.jp" do
+          =link_to users_path do
             .mypage__link
               =image_tag ("face.jpg"), class: "mypage__link--photo"
               %h2.mypage__link--name.bold
@@ -35,7 +35,7 @@
                 やることリスト
           .mypage__notification__content
             %li
-              =link_to 'http://google.co.jp', class: 'mypage__notification__content--link' do
+              =link_to users_path, class: 'mypage__notification__content--link' do
                 =image_tag "mercari.jpg", class: "mercari-icon"
                 .notification__body
                   .notification__body--text
@@ -48,7 +48,7 @@
                   .notification__body--next
                     =fa_icon "chevron-right"
             %li
-              =link_to 'http://google.co.jp', class: 'mypage__notification__content--link' do
+              =link_to users_path, class: 'mypage__notification__content--link' do
                 =image_tag "mercari.jpg", class: "mercari-icon"
                 .notification__body
                   .notification__body--text
@@ -61,7 +61,7 @@
                   .notification__body--next
                     =fa_icon "chevron-right"
             %li
-              =link_to 'http://google.co.jp', class: 'mypage__notification__content--link' do
+              =link_to users_path, class: 'mypage__notification__content--link' do
                 =image_tag "mercari.jpg", class: "mercari-icon"
                 .notification__body
                   .notification__body--text
@@ -75,7 +75,7 @@
                     =fa_icon "chevron-right"
             %li
               .mypage__notification__content--all
-                =link_to 'http://google.co.jp', class: 'notification-all' do
+                =link_to users_path, class: 'notification-all' do
                   一覧を見る
 
         .mypage__bought

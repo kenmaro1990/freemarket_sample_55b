@@ -30,10 +30,12 @@ ActiveRecord::Schema.define(version: 20191203151457) do
   end
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                      null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "ancestry"
+    t.text     "description", limit: 65535
+    t.string   "imege"
     t.index ["ancestry"], name: "index_brands_on_ancestry", using: :btree
   end
 
@@ -47,10 +49,11 @@ ActiveRecord::Schema.define(version: 20191203151457) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                      null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "ancestry"
+    t.text     "description", limit: 65535
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 

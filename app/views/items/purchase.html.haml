@@ -1,5 +1,8 @@
 .item-wrapper
-  =render partial: "shared/header-after-login"
+  -if user_signed_in?  
+    =render partial: "shared/header-after-login"
+  -else
+    =render partial: "shared/header"
   .item
     %h1.item__name
       = @item.name
