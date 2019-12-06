@@ -413,11 +413,8 @@ other_other = other.children.create(name:"その他")
 other_other.children.create([{name:"すべて"}])
 
 
-category_list = Category.create(name:"カテゴリー一覧")
-
 chanel = Brand.create(name:"シャネル")
 nike = Brand.create(name:"ナイキ")
 louis_vitton = Brand.create(name:"ルイヴィトン")
 supreme = Brand.create(name:"シュプリーム")
 addidas = Brand.create(name:"アディダス")
-brand_list = Brand.create(name:"ブランド一覧")

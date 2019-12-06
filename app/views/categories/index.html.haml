@@ -10,7 +10,8 @@
     .category
       .category-contents
         .category-contents__title
-          %h2 カテゴリー一覧
+          %div{id: "x"}
+            %h2 カテゴリー一覧
         .category-contents__parents
           - @parents.each do |parent|
             = link_to "#{parent.name}", "#root_category-#{parent.id}"
@@ -33,5 +34,7 @@
                       .grandchild_list__name
                         %p
                           = link_to "#{grandchild.name}", category_path(grandchild),id: "#{grandchild.id}"  
+    %a{class: "restert-btn", href: "#x"}
+      = fa_icon "angle-up", class: "angle-up"
     = render partial: "shared/exhibit" 
     = render partial: "shared/footer"

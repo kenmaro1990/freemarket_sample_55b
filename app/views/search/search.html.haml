@@ -191,7 +191,7 @@
                   = item.name
                 .items-box__price
                   ¥
-                  = item.price
+                  =converting_to_jpy(item.price)
       - else
         .search-result-description
           %p 該当する商品が見つかりません。検索条件を変えて、再度お試しください。

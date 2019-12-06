@@ -1,3 +1,15 @@
+@mixin box_style {
+  margin-bottom: 40px;
+  border-radius: 4px;
+  padding: 15px 30px 0 30px;
+  height: 50px;
+  display: flex;
+  h2{
+    margin-left: 20px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
 .brand{
   background: transparent;
   margin: 40px auto;
@@ -23,87 +35,32 @@
       &__box__1{
         color: #fff;
         background-color: rgb(139, 218, 22);
-        border-color: black;
-        margin-bottom: 40px;
-        border-radius: 4px;
-        padding: 15px 30px 0 30px;
-        height: 50px;
-        display: flex;
-        h2{
-          margin-left: 20px;
-          font-size: 22px;
-          font-weight: bold;
-        }
+        @include box_style;
       }
       &__box__2{
         color: #fff;
         background-color: rgb(253, 138, 6);
-        margin-bottom: 40px;
-        border-radius: 4px;
-        padding: 15px 30px 0 30px;
-        height: 50px;
-        display: flex;
-        h2{
-          margin-left: 20px;
-          font-size: 22px;
-          font-weight: bold;
-        }
+        @include box_style;
       }
       &__box__3{
         color: #fff;
         background-color: rgb(69, 75, 77);
-        margin-bottom: 40px;
-        border-radius: 4px;
-        padding: 15px 30px 0 30px;
-        height: 50px;
-        display: flex;
-        h2{
-          margin-left: 20px;
-          font-size: 22px;
-          font-weight: bold;
-        }
+        @include box_style;
       }
       &__box__4{
         color: #fff;
         background-color: rgb(255, 38, 0);
-        margin-bottom: 40px;
-        border-radius: 4px;
-        padding: 15px 30px 0 30px;
-        height: 50px;
-        display: flex;
-        h2{
-          margin-left: 20px;
-          font-size: 22px;
-          font-weight: bold;
-        }
+        @include box_style;
       }
       &__box__5{
         color: #fff;
         background-color: rgb(0, 89, 255);
-        margin-bottom: 40px;
-        border-radius: 4px;
-        padding: 15px 30px 0 30px;
-        height: 50px;
-        display: flex;
-        h2{
-          margin-left: 20px;
-          font-size: 22px;
-          font-weight: bold;
-        }
+        @include box_style;
       }
       &__box__6{
         color: #fff;
         background-color: rgb(0, 204, 255);
-        margin-bottom: 40px;
-        border-radius: 4px;
-        padding: 15px 30px 0 30px;
-        height: 50px;
-        display: flex;
-        h2{
-          margin-left: 20px;
-          font-size: 22px;
-          font-weight: bold;
-        }
+        @include box_style;
       }
       img{
         position: relative;

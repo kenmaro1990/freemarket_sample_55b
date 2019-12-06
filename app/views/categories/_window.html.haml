@@ -2,5 +2,6 @@
   .parents_list
     - @parents.each do |parent|
       = link_to "#{parent.name}", category_path(parent), class: "parent_category", id: "#{parent.id}"
+      = link_to "カテゴリー一覧", categories_path, class: "parent_category"
   .children_list
   .grand_children_list

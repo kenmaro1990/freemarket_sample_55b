@@ -4,7 +4,7 @@
     =image_tag "#{image.image}" if item.item_images.present?
     %span.price
       ¥
-      =item.price.to_s(:delimited)
+      =converting_to_jpy(item.price)
     %figcaption
       %span
         =item.name
