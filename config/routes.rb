@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   end
 
   resources :items do
+    resources :likes, only: [:create, :destroy]
     collection do
       get 'transaction'
       get 'get_category_children', defaults: { format: 'json' }

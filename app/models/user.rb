@@ -15,6 +15,9 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :card
 
   has_many :items
+  has_many :likes, dependent: :destroy
+  
+  
 
   VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -29,8 +32,6 @@ class User < ApplicationRecord
   validates :birthday,            presence: true
   validates :phone_number,        presence: true, uniqueness: true
 
-
-  has_many :items
   def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
 

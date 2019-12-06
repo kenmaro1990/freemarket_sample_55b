@@ -14,8 +14,10 @@ class Item < ApplicationRecord
 
   has_many :comments
   has_many :messages
-  has_many :likes
-
+  has_many :likes, dependent: :destroy
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
+  end
   validates :item_images,
     presence: { message: "がありません" }
   validates :name,
