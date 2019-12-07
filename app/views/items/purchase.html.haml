@@ -77,7 +77,8 @@
         =@item.description
     .item-button-container.clearfix
       .item-button--left
-        = render partial: 'likes/like_links', item: @item
+        %div{id: "likes_buttons_#{@item.id}"}
+          = render partial: 'likes/like_links',locals: {item: @item}
         %button{ class: "item-button--left--report", type: "button"}
           %i.fa.fa-flag
           不適切な商品の報告

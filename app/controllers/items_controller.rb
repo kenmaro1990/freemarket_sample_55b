@@ -72,6 +72,7 @@ class ItemsController < ApplicationController
 
   def purchase
     @item = Item.find(params[:id])
+    @like = Like.find_by(user_id: current_user.id, item_id: params[:item_id])
     @images = @item.item_images
     @image = @images.first  
   end
